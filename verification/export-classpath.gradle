@@ -1,0 +1,13 @@
+allprojects {
+    afterEvaluate {
+        tasks.register('nerflensVerificationClasspath') {
+            doLast {
+                def requestedOutput = project.findProperty('nerflensVerificationOutput')
+                def target = requestedOutput ? new File(requestedOutput.toString()) : new File(project.projectDir, 'verification/frame-check-classpath.txt')
+                target.parentFile.mkdirs()
+                target.text = project.sourceSets.main.compileClasspath.files
+                    .collect { it.absolutePath }.join(System.lineSeparator())
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "item.gtnhextranerf.blighted_soybean.name": {
+    "english": "Blighted Soybean",
+    "chinese": "枯萎黄豆"
+  },
+  "item.gtnhextranerf.magicnetized_manasteel_rod.name": {
+    "english": "Magicnetized Manasteel Rod",
+    "chinese": "魔法磁化魔力钢棒"
+  },
+  "item.gtnhextranerf.magicnetized_void_metal_rod.name": {
+    "english": "Magicnetized Void Metal Rod",
+    "chinese": "魔法磁化虚空金属棒"
+  },
+  "gtnhextranerf.research.metal_transmutation": {
+    "english": "By combining metal nuggets with aspects, you can create tiny piles of the corresponding metal dust.",
+    "chinese": "将金属粒与要素结合，可以制成相应金属的小撮粉末。"
+  },
+  "gtnhextranerf.consent.title": {
+    "english": "Extra Nerf statistics",
+    "chinese": "Extra Nerf 统计信息"
+  },
+  "gtnhextranerf.consent.scope": {
+    "english": "Choose one mode or disable reporting. The choice applies to this world and can be changed with /extranerftelemetry and /extranerfteam.",
+    "chinese": "选择一种上报方式，或关闭上报。此选择适用于当前世界，可通过 /extranerftelemetry 和 /extranerfteam 随时更改。"
+  },
+  "gtnhextranerf.consent.minimal": {
+    "english": "Basic statistics contribute to anonymous, aggregated stats on our website. Reports include a random server-run ID, player count, progression tier, world type and optional build proof, but no player names or UUIDs.",
+    "chinese": "基础统计会用于网站上的匿名汇总数据。上报内容包括本次服务器运行的随机标识、玩家人数、进度等级、世界类型，以及可选的构建验证信息；不包含玩家名称或 UUID。"
+  },
+  "gtnhextranerf.consent.team": {
+    "english": "Team tracking can show your team publicly. Reports include a team ID, leader and online players' names and UUIDs, progression tier, world type and optional build proof.",
+    "chinese": "队伍追踪可能在网站上公开展示你的队伍。上报内容包括队伍标识、队长及在线玩家的名称和 UUID、进度等级、世界类型，以及可选的构建验证信息。"
+  },
+  "gtnhextranerf.consent.send_minimal": {
+    "english": "Send basic statistics",
+    "chinese": "发送基础统计"
+  },
+  "gtnhextranerf.consent.send_team": {
+    "english": "Enable team tracking",
+    "chinese": "启用队伍追踪"
+  },
+  "gtnhextranerf.consent.decline": {
+    "english": "Disable reporting",
+    "chinese": "关闭上报"
+  },
+  "gtnhextranerf.consent.link.privacy": {
+    "english": "Privacy & Telemetry Policy",
+    "chinese": "隐私与统计上报政策"
+  },
+  "gtnhextranerf.consent.link.team": {
+    "english": "Team tracking policy",
+    "chinese": "队伍追踪政策"
+  }
+}

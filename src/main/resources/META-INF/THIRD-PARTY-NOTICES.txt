@@ -1,0 +1,18 @@
+NerfLens code
+Copyright (c) 2026 ochizakura
+MIT License; the inherited ExampleMod template notice is preserved in LICENSE.
+
+Bundled display data and derived gameplay documentation
+Derived from GTNH Extra Nerf by kuba6000.
+Copyright (C) 2024 kuba6000
+Licensed under LGPL-3.0-or-later.
+Source: https://github.com/kuba6000/GTNH-Extra-Nerf
+The version-specific JSON source is included in the source distribution.
+Original notice and full license terms: META-INF/licenses/.
+
+Chinese naming references
+GregTech: New Horizons translations and installed mod language resources.
+Additional naming references: https://github.com/Kiwi233/Translation-of-GTNH
+Minecraft/GregTech/ExtraNerf names and game rules are used to identify the
+corresponding items and changes. Native game assets and dependency JARs are
+not redistributed in this release.

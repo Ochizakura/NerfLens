@@ -1,0 +1,13 @@
+item.gtnhextranerf.blighted_soybean.name=Blighted Soybean
+item.gtnhextranerf.magicnetized_manasteel_rod.name=Magicnetized Manasteel Rod
+item.gtnhextranerf.magicnetized_void_metal_rod.name=Magicnetized Void Metal Rod
+gtnhextranerf.research.metal_transmutation=By combining metal nuggets with aspects, you can create tiny piles of the corresponding metal dust.
+gtnhextranerf.consent.title=Extra Nerf statistics
+gtnhextranerf.consent.scope=Choose one mode or disable reporting. The choice applies to this world and can be changed with /extranerftelemetry and /extranerfteam.
+gtnhextranerf.consent.minimal=Basic statistics contribute to anonymous, aggregated stats on our website. Reports include a random server-run ID, player count, progression tier, world type and optional build proof, but no player names or UUIDs.
+gtnhextranerf.consent.team=Team tracking can show your team publicly. Reports include a team ID, leader and online players' names and UUIDs, progression tier, world type and optional build proof.
+gtnhextranerf.consent.send_minimal=Send basic statistics
+gtnhextranerf.consent.send_team=Enable team tracking
+gtnhextranerf.consent.decline=Disable reporting
+gtnhextranerf.consent.link.privacy=Privacy & Telemetry Policy
+gtnhextranerf.consent.link.team=Team tracking policy

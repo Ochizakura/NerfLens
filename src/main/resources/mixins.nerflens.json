@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8.7",
+  "package": "nerflens.mixins",
+  "refmap": "mixins.nerflens.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": ["MixinRecipeWidget", "MixinGuiRecipe", "MixinLocale", "MixinStringTranslate"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
