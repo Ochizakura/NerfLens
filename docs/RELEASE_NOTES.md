@@ -1,8 +1,15 @@
-# NerfLens 0.2.0-rc2
+# NerfLens 0.2.0-rc3
 
-用于 GTNH 2.9.0 的 ExtraNerf 客户端显示辅助，提供物品改动说明、NEI 配方对照、材料变化标记和认证状态提示。作者：**ochizakura**。本版本为预发布版本。
+修复部分自定义配方没有有效物品投入时的 NEI 对照异常，并让源码 ZIP 能生成正确的模组版本号。用于 GTNH 2.9.0，作者：**ochizakura**。本版本为预发布版本。
 
-**[下载 NerfLens-0.2.0-rc2.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc2/NerfLens-0.2.0-rc2.jar)**
+**[下载 NerfLens-0.2.0-rc3.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar)**
+
+## 本版改动
+
+- 自定义配方启用全部投入变化标记、却没有有效物品投入时，使用配方路线对照卡展示信息。空投入列表、纯流体投入、零数量工具和空槽位均可安全处理。
+- 普通物品投入的数量对照继续使用实际配方的副本生成。
+- 发布版本在构建脚本中明确声明，源码 ZIP 自行构建时无需 Git 标签，生成的版本号为 `0.2.0-rc3`。
+- 验证脚本增加上述边界场景，并检查 NEI 配方页的完整对照注入。
 
 ## 安装与使用
 
@@ -13,19 +20,13 @@
 
 NerfLens 由 Forge 自动加载，功能显示在物品提示和 NEI 中。绿色 **Code → Download ZIP** 下载的是源码仓库。完整离线包中包含可安装的 JAR、源码、说明与许可证。更多安装、配置和反馈方式见[仓库 README](https://github.com/Ochizakura/NerfLens)。
 
-## 本版功能
+## 支持与验证
 
-- 机器提示显示所需认证及已解锁、缺少或未知状态；`Shift` 显示每项前置认证。
-- 证书物品显示该证书自身的认证状态。
-- 单机读取已有认证状态；联机状态无法取得时显示“未知”。切换存档或服务器时清理旧状态。
-- 根据 ExtraNerf 1.0.1、1.1.0、1.1.1 自动选择相应说明和配方数据。
-- 提供中英文说明、材料变化边框及 NEI 对照；已有译文优先。Chromatic Tooltips 为可选集成。
+支持 GTNH 2.9.0 / Minecraft 1.7.10 / Forge 1614，根据 ExtraNerf 1.0.1、1.1.0、1.1.1 自动选择相应说明。未知版本使用用户自定义显示数据。提供中英文说明、NEI 配方和材料对照、认证状态提示；Chromatic Tooltips 为可选集成。
 
-## 支持与验证范围
+构建、格式和 Checkstyle 检查通过。源码附带 35 项版本兼容检查与 16 项认证状态检查；离线集成检查在带 Chromatic 和不带 Chromatic 的环境中分别通过 324 和 308 项断言，其中包含 10 项对照卡边界检查。四个生产 Mixin 的注入、实际模组的数据字段和调用接口已核对，源码 ZIP 在无 Git 元数据的目录中完成构建。
 
-支持 GTNH 2.9.0 / Minecraft 1.7.10 / Forge 1614。未知 ExtraNerf 版本使用用户自定义数据。
-
-该版本的构建、格式和 Checkstyle 检查通过。源码附带 35 项兼容检查与 16 项认证状态检查；离线集成检查在带 Chromatic 和不带 Chromatic 的环境中分别通过 314 和 298 项断言。完整游戏画面、真实存档加工和蒸汽耗量读数仍需游戏内核对。
+本版本保留预发布标记。完整游戏画面、真实存档中的机器加工和蒸汽耗量读数仍需游戏内验收。
 
 ## 许可
 
@@ -33,12 +34,14 @@ NerfLens 由 Forge 自动加载，功能显示在物品提示和 NEI 中。绿�
 
 ## English
 
-NerfLens 0.2.0-rc2 provides version-aware ExtraNerf tooltips, NEI comparisons, material frames and certificate status in GTNH 2.9.0. Author: **ochizakura**. This is a prerelease.
+NerfLens 0.2.0-rc3 fixes NEI comparisons for custom display records without effective item inputs, and gives source ZIP builds the correct release version. Author: **ochizakura**. This is a prerelease for GTNH 2.9.0.
 
-[Download the JAR](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc2/NerfLens-0.2.0-rc2.jar), place it in the active client's `mods` directory with the game closed, replace older NerfLens versions and restart. Open the inventory and hover affected items; hold `Shift` for details. Open NEI recipes or usages (`R` / `U` by default) for supported comparisons. The server does not need NerfLens.
+For `allInputsChanged` records with empty, fluid-only, zero-count or null inputs, comparison generation provides a route card instead of returning an empty list or throwing. Regular item quantity comparisons use copies of the native ingredients. The build declares its version explicitly and does not require Git tags.
 
-Machine tooltips show required certificates and their state. Individual certificates show their own status. Singleplayer reads existing certification data; unavailable remote state is shown as unknown, and changing worlds or servers clears stale state. ExtraNerf 1.0.1, 1.1.0 and 1.1.1 profiles are selected automatically. Unknown versions use custom display data only.
+[Download the JAR](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar), replace the older NerfLens JAR in the active client's `mods` directory with the game closed, and restart. Hover affected items in the inventory, hold `Shift` for details, and open NEI recipes or usages (`R` / `U` by default). The server does not need NerfLens.
 
-Build, formatting and Checkstyle passed for this release. The shipped checks cover 35 compatibility and 16 certificate-state assertions; the offline harness passes 314 assertions with Chromatic Tooltips and 298 without it. Full in-game visuals, real-save processing and steam-consumption readouts remain outside the automated checks.
+ExtraNerf 1.0.1, 1.1.0 and 1.1.1 profiles are selected automatically. Unknown versions use custom display data only. Unavailable remote certification state is shown as unknown.
 
-Program code is MIT licensed. ExtraNerf-derived display data and documentation is LGPL-3.0-or-later. Complete license texts and upstream notices are included.
+Build, formatting and Checkstyle passed. The shipped checks cover 35 version compatibility and 16 certificate-state assertions. The offline harness passes 324 assertions with Chromatic Tooltips and 308 without it, including 10 comparison-card boundary checks. All four production client Mixins, installed mod interfaces and a build from the source ZIP were checked. Full in-game visuals, real-save machine processing and steam-consumption readouts remain outside these checks.
+
+Code is MIT licensed. ExtraNerf-derived display data and documentation is LGPL-3.0-or-later. Complete license texts and upstream notices are included.

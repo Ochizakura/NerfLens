@@ -308,6 +308,7 @@ public final class FrameChecks {
         for (int i = 0; i < 100000; i++) NerfItems.affected(s(slab, 64, 1));
         double milliseconds = (System.nanoTime() - start) / 1000000.0;
         require(milliseconds < 3000, "Cached classification suitable for recipe drawing: " + milliseconds + " ms for 100000 calls");
+        assertions += VisualBoundaryChecks.run();
         System.out.println("PASS: " + assertions + " assertions; scenarios=" + scenarios);
         System.out.println("Cached classification: " + milliseconds + " ms / 100000 calls");
         Files.write(new File(args[0], "frame-check-summary.txt").toPath(),

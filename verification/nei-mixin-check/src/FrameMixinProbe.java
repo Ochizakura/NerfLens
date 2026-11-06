@@ -72,6 +72,22 @@ public final class FrameMixinProbe {
         }
         if (drawHooks < 1 || tooltipHooks < 1 || explanations < 1) throw new AssertionError("Missing production hooks: draw=" + drawHooks + ", tooltip=" + tooltipHooks);
         System.out.println("PASS: installed NEI RecipeWidget accepts production frame Mixin; draw hooks=" + drawHooks + ", tooltip hooks=" + tooltipHooks + ", recipe explanation calls=" + explanations);
+
+        String guiName = "codechicken.nei.recipe.GuiRecipe";
+        byte[] guiAfter = (byte[]) transform.invoke(transformer, guiName, guiName, Files.readAllBytes(Paths.get("GuiRecipe.class")));
+        Files.write(Paths.get("GuiRecipe.class.transformed"), guiAfter);
+        ClassNode guiNode = new ClassNode(); new ClassReader(guiAfter).accept(guiNode, 0);
+        Set<String> guiHooks = new HashSet<>();
+        for (MethodNode method : guiNode.methods) for (AbstractInsnNode instruction = method.instructions.getFirst(); instruction != null; instruction = instruction.getNext()) {
+            if (instruction instanceof MethodInsnNode) {
+                MethodInsnNode call = (MethodInsnNode) instruction;
+                if (call.owner.equals("nerflens/NerfCompareOverlay")) guiHooks.add(call.name);
+            }
+        }
+        if (!guiHooks.containsAll(Arrays.asList("reserve", "draw", "tooltip", "click")))
+            throw new AssertionError("Missing production GuiRecipe hooks: " + guiHooks);
+        System.out.println("PASS: installed NEI GuiRecipe accepts complete production overlay Mixin; hooks=" + guiHooks);
+
         for (String target : new String[]{"net.minecraft.client.resources.Locale", "net.minecraft.util.StringTranslate"}) {
             String file = target.substring(target.lastIndexOf('.') + 1) + ".class";
             byte[] result = (byte[]) transform.invoke(transformer, target, target, Files.readAllBytes(Paths.get(file)));

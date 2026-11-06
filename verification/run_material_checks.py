@@ -5,6 +5,9 @@ import shutil
 import subprocess
 import sys
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 WORK = Path(__file__).resolve().parent
 ROOT = WORK / "tooltip-check"
 PROJECT = Path(os.environ.get("NERFLENS_TEST_PROJECT", str(WORK.parent)))
@@ -14,7 +17,7 @@ EXE = ".exe" if os.name == "nt" else ""
 ROOT.joinpath("classes").mkdir(parents=True, exist_ok=True)
 dependencies = [line.strip() for line in (WORK / "frame-check-classpath.txt").read_text(encoding="utf-8").splitlines()
                 if line.strip() and "jabel-javac-plugin" not in line]
-base = [ROOT / "classes", PROJECT / "build/libs/nerflens-0.2.0-rc2-dev.jar",
+base = [ROOT / "classes", PROJECT / "build/libs/nerflens-0.2.0-rc3-dev.jar",
         PROJECT / "build/rfg/recompiled_minecraft-1.7.10.jar", *dependencies]
 chromatic = MODS / "chromatictooltips-1.0.36-GTNH.jar"
 

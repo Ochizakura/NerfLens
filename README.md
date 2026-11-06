@@ -1,25 +1,25 @@
 # NerfLens
 
-NerfLens 是用于 **GregTech: New Horizons 2.9.0** 的客户端辅助模组，在物品提示和 NEI 配方页中显示 ExtraNerf 的改动、材料对照与认证状态。当前版本：**0.2.0-rc2（预发布）**。作者：**ochizakura**。
+NerfLens 是用于 **GregTech: New Horizons 2.9.0** 的客户端辅助模组，在物品提示和 NEI 配方页中显示 ExtraNerf 的改动、材料对照与认证状态。当前版本：**0.2.0-rc3（预发布）**。作者：**ochizakura**。
 
-**[下载 NerfLens-0.2.0-rc2.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc2/NerfLens-0.2.0-rc2.jar)** · [发布页与其他文件](https://github.com/Ochizakura/NerfLens/releases/tag/v0.2.0-rc2)
+**[下载 NerfLens-0.2.0-rc3.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar)** · [发布页与其他文件](https://github.com/Ochizakura/NerfLens/releases/tag/v0.2.0-rc3)
 
 ## 安装
 
 1. 关闭 Minecraft 客户端。
-2. [下载 NerfLens-0.2.0-rc2.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc2/NerfLens-0.2.0-rc2.jar)。
+2. [下载 NerfLens-0.2.0-rc3.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar)。
 3. 将 JAR 放进**正在使用的 GTNH 实例**的 `mods` 文件夹。使用启动器的版本隔离功能时，以该实例的游戏目录为准。
 4. 升级时移出旧版 NerfLens，同一实例保留一个 NerfLens JAR。
-5. 重新启动游戏；主菜单的 **Mods** 列表中应显示 NerfLens 0.2.0-rc2。
+5. 重新启动游戏；主菜单的 **Mods** 列表中应显示 NerfLens 0.2.0-rc3。
 
 JAR 由 Forge 随游戏自动加载，无须单独运行。NerfLens 安装在客户端，服务器无需安装。
 
 | 下载文件 | 用途 |
 | --- | --- |
-| `NerfLens-0.2.0-rc2.jar` | 玩家安装使用，将它放入实例的 `mods` 文件夹。 |
+| `NerfLens-0.2.0-rc3.jar` | 玩家安装使用，将它放入实例的 `mods` 文件夹。 |
 | 绿色 **Code → Download ZIP** | 下载源码仓库，供查看或自行编译。 |
-| `NerfLens-0.2.0-rc2-source.zip` | 发布版源码、许可证及可复现检查脚本。 |
-| `NerfLens-0.2.0-rc2-release.zip` | 离线完整包，包含 JAR、源码、发布说明、验证记录和许可证；安装时取出其中的 JAR。 |
+| `NerfLens-0.2.0-rc3-source.zip` | 发布版源码、许可证及可复现检查脚本。 |
+| `NerfLens-0.2.0-rc3-release.zip` | 离线完整包，包含 JAR、源码、发布说明、验证记录和许可证；安装时取出其中的 JAR。 |
 
 ## 在游戏中使用
 
@@ -56,9 +56,9 @@ NerfLens 提供显示辅助，认证规则、考试、评分和机器实际行�
 
 ## English
 
-NerfLens is a client-side display companion for ExtraNerf in GTNH 2.9.0. It provides version-aware tooltips, NEI recipe comparisons, material-change frames and certificate status. Author: **ochizakura**. Current release: **0.2.0-rc2**, a prerelease.
+NerfLens is a client-side display companion for ExtraNerf in GTNH 2.9.0. It provides version-aware tooltips, NEI recipe comparisons, material-change frames and certificate status. Author: **ochizakura**. Current release: **0.2.0-rc3**, a prerelease.
 
-**[Download NerfLens-0.2.0-rc2.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc2/NerfLens-0.2.0-rc2.jar)** and place it in the active GTNH instance's `mods` directory with the client closed. Replace older NerfLens versions, keep one JAR and restart the game. Forge loads it automatically; the server does not need it. GitHub's **Code → Download ZIP** contains source code for developers.
+**[Download NerfLens-0.2.0-rc3.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar)** and place it in the active GTNH instance's `mods` directory with the client closed. Replace older NerfLens versions, keep one JAR and restart the game. Forge loads it automatically; the server does not need it. GitHub's **Code → Download ZIP** contains source code for developers.
 
 Open the inventory (`E` by default) and hover an affected item or machine. Hold `Shift` for details. Use NEI recipe and usage pages (`R` / `U` by default) for supported material frames and comparisons. Hover a machine or certificate for certification requirements and status. These features appear in existing inventory and NEI screens; there is no separate NerfLens window or opening key.
 
@@ -68,7 +68,7 @@ GTNH 2.9.0 / Minecraft 1.7.10 / Forge 1614 is the supported environment. One JAR
 
 Run Gradle with Java 25 and provide the Java 8/17/21/25 toolchains used by the GTNH convention. Build with `gradlew.bat build --no-configuration-cache`, or `./gradlew build --no-configuration-cache` on Unix. Offline builds require cached dependencies.
 
-The release source archive omits local absolute toolchain paths. Configure installed toolchains through Gradle properties or automatic discovery. The `check` task includes the dependency-free compatibility and certificate-state checks under `src/test/java`. The optional [offline integration harness](verification/README.md) explains how to generate a local classpath and use your own GTNH mods.
+The release version is declared in `build.gradle.kts`; source ZIP builds do not require Git metadata. The release source archive omits local absolute toolchain paths. Configure installed toolchains through Gradle properties or automatic discovery. The `check` task includes the dependency-free compatibility and certificate-state checks under `src/test/java`. The optional [offline integration harness](verification/README.md) explains how to generate a local classpath and use your own GTNH mods.
 
 ## Licensing and sources
 

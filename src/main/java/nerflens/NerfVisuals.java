@@ -25,7 +25,8 @@ public final class NerfVisuals {
         List<Card> out = new ArrayList<>();
         if (recipe.allInputsChanged) {
             for (PositionedStack position : NerfRecipes.recipeStacks(handler, index, false)) {
-                if (position.item == null || StackInfo.getAmount(position.item) <= 0
+                if (position == null || position.item == null
+                    || StackInfo.getAmount(position.item) <= 0
                     || StackInfo.getFluid(position.item) != null) continue;
                 Card card = new Card();
                 card.label = NerfText.tr("scale");
@@ -38,7 +39,7 @@ public final class NerfVisuals {
                 card.note = NerfText.tr(amount >= 64 ? "scale.capped" : "scale.note");
                 out.add(card);
             }
-            return out;
+            if (!out.isEmpty()) return out;
         }
         for (NerfDB.VisualChange change : recipe.visualChanges) {
             if (change == null) continue;
