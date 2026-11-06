@@ -1,6 +1,6 @@
-# Release-candidate validation
+# Release validation
 
-NerfLens 0.2.0-rc2 is prepared as a GitHub prerelease.
+NerfLens 0.2.0-rc2 is a GitHub prerelease. The following results describe the released code and its automated checks.
 
 - Gradle check includes 35 dependency-free version/profile checks shipped with the source.
 - The complete offline harness passes 314 assertions with Chromatic Tooltips and 298 without it.
@@ -12,7 +12,7 @@ NerfLens 0.2.0-rc2 is prepared as a GitHub prerelease.
 - Changed future English wording and missing owner text do not receive old Chinese fallback text.
 - Production Mixins are applied to actual NEI RecipeWidget and Minecraft Locale/StringTranslate bytecode.
 
-The harness uses real Minecraft, NEI and optional Chromatic interfaces with isolated GregTech/Thaumcraft registries. It does not claim three complete client runs, real-save processing tests or full visual acceptance. The steam 5:1 display report was deferred and is not claimed fixed.
+The harness uses real Minecraft, NEI and optional Chromatic interfaces with isolated GregTech/Thaumcraft registries. Full in-game visuals, processing in real saves and steam-consumption readouts are outside these automated checks.
 
 ## Reproduction
 

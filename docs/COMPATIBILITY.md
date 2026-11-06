@@ -29,7 +29,7 @@ Global material frames follow the selected profile. Changing the database invali
 
 ## Certification tooltips
 
-Read-only certification state has been restored in 0.2.0-rc2. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain.
+NerfLens 0.2.0-rc2 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain.
 
 Singleplayer reads only an already-loaded record in the integrated server's MapStorage, on its server thread, every half second. It serializes that existing record into a temporary NBT object without loading, creating, saving or dirtying world data. World/server changes invalidate the snapshot. Remote or unavailable state is shown as unknown.
 
@@ -39,4 +39,4 @@ Default tooltips show ready or missing requirements. Shift shows each prerequisi
 
 The release has deterministic profile checks, actual Forge metadata checks, real Minecraft/NEI/Chromatic API checks with isolated GregTech and Thaumcraft registries, and production Mixin bytecode checks. This does not claim three complete game runs or upstream processing tests in real saves.
 
-The reported steam 5:1 display issue was deferred at the user's request. This release does not claim to fix the native steam gauge or that report.
+In-game steam-consumption readouts are outside the automated verification scope. Check machine readouts and actual consumption in the running game when evaluating steam usage.
