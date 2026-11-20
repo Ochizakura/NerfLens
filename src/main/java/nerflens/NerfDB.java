@@ -55,6 +55,7 @@ public final class NerfDB {
         public Boolean steamPowered;
         public List<String> excludeMachineClasses;
         public Map<String, String> nbtStrings;
+        public String beeSpecies;
         public String nh;
         public String ic2;
         public String material;
@@ -81,6 +82,7 @@ public final class NerfDB {
         public List<String> maps = Collections.emptyList();
         public List<StackSpec> inputs = Collections.emptyList();
         public List<StackSpec> outputs = Collections.emptyList();
+        public List<StackSpec> products;
         public List<StackSpec> changedInputs = Collections.emptyList();
         public List<StackSpec> absentInputs = Collections.emptyList();
         public boolean allInputsChanged;

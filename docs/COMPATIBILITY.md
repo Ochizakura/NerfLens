@@ -7,10 +7,13 @@ One NerfLens JAR supports the following verified display profiles in GTNH 2.9.0,
 | 1.0.1 | 71 | 123 | Automatic |
 | 1.1.0 | 91 | 140 | Automatic |
 | 1.1.1 | 91 | 143 | Automatic |
+| 1.2.0 | 100 | 176 | Automatic |
 
 The ExtraNerf version comes from Forge's loaded mod metadata. Leading `v` and build metadata such as `1.1.1+build.42` are recognized. Unverified prereleases, unrecognized releases and an absent ExtraNerf do not receive a guessed built-in profile. User-provided display records remain available.
 
-The older profile preserves its Gallium changes and its original high-tier casing material costs. The 1.1.0 profile includes the motor, heating-coil and industrial recipe changes, but does not claim the 1.1.1 Livingrock hammer route or metal transmutation changes. The 1.1.1 profile includes those changes and the expanded cutter rule.
+The older profile preserves its Gallium changes and its original high-tier casing material costs. The 1.1.0 profile includes the motor, heating-coil and industrial recipe changes, but does not claim the 1.1.1 Livingrock hammer route or metal transmutation changes. The 1.1.1 profile is frozen in `profiles/1.1.1.json` and retains its original 91 descriptions and 143 compare records.
+
+The 1.2.0 profile adds the Electric Iron Bath, its Wrought/Cast/Pig Iron alloy feeds, revised industrial Steel routes, Kevlar drones, Botania HV glass, the Universal Wireless Terminal input, Tool Forge removals, Crystal Blood conversion and the other verified 1.2.0 changes. It follows runtime code when upstream prose disagrees: the Ilmenite EBF recipe outputs Cast Iron in `BlastFurnaceNerf.java`, so NerfLens does not repeat the stale Wrought Iron table entry.
 
 Global material frames follow the selected profile. Changing the database invalidates recipe matches and item classification, including when the same NEI handler is reused. Output-only changes retain their local recipe frames; the legacy high-tier casing finishing step does not create a global material frame.
 
@@ -21,7 +24,7 @@ Global material frames follow the selected profile. Changing the database invali
 ```json
 {
   "schemaVersion": 3,
-  "extraNerfVersion": "1.1.1",
+  "extraNerfVersion": "1.2.0",
   "entries": [],
   "recipes": []
 }
@@ -29,7 +32,7 @@ Global material frames follow the selected profile. Changing the database invali
 
 ## Certification tooltips
 
-NerfLens 0.2.0-rc3 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain.
+NerfLens 0.2.0 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain. ExtraNerf 1.2.0 multiblocks inherit the installed classifier's energy/dynamo-hatch tier rule, while the Industrial Apiary remains HV and the Ice Cream Machine remains exempt.
 
 Singleplayer reads only an already-loaded record in the integrated server's MapStorage, on its server thread, every half second. It serializes that existing record into a temporary NBT object without loading, creating, saving or dirtying world data. World/server changes invalidate the snapshot. Remote or unavailable state is shown as unknown.
 

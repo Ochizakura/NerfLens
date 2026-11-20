@@ -64,7 +64,7 @@
         "16 根栅栏时概率为 12.5%，32 根及以上为 25%。",
         "提高控制器的海拔不会增加落雷概率。",
         "每次成功落雷会随机破坏一根栅栏，需要补回。",
-        "HV / EV / IV 档位和 512 A 输出保持原样。",
+        "HV / EV / IV 档位和 512A 输出保持原样。",
         "杆塔及其上方遮挡检查均包括世界最高有效方块层。"
       ],
       "newMat": [
@@ -88,7 +88,7 @@
       ],
       "summary": [
         "只在雷暴中发电，需要至少 16 根连续铁栅栏。",
-        "每次落雷充满 10,000,000 EU，并破坏一根栅栏。"
+        "每次落雷充满 10,000,000EU，并破坏一根栅栏。"
       ],
       "summaryEn": [
         "Generates only in thunderstorms with at least 16 consecutive Iron Fences.",
@@ -172,7 +172,7 @@
       ],
       "lines": [
         "移除的是这两种植物的 UU 物质提取路线。",
-        "UUA Berry 等增幅器原料的生产路线仍保留。"
+        "UUABerry 等增幅器原料的生产路线仍保留。"
       ],
       "newMat": [],
       "requireUnloc": [
@@ -318,6 +318,7 @@
         "铂金属粉处理：氯化钙副产物从 3 减至 2。",
         "皮米功率IC晶圆：纳米功率IC晶圆输入从 1 增至 64。",
         "电路 8 钚衰变：钚粉产出从 64 减至 63。",
+        "小批量钚衰变：8 钚锭只返还 7 钚粉，并产出 100 mB 氡。",
         "脱磷钐精：钐粉概率从 90% 降至 5%。",
         "大小钐混合物：钐粉概率为 10%。",
         "林业铟路线：浓缩 3→2、磷酸盐 6→4、净化矿 12→8、硫铟铜矿 3→2。",
@@ -336,6 +337,7 @@
         "Raw Platinum processing: Calcium Chloride output falls from 3 to 2.",
         "PPIC Wafer: NPIC Wafer input rises from 1 to 64.",
         "Circuit-8 Plutonium decay: Plutonium Dust output falls from 64 to 63.",
+        "Small-batch Plutonium decay returns 7 Dust from 8 ingots and produces 100 mB Radon.",
         "Dephosphated Samarium Concentrate: Samarium chance falls from 90% to 5%.",
         "Small and large Samarium blends now have a 10% Samarium chance.",
         "Forestry Indium routes: concentrate 3→2, phosphate 6→4, purified ore 12→8, Roquesite 3→2.",
@@ -343,11 +345,11 @@
       ],
       "newMatEn": [],
       "summary": [
-        "部分配方增加耗料或减少副产物。",
+        "部分配方增加耗料或减少副产物；小批量钚衰变也损失 1 份钚。",
         "铟富集溶液处理用铝粉翻倍，皮米功率IC晶圆用 纳米功率IC晶圆增至 64。"
       ],
       "summaryEn": [
-        "Several recipes use more material or yield fewer byproducts.",
+        "Several recipes use more material or yield fewer byproducts; small Plutonium batches also lose one unit.",
         "Indium concentrate doubles Aluminium; PPIC Wafers need 64 NPIC Wafers."
       ],
       "matchName": [],
@@ -365,6 +367,8 @@
         "原来的完美超频已取消：每次超频，耗时变为 1/3，EU/t 变为 4 倍。",
         "工作台和组装机配方均改用 EV 电路。",
         "电路 10 的新钚衰变路线：额外用 800 mB 氦，产出 63 钚粉和 960 mB 氡。",
+        "液晶凯芙拉：9,000 / 63,000 mB 批次分别额外消耗 1 / 7 个凯芙拉雄蜂。",
+        "新增 结晶血液 路线：1 瓶水晶血＋100 mB 匠魂血 → 100 mBBOP 血，HV20 秒。",
         "铟富集溶液处理：铝粉用量从 4 增至 8。",
         "钠法制硅：盐粉副产物从 8 减至 7。",
         "氢气制硅：盐酸副产物从 3,000 减至 2,000 mB。",
@@ -378,7 +382,8 @@
         "硅岩提纯还需分级净化水，详见对应配方的图标对照。"
       ],
       "newMat": [
-        "EV 电路（替代 HV 电路）"
+        "EV 电路（替代 HV 电路）",
+        "凯芙拉雄蜂 ×1 / ×7（液晶凯芙拉）"
       ],
       "requireUnloc": [
         "blockmachines"
@@ -388,6 +393,8 @@
         "Perfect overclocking is replaced: duration is divided by 3 and EU/t multiplied by 4 per overclock.",
         "Both crafting and Assembler production use EV circuits.",
         "New circuit-10 Plutonium decay uses an extra 800 mB Helium and yields 63 Plutonium Dust plus 960 mB Radon.",
+        "Liquid Crystal Kevlar batches of 9,000 / 63,000 mB additionally consume 1 / 7 Kevlar Drones.",
+        "New Crystal Blood route: 1 phial plus 100 mB TConstruct Blood makes 100 mB BOP Blood, HV, 20s.",
         "Indium concentrate: Aluminium Dust input rises from 4 to 8.",
         "Sodium-to-Silicon: Salt Dust byproduct falls from 8 to 7.",
         "Hydrogen-to-Silicon: Hydrochloric Acid output falls from 3,000 to 2,000 mB.",
@@ -401,15 +408,18 @@
         "Naquadah purification also needs graded purified water; inspect the recipe cards."
       ],
       "newMatEn": [
-        "EV circuits replacing HV circuits"
+        "EV circuits replacing HV circuits",
+        "1 / 7 Kevlar Drones (Liquid Crystal Kevlar)"
       ],
       "summary": [
         "每次超频：速度提高 3 倍，耗电提高 4 倍。",
-        "制造控制器时，HV 电路改为 EV 电路。"
+        "制造控制器时，HV 电路改为 EV 电路。",
+        "液晶凯芙拉增加凯芙拉雄蜂投入，并新增水晶血转 BOP 血路线。"
       ],
       "summaryEn": [
         "Each overclock gives 3x speed at 4x power draw.",
-        "Controller production now uses EV circuits instead of HV circuits."
+        "Controller production now uses EV circuits instead of HV circuits.",
+        "Liquid Crystal Kevlar needs Kevlar Drones, and Crystal Blood gains a BOP Blood route."
       ],
       "heading": "大型化学反应釜",
       "headingEn": "Large Chemical Reactor",
@@ -426,12 +436,13 @@
       ],
       "lines": [
         "铕晶棒：八种气体路线均额外消耗 2 份六氟化镎粉。",
-        "镅晶棒：只保留 鿫 路线，并额外消耗 2 份镤粉。",
+        "镅晶棒：EBF 只保留 鿫 路线并消耗 2 镤粉；太阳射流融化核心 改用 1 放射性矿物混合物。",
         "硅岩 / 富集硅岩 / 超能硅岩提纯：每批分别增加 1,000 mB 一级 / 二级 / 三级净化水。",
         "制钛：氯化镁副产物从 6 减至 4。",
-        "钛铁矿：钛铁矿粉 5→10、碳粉 1→2，主要产物翻倍，另加 1 份矿渣；160→300 秒。",
-        "制钢：铁粉直接炼钢路线移除，改用铸铁粉；铸铁路线耗时 45 秒。",
-        "新增铸铁路线：3 铁粉 + 2 碳类粉，用电路 1，MV 20 秒。",
+        "钛铁矿：钛铁矿粉 5→10、碳粉 1→2，产出 2 铸铁、6 金红石、1 矿渣和 2,000 mBCO；300 秒。",
+        "低阶铁粉与铸铁粉炼钢路线均移除；钢粉 / 磁钢粉仅可用电路 1 在 UHV 配方电压下 1 tick 重熔。",
+        "50 铁粉＋1 任意碳源＋电路 2 的后期批量路线改为 UHV 配方电压、1 tick，产出 50 钢锭。",
+        "铸铁生产仍为：3 铁粉＋2 任意碳源＋电路 1 → 3 铸铁，MV20 秒、1,000K。",
         "铝：冰晶石路线 80→120 秒；氮气路线 60→90 秒；无气体路线 75→140 秒。",
         "氧化铝直接还原及七种稀有气体炼铝路线已移除。",
         "碎铅矿：铅锭概率为 100%，两粒碲粒的概率为 0.1%。",
@@ -439,7 +450,7 @@
       ],
       "newMat": [
         "六氟化镎粉 ×2（铕晶棒）",
-        "镤粉 ×2（镅晶棒）",
+        "镤粉 ×2 / 放射性矿物混合物 ×1（镅晶棒，依机器而异）",
         "分级净化水（硅岩提纯）"
       ],
       "requireUnloc": [
@@ -449,12 +460,13 @@
       "id": "tooltip-010",
       "linesEn": [
         "Europium Boule: all eight gas routes add 2 Neptunium Hexafluoride Dust.",
-        "Americium Boule: only Oganesson remains, with 2 extra Protactinium Dust.",
+        "Americium Boule: the EBF keeps only Oganesson and uses 2 Protactinium Dust; Helioflux uses 1 Radioactive Mineral Mix instead.",
         "Naquadah / Enriched Naquadah / Naquadria purification add 1,000 mB Grade 1 / 2 / 3 Water respectively.",
         "Titanium: Magnesium Chloride byproduct falls from 6 to 4.",
-        "Ilmenite: dust 5→10, Carbon 1→2, main outputs double, plus 1 Slag; duration 160→300 seconds.",
-        "Direct Iron Dust steelmaking is removed. The Cast Iron route takes 45 seconds.",
-        "New Cast Iron route: 3 Iron Dust + 2 Carbon-family Dust, circuit 1, MV, 20 seconds.",
+        "Ilmenite: dust 5→10 and Carbon 1→2; output is 2 Cast Iron, 6 Rutile, 1 Slag and 2,000 mB CO in 300s.",
+        "Both low-tier Iron-Dust and Cast-Iron-Dust steelmaking are removed. Steel / Magnetic Steel Dust only remelt with circuit 1 at UHV recipe voltage in one tick.",
+        "The late 50 Iron + 1 Any Carbon + circuit 2 batch runs at UHV recipe voltage for one tick and yields 50 Steel Ingots.",
+        "Cast Iron production remains: 3 Iron Dust + 2 Any Carbon + circuit 1 -> 3 Cast Iron, MV, 20s, 1,000 K.",
         "Aluminium: Cryolite 80→120 seconds; Nitrogen 60→90; no-gas 75→140.",
         "Direct Aluminium Oxide reduction and seven noble-gas smelting routes are removed.",
         "Crushed Lead gives guaranteed Lead and a 0.1% chance of 2 Tellurium Nuggets.",
@@ -462,16 +474,16 @@
       ],
       "newMatEn": [
         "2 Neptunium Hexafluoride Dust (Europium Boule)",
-        "2 Protactinium Dust (Americium Boule)",
+        "2 Protactinium Dust or 1 Radioactive Mineral Mix (Americium Boule, machine-dependent)",
         "Graded Purified Water (Naquadah purification)"
       ],
       "summary": [
-        "部分晶棒和硅岩提纯配方增加材料要求。",
-        "铝、钢和钛铁矿路线也有调整，详见配方图标。"
+        "主要工业钢改由 电力铁浴 生产；EBF 的普通钢路线只保留 UHV 重熔和后期批量。",
+        "镅晶棒、铝、钛铁矿和硅岩提纯也有调整，详见配方图标。"
       ],
       "summaryEn": [
-        "Some boule and Naquadah recipes need extra materials.",
-        "Aluminium, Steel and Ilmenite routes also change; inspect their recipe cards."
+        "The Electric Iron Bath becomes the main industrial Steel source; ordinary EBF Steel is limited to UHV remelting and the late bulk route.",
+        "Americium boules, Aluminium, Ilmenite and Naquadah purification also change; inspect their recipe cards."
       ],
       "heading": "高炉配方",
       "headingEn": "Blast Furnace recipes",
@@ -486,7 +498,7 @@
       "lines": [
         "铕、镅基础路线：每批输入 ×4，产出减为 1/4，因此单位耗料为原来的 16 倍。",
         "使用钷的路线：输入和产出都减半，但耗时变为 4 倍。",
-        "镅等离子点火能量从 500,000,000 增至 1,000,000,000 EU，需要 MK4。",
+        "镅等离子点火能量从 500,000,000 增至 1,000,000,000EU，需要 MK4。",
         "只有老式 MK2–MK5 结构替换线圈位置，MK1 和紧凑型结构不变。"
       ],
       "newMat": [
@@ -678,8 +690,8 @@
       ],
       "lines": [
         "只修改化工厂路线，量子操纵者路线不变。",
-        "产出仍为 40,320 mB，耗时 800 秒，耗电 3,842,160 EU/t。",
-        "初始核能之星可在 4 A UHV 条件下制造。"
+        "产出仍为 40,320 mB，耗时 800 秒，耗电 3,842,160EU/t。",
+        "初始核能之星可在 4AUHV 条件下制造。"
       ],
       "newMat": [
         "核能之星 ×8（替代重力之星）"
@@ -843,7 +855,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "发电效率调整为：LV 20% / MV 30% / HV 40%。"
+        "发电效率调整为：LV20% / MV30% / HV40%。"
       ],
       "summaryEn": [
         "Generation efficiency: LV 20% / MV 30% / HV 40%."
@@ -877,7 +889,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "发电效率调整为：LV 20% / MV 30% / HV 40%。"
+        "发电效率调整为：LV20% / MV30% / HV40%。"
       ],
       "summaryEn": [
         "Generation efficiency: LV 20% / MV 30% / HV 40%."
@@ -909,7 +921,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "发电效率调整为：LV 20% / MV 30% / HV 40%。"
+        "发电效率调整为：LV20% / MV30% / HV40%。"
       ],
       "summaryEn": [
         "Generation efficiency: LV 20% / MV 30% / HV 40%."
@@ -921,7 +933,7 @@
     },
     {
       "kind": "machine",
-      "title": "等离子发电机 (Plasma Generator)",
+      "title": "等离子发电机 (等离子体 Generator)",
       "matchUnloc": [
         "gt.blockmachines.basicgenerator.plasmagenerator."
       ],
@@ -940,7 +952,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "发电效率：EV 20% / IV 30% / LuV 40%。"
+        "发电效率：EV20% / IV30% / LuV40%。"
       ],
       "summaryEn": [
         "Generation efficiency: EV 20% / IV 30% / LuV 40%."
@@ -974,7 +986,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "发电效率调整为：LV 20% / MV 30% / HV 40%。"
+        "发电效率调整为：LV20% / MV30% / HV40%。"
       ],
       "summaryEn": [
         "Generation efficiency: LV 20% / MV 30% / HV 40%."
@@ -990,7 +1002,7 @@
         "centrifuge"
       ],
       "lines": [
-        "贫铀合金：480→7,680 EU/t，仍耗时 48 秒，产量不变。",
+        "贫铀合金：480→7,680EU/t，仍耗时 48 秒，产量不变。",
         "末地石：钨酸盐概率 37.5%→10%，氦产量 4,320→1,500 mB。",
         "黏液类材料和 红宝石汁 的离心回收配方已移除。",
         "启用林业时，镨路线的铟副产物从 12 减至 8。"
@@ -1065,7 +1077,7 @@
         "mixer"
       ],
       "lines": [
-        "Raw Tungstensteel必须经过 Industrial Brainrotter 才能成为成品钨钢。",
+        "粗制钨钢必须经过 工业脑腐机 才能成为成品钨钢。",
         "钛铂钒合金粉的混合产量从 7 减至 3。",
         "粗制中子素粉混合配方的氦等离子输入从 144 增至 1,440 mB。"
       ],
@@ -1081,7 +1093,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "钢和钨混合后得到Raw Tungstensteel粉，需要再精炼。",
+        "钢和钨混合后得到粗制钨钢粉，需要再精炼。",
         "八条 红宝石汁 混合配方已移除。"
       ],
       "summaryEn": [
@@ -1100,7 +1112,8 @@
       ],
       "lines": [
         "保留 7 条炼钢配方，移除其余 39 条。",
-        "这条限制只影响产出钢的配方，其他砖高炉配方不变。"
+        "这条限制只影响产出钢的配方，其他砖高炉配方不变。",
+        "砖高炉现在主要用于启动钢；电力铁浴 是早期工业钢的主路线。"
       ],
       "newMat": [],
       "requireUnloc": [
@@ -1109,14 +1122,15 @@
       "id": "tooltip-028",
       "linesEn": [
         "Seven steelmaking recipes remain; the other 39 are removed.",
-        "Recipes that do not produce Steel are unaffected."
+        "Recipes that do not produce Steel are unaffected.",
+        "The Primitive Blast Furnace is now a bootstrap Steel source; the Electric Iron Bath is the main early industrial route."
       ],
       "newMatEn": [],
       "summary": [
-        "炼钢只能使用焦炭类燃料或 Railcraft 煤焦块。"
+        "只保留焦炭类燃料路线，用于慢速启动炼钢；工业量钢材转向 电力铁浴。"
       ],
       "summaryEn": [
-        "Steelmaking accepts only Coke-family fuels or Railcraft Coal Coke Blocks."
+        "Only Coke-family routes remain for slow bootstrap Steel; industrial production moves to the Electric Iron Bath."
       ],
       "heading": "砖高炉燃料",
       "headingEn": "Primitive Blast Furnace fuel",
@@ -1210,7 +1224,7 @@
       "lines": [
         "研究：用数据棒扫描 64k ME 存储元件，HV，60 秒。",
         "请先取空存储元件，避免连同内部物品一起消耗。",
-        "制造：4 钛铂钒合金板、2 HV 电路、2 工程处理器、1 福鲁伊克斯块 和 576 mB 焊料。",
+        "制造：4 钛铂钒合金板、2HV 电路、2 工程处理器、1 福鲁伊克斯块 和 576 mB 焊料。",
         "装配线制造耗时 30 秒，电压为 LuV。",
         "原工作台和 HV 组装机路线已移除。"
       ],
@@ -1287,7 +1301,7 @@
     },
     {
       "kind": "item",
-      "title": "治愈之斧 => Hungry Axe",
+      "title": "治愈之斧 =>Hungry Axe",
       "matchName": [
         "healing axe",
         "hungry axe",
@@ -1402,7 +1416,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "ME P2P通道最多传输 8 个频道。",
+        "MEP2P通道最多传输 8 个频道。",
         "多个输出端共享这 8 个频道，不是每端各 8 个。"
       ],
       "summaryEn": [
@@ -1421,7 +1435,7 @@
     },
     {
       "kind": "item",
-      "title": "无线接入器/无线集线器 (AE2 Wireless)",
+      "title": "无线接入器/无线集线器 (AE2Wireless)",
       "matchName": [
         "wireless connector",
         "wireless hub",
@@ -1431,8 +1445,8 @@
       "lines": [
         "每条连接的总耗电 = min(距离⁴, 10,000,000) EU/t，由两端各付一半。",
         "距离按两个方块坐标的直线距离计算。",
-        "两个连接器中间隔一格墙时，距离为 2，总耗电为 16 EU/t。",
-        "每端每条连接最多耗电 5,000,000 EU/t。",
+        "两个连接器中间隔一格墙时，距离为 2，总耗电为 16EU/t。",
+        "每端每条连接最多耗电 5,000,000EU/t。",
         "集线器连接多条线路时，耗电相加；没有连接时不产生连接耗电。"
       ],
       "newMat": [],
@@ -1447,7 +1461,7 @@
       "newMatEn": [],
       "summary": [
         "无线连接越远，耗电越高：总耗电按距离的四次方计算。",
-        "例如距离 32 格，总耗电为 1,048,576 EU/t。"
+        "例如距离 32 格，总耗电为 1,048,576EU/t。"
       ],
       "summaryEn": [
         "Wireless link power grows with distance to the fourth power.",
@@ -1509,28 +1523,30 @@
     },
     {
       "kind": "item",
-      "title": "钨钢更名: TungTungTungstensteel",
+      "title": "钨钢更名: 钨钨钨钢",
       "matchName": [
         "tungtungtungstensteel"
       ],
       "lines": [
         "已有成品钨钢的物品身份不变，仍可正常用于配方。",
-        "搅拌机、量子操纵者和高炉等指定路线改产Raw Tungstensteel。",
-        "Raw Tungstensteel需经 Industrial Brainrotter 转为成品。",
-        "热Raw Tungstensteel锭必须先在真空冷冻机中冷却。"
+        "IV 硼硅酸盐玻璃更名为 钨钨钨钢强化硼硅酸盐玻璃，并使用成品钨钢。",
+        "搅拌机、量子操纵者和高炉等指定路线改产粗制钨钢。",
+        "粗制钨钢需经 工业脑腐机 转为成品。",
+        "热粗制钨钢锭必须先在真空冷冻机中冷却。"
       ],
       "newMat": [],
       "id": "tooltip-039",
       "linesEn": [
         "Existing finished material keeps the same identity and remains usable in recipes.",
+        "IV borosilicate glass is named TungTungTungstensteel Reinforced Borosilicate Glass Block and uses finished Tungstensteel.",
         "Specified Mixer, QFT and EBF routes now yield Raw Tungstensteel.",
         "Use Industrial Brainrotter to obtain finished material.",
         "Cool hot raw ingots in a Vacuum Freezer before refining."
       ],
       "newMatEn": [],
       "summary": [
-        "原成品钨钢更名为 TungTungTungstensteel。",
-        "新生产路线先得到Raw Tungstensteel，需要再精炼。"
+        "原成品钨钢更名为 钨钨钨钢。",
+        "新生产路线先得到粗制钨钢，需要再精炼。"
       ],
       "summaryEn": [
         "Finished Tungstensteel is renamed TungTungTungstensteel.",
@@ -1658,7 +1674,7 @@
       "lines": [
         "ULV 直接产出成品。",
         "ULV–UMV：8 普通板改为 8 同材质双重板。",
-        "UXV：4 MHDCSM 板＋4 磁物质板改为 1 致密 MHDCSM 板＋4 双重磁物质板。",
+        "UXV：4MHDCSM 板＋4 磁物质板改为 1 致密 MHDCSM 板＋4 双重磁物质板。",
         "LV–UXV 工作台与组装机均先产出生机械方块；凿子或工业凿子完成。",
         "MAX 只保留加工占位，不新增生产配方。"
       ],
@@ -1894,7 +1910,7 @@
     },
     {
       "kind": "item",
-      "title": "LV 电动马达 (LV Electric Motor)",
+      "title": "LV 电动马达 (LVElectric Motor)",
       "matchName": [
         "=lv electric motor",
         "=电动马达 (lv)"
@@ -1988,7 +2004,7 @@
       ],
       "newMatEn": [],
       "summary": [
-        "高级电路：逻辑IC 2→8，RAM芯片 2→8。"
+        "高级电路：逻辑IC2→8，RAM芯片 2→8。"
       ],
       "summaryEn": [
         "Advanced Circuit uses 8 ILC Chips and 8 RAM Chips instead of 2 each."
@@ -2055,8 +2071,8 @@
       ],
       "lines": [
         "原焊料标准和 ASMD 路线已替换。",
-        "标准路线：2 铝框、2 工作站、12 线圈、24 电容、16 RAM芯片、24 根 1 倍退火铜线。",
-        "ASMD 路线：2 铝框、2 工作站、3 ASMD 电感、4 ASMD 电容、16 RAM芯片、16 根 1 倍退火铜线。",
+        "标准路线：2 铝框、2 工作站、12 线圈、24 电容、16RAM芯片、24 根 1 倍退火铜线。",
+        "ASMD 路线：2 铝框、2 工作站、3ASMD 电感、4ASMD 电容、16RAM芯片、16 根 1 倍退火铜线。",
         "两条路线都是 HV，每批产出 1 个；标准耗时 80 秒，ASMD 耗时 40 秒。"
       ],
       "newMat": [
@@ -2134,7 +2150,7 @@
     },
     {
       "kind": "item",
-      "title": "MV 能源仓 (MV Energy Hatch)",
+      "title": "MV 能源仓 (MVEnergy Hatch)",
       "matchName": [
         "=energy hatch (mv)",
         "=mv energy hatch",
@@ -2370,10 +2386,10 @@
         {
           "any": [
             {
-              "od": "dustTpv"
+              "od": "dustTPVAlloy"
             },
             {
-              "od": "dustTPV"
+              "od": "dustTPVAlloy"
             }
           ]
         }
@@ -2614,15 +2630,15 @@
     },
     {
       "kind": "machine",
-      "title": "Industrial Brainrotter",
+      "title": "工业脑腐机",
       "matchUnloc": [
         "brainrotter"
       ],
       "matchName": [],
       "lines": [
         "机器为 5×5×3 结构，使用玻璃和防火原木，按 EV 运行。",
-        "热Raw Tungstensteel锭必须先用真空冷冻机冷却。",
-        "加工时保留底座上的Raw Tungstensteel锭，取走它会使该轮全部进度标记失效。"
+        "热粗制钨钢锭必须先用真空冷冻机冷却。",
+        "加工时保留底座上的粗制钨钢锭，取走它会使该轮全部进度标记失效。"
       ],
       "newMat": [],
       "requireUnloc": [
@@ -2636,14 +2652,14 @@
       ],
       "newMatEn": [],
       "summary": [
-        "用于把冷却后的Raw Tungstensteel精炼成成品。",
+        "用于把冷却后的粗制钨钢精炼成成品。",
         "每锭需要 1 份木浆和不消耗的 Brainrot Compilation。"
       ],
       "summaryEn": [
         "Refines cooled Raw Tungstensteel into finished material.",
         "Needs 1 Wood Pulp per ingot and a non-consumed Brainrot compilation."
       ],
-      "heading": "Raw Tungstensteel精炼",
+      "heading": "粗制钨钢精炼",
       "headingEn": "Raw Tungstensteel refining",
       "warning": false
     },
@@ -2657,8 +2673,8 @@
         "lootbag"
       ],
       "lines": [
-        "涉及 AE2 Basic 和 AE2 Good 两种袋子。",
-        "没有保底获得机制，其他战利品奖励不变。",
+        "涉及 AE2Basic 和 AE2Good 两种袋子。",
+        "存档中第一次符合条件的袋子开启会保底获得 1 台控制器，占用正常奖励槽位。",
         "限制只针对这个袋子奖励，不限制自己制造的控制器。",
         "NEI 显示最近收到的存档奖励余量；余量已用完时显示 0%。",
         "未收到服务器余量时显示未知；其他玩家同时领取可能使显示稍有延迟。"
@@ -2667,7 +2683,7 @@
       "id": "tooltip-065",
       "linesEn": [
         "Applies to AE2 Basic and AE2 Good bags.",
-        "There is no guaranteed Controller reward. Other loot is retained.",
+        "The first eligible bag opening in a save guarantees one Controller in a normal reward slot.",
         "The cap concerns this loot reward, not Controllers you craft.",
         "NEI displays the latest received save-wide allowance; an exhausted allowance shows 0%.",
         "Unknown until synchronized; concurrent claims may make the snapshot briefly stale."
@@ -2675,11 +2691,11 @@
       "newMatEn": [],
       "summary": [
         "AE2 战利品袋的 ME控制器奖励从 4 台减为 1 台。",
-        "整个存档最多领取一次，不是每人一次。"
+        "整个存档最多领取一次；第一次符合条件的开启有保底。"
       ],
       "summaryEn": [
         "AE2 loot-bag ME Controller rewards fall from 4 to 1.",
-        "Only one can be claimed per save, not one per player."
+        "Only one can be claimed per save; the first eligible opening is guaranteed."
       ],
       "heading": "AE2 战利品奖励",
       "headingEn": "AE2 loot rewards",
@@ -2854,7 +2870,7 @@
       ],
       "lines": [
         "工作台和组装机两种路线均已替换。",
-        "新棒材由 MV 组装机制作，30 秒、120 EU/t。"
+        "新棒材由 MV 组装机制作，30 秒、120EU/t。"
       ],
       "linesEn": [
         "Both hand-crafting and Assembler routes change.",
@@ -2893,12 +2909,14 @@
       "lines": [
         "奥术路线：1 魔力钢棒、2 磁化钢棒及弱磁兰；消耗 10 风和 10 秩序。",
         "磁化钢棒会变成 2 根钢棒；弱磁兰保留。",
-        "HV 自动化额外需要 2 世界盐及 144 mB 汞，20 秒、480 EU/t。"
+        "HV 自动化额外需要 2 世界盐及 144 mB 汞，20 秒、480EU/t。",
+        "Thaumic Energistics 的 奥术合成终端 自动制作时也会保留弱磁兰。"
       ],
       "linesEn": [
         "Arcane route: 1 Manasteel Rod, 2 Magnetic Steel Rods and Solegnolia; 10 Aer and 10 Ordo vis.",
         "The magnetic rods return as 2 Steel Rods; Solegnolia is retained.",
-        "HV automation additionally uses 2 Salis Mundus and 144 mB Mercury, 20s at 480 EU/t."
+        "HV automation additionally uses 2 Salis Mundus and 144 mB Mercury, 20s at 480 EU/t.",
+        "Thaumic Energistics' Arcane Crafting Terminal also retains Solegnolia during automation."
       ],
       "newMat": [],
       "newMatEn": [],
@@ -2920,7 +2938,7 @@
       "matchName": [],
       "summary": [
         "HV 电动马达需要的新棒材。",
-        "MV 组装机制作：30 秒、120 EU/t。"
+        "MV 组装机制作：30 秒、120EU/t。"
       ],
       "summaryEn": [
         "New rod required by HV motors.",
@@ -3293,22 +3311,24 @@
       ],
       "matchName": [],
       "summary": [
-        "钢、铝路线已同步对应工业高炉改动。",
-        "合金高炉产出熔融金属，配方时长通常为工业高炉的 80%。"
+        "低阶铁粉和铸铁炼钢路线已移除。",
+        "仅保留 UHV 一刻重熔、后期 50 铁批量路线及调整后的铝路线。"
       ],
       "summaryEn": [
-        "Steel and Aluminium routes now match their EBF changes.",
-        "Molten-metal recipes generally take 80% of the EBF time."
+        "Low-tier Iron and Cast Iron steelmaking routes are removed.",
+        "Only one-tick UHV remelting, the late 50-Iron batch and adjusted Aluminium routes remain."
       ],
       "lines": [
-        "铸铁：3 铸铁粉＋6000 mB 氧 → 432 mB 熔融钢，MV 36 秒。",
+        "钢粉 / 磁钢粉＋电路 1 → 144 mB 熔融钢；UHV 配方电压，1 tick。",
+        "50 铁粉＋1 任意碳源＋电路 2 → 7,200 mB 熔融钢；UHV 配方电压，1 tick。",
         "铝：氮气 72 秒；普通无气体 112 秒；匠魂无气体 96 秒。",
-        "旧铁和煤炼钢、氧化铝还原及对应稀有气体路线已移除。"
+        "旧铁和煤炼钢、铸铁炼钢、氧化铝还原及对应稀有气体路线已移除。"
       ],
       "linesEn": [
-        "Cast Iron: 3 dust + 6000 mB Oxygen -> 432 mB Molten Steel, MV, 36s.",
+        "Steel / Magnetic Steel Dust + circuit 1 -> 144 mB Molten Steel; UHV recipe voltage, one tick.",
+        "50 Iron Dust + 1 Any Carbon + circuit 2 -> 7,200 mB Molten Steel; UHV recipe voltage, one tick.",
         "Aluminium: Nitrogen 72s; ordinary no-gas 112s; TConstruct no-gas 96s.",
-        "Old Iron-and-Coal Steel, Aluminium Oxide and corresponding noble-gas routes are removed."
+        "Old Iron-and-Coal Steel, Cast Iron Steel, Aluminium Oxide and corresponding noble-gas routes are removed."
       ],
       "newMat": [],
       "newMatEn": [],
@@ -3369,16 +3389,16 @@
       "matchUnloc": [],
       "matchName": [],
       "summary": [
-        "消耗原版 5 倍蒸汽：每 EU 使用 10 L。",
-        "NEI、WAILA、流体槽和 ModularUI 2 蒸汽表使用相同换算。"
+        "消耗原版 5 倍蒸汽：每 EU 使用 10L。",
+        "NEI、WAILA、流体槽和 ModularUI2 蒸汽表使用相同换算。"
       ],
       "summaryEn": [
         "Consumes five times vanilla steam: 10 L per EU.",
         "NEI, WAILA, tanks and ModularUI 2 gauges use the same ratio."
       ],
       "lines": [
-        "内部能量缓冲大小不变；16,000 内部单位对应 160,000 L 蒸汽。",
-        "旧 ModularUI 1 蒸汽表仍使用 GT 原有显示比例。"
+        "内部能量缓冲大小不变；16,000 内部单位对应 160,000L 蒸汽。",
+        "旧 ModularUI1 蒸汽表仍使用 GT 原有显示比例。"
       ],
       "linesEn": [
         "Internal buffer size is retained; 16,000 internal units represent 160,000 L Steam.",
@@ -3403,7 +3423,7 @@
       "matchUnloc": [],
       "matchName": [],
       "summary": [
-        "通常消耗 5 倍原蒸汽；蒸汽抽水机仍为 1,500 L/周期。"
+        "通常消耗 5 倍原蒸汽；蒸汽抽水机仍为 1,500L/周期。"
       ],
       "summaryEn": [
         "Generally consumes five times native steam; Steam Water Pump remains at 1,500 L/cycle."
@@ -3435,7 +3455,7 @@
       "matchUnloc": [],
       "matchName": [],
       "summary": [
-        "容量从 64,000 L 增至 640,000 L。"
+        "容量从 64,000L 增至 640,000L。"
       ],
       "summaryEn": [
         "Capacity increases from 64,000 L to 640,000 L."
@@ -3553,6 +3573,394 @@
       "requireUnloc": [
         "blockmachines"
       ]
+    },
+    {
+      "id": "tooltip-iron-bath-controller",
+      "title": "电力铁浴",
+      "kind": "machine",
+      "matchUnloc": [
+        "multimachine.gtnhextranerf.iron_bath"
+      ],
+      "matchName": [
+        "electric iron bath",
+        "电力铁浴"
+      ],
+      "summary": [
+        "ExtraNerf1.2.0 新增的主要工业钢铁设备。",
+        "熔化铁系锭/粉，并按碳含量抽取六种铁系产品。"
+      ],
+      "summaryEn": [
+        "ExtraNerf 1.2.0's main industrial iron and Steel machine.",
+        "Melts iron-family ingots/dusts and taps six products according to carbon content."
+      ],
+      "lines": [
+        "运行方式：持续加热铁碳浴槽，按碳含量和浇铸仓高度抽取产物。",
+        "输入铁系锭/粉、煤/木炭/焦炭、方解石和可选氧气；浴槽内容会持久保存。",
+        "白铜 线圈起步，最多 8 个能源仓；更高电压按原生 EBF 规则超频。",
+        "砖高炉用于启动钢；低阶 EBF/合金高炉普通炼钢路线已移除。"
+      ],
+      "linesEn": [
+        "Operation: continuously heats an iron-carbon bath; composition and tapping height determine the output.",
+        "Accepts iron-family ingots/dusts, Coal/Charcoal/Coke, Calcite and optional Oxygen; bath contents persist.",
+        "Starts with Cupronickel coils, supports up to eight energy hatches and uses native EBF overclock rules at higher voltage.",
+        "The Primitive Blast Furnace supplies bootstrap Steel; ordinary low-tier EBF/ABS steelmaking is removed."
+      ],
+      "newMat": [
+        "铁系原料、碳源、方解石与可选氧气"
+      ],
+      "newMatEn": [
+        "Iron feed, carbon source, Calcite and optional Oxygen"
+      ],
+      "heading": "电力铁浴",
+      "headingEn": "Electric Iron Bath",
+      "warning": false
+    },
+    {
+      "id": "tooltip-iron-bath-products",
+      "title": "铁浴铁系产物",
+      "kind": "item",
+      "matchStacks": [
+        {
+          "od": "dustWroughtIron"
+        },
+        {
+          "od": "ingotWroughtIron"
+        },
+        {
+          "od": "dustCastIron"
+        },
+        {
+          "od": "ingotCastIron"
+        },
+        {
+          "od": "dustPigIron"
+        },
+        {
+          "od": "ingotPigIron"
+        },
+        {
+          "od": "dustOvercarburizedIron"
+        },
+        {
+          "od": "ingotOvercarburizedIron"
+        }
+      ],
+      "matchUnloc": [],
+      "matchName": [],
+      "summary": [
+        "铁浴按碳含量区分六种铁系产物；研磨和铸造保持材料身份。"
+      ],
+      "summaryEn": [
+        "The Iron Bath selects its tapped product by the carbon-to-iron ratio; maceration and casting preserve identity."
+      ],
+      "lines": [
+        "碳含量：碳单位数 ÷ 铁锭当量；144 mB 铁按 1 锭计算。",
+        "纯铁：不含碳（0%）。",
+        "锻铁：大于 0%，不超过 0.2%。",
+        "钢：大于 0.2%，小于 2%。",
+        "铸铁：至少 2%，小于 3.5%。",
+        "生铁：至少 3.5%，小于 4.5%。",
+        "过渗碳铁：至少 4.5%。"
+      ],
+      "linesEn": [
+        "Carbon ratio: carbon units / Iron-ingot equivalents; 144 mB Iron counts as 1 ingot.",
+        "Iron: 0%.",
+        "Wrought Iron: above 0%, up to 0.2%.",
+        "Steel: above 0.2%, below 2%.",
+        "Cast Iron: at least 2%, below 3.5%.",
+        "Pig Iron: at least 3.5%, below 4.5%.",
+        "Overcarburized Iron: at least 4.5%."
+      ],
+      "newMat": [],
+      "newMatEn": [],
+      "heading": "铁浴碳区间",
+      "headingEn": "Iron Bath carbon ranges",
+      "warning": false
+    },
+    {
+      "id": "tooltip-botania-hv-glass",
+      "title": "Botania 结构玻璃",
+      "kind": "item",
+      "matchStacks": [
+        {
+          "item": "Botania:manaGlass",
+          "meta": 0
+        },
+        {
+          "item": "Botania:elfGlass",
+          "meta": 0
+        },
+        {
+          "item": "Botania:bifrostPerm",
+          "meta": 0
+        }
+      ],
+      "matchUnloc": [],
+      "matchName": [],
+      "summary": [
+        "Managlass、Alfglass 与 Bifrost Block 在 GregTech 结构中均按 HV 玻璃计算。"
+      ],
+      "summaryEn": [
+        "Managlass, Alfglass and Bifrost Block all count as HV glass in GregTech structures."
+      ],
+      "lines": [
+        "只改变 GregTech 玻璃档位；要求指定 Botania 玻璃的配方仍要求原物品。",
+        "Alfheim 交易仍要求 EV 玻璃，因此 Managlass 不再满足该交易。"
+      ],
+      "linesEn": [
+        "Only the GregTech structural tier changes; recipes naming a specific Botania glass still require that item.",
+        "The Alfheim trade still requires EV glass, so Managlass no longer qualifies."
+      ],
+      "newMat": [],
+      "newMatEn": [],
+      "heading": "Botania HV 玻璃",
+      "headingEn": "Botania HV glass",
+      "warning": false
+    },
+    {
+      "id": "tooltip-kevlar-bee",
+      "title": "凯芙拉蜂与液晶凯芙拉",
+      "kind": "item",
+      "matchStacks": [
+        {
+          "fluidGt": "LiquidCrystalKevlar",
+          "phase": "fluid"
+        },
+        {
+          "od": "plateKevlar"
+        },
+        {
+          "od": "foilKevlar"
+        },
+        {
+          "od": "dustKevlar"
+        },
+        {
+          "any": [
+            {
+              "item": "Forestry:beeDroneGE",
+              "beeSpecies": "gregtech.bee.speciesKevlar"
+            },
+            {
+              "item": "Forestry:beePrincessGE",
+              "beeSpecies": "gregtech.bee.speciesKevlar"
+            },
+            {
+              "item": "Forestry:beeQueenGE",
+              "beeSpecies": "gregtech.bee.speciesKevlar"
+            }
+          ]
+        }
+      ],
+      "matchUnloc": [],
+      "matchName": [],
+      "summary": [
+        "液晶凯芙拉的两种 LCR 批次新增消耗 1 / 7 个凯芙拉雄蜂。",
+        "凯芙拉蜂突变要求 ZPM 复制机；只有显性凯芙拉蜂获得此全局标记。"
+      ],
+      "summaryEn": [
+        "The two LCR Liquid Crystal Kevlar batches consume 1 / 7 Kevlar Drones.",
+        "The Kevlar bee mutation requires a ZPM Replicator below the housing."
+      ],
+      "lines": [
+        "只检查雄蜂的显性物种为 凯芙拉；其他基因、隐性物种和分析状态不限。",
+        "公主蜂和蜂后不符合投入要求；配方锁定可接受不同的有效凯芙拉基因。",
+        "9,000 mB（电路 1）消耗 1 个；63,000 mB（电路 9）消耗 7 个。"
+      ],
+      "linesEn": [
+        "Only the drone's active species must be Kevlar; other genetics, inactive species and analysis state are unrestricted.",
+        "Princesses and queens do not qualify; recipe locking accepts different valid Kevlar genetics.",
+        "9,000 mB (circuit 1) consumes 1; 63,000 mB (circuit 9) consumes 7."
+      ],
+      "newMat": [
+        "凯芙拉雄蜂",
+        "ZPM 复制机（蜂突变）"
+      ],
+      "newMatEn": [
+        "Kevlar Drone",
+        "ZPM Replicator (bee mutation)"
+      ],
+      "heading": "凯芙拉蜂要求",
+      "headingEn": "Kevlar bee requirement",
+      "warning": false,
+      "materialInputsChanged": true
+    },
+    {
+      "id": "tooltip-universal-wireless-terminal",
+      "title": "无线通用终端",
+      "kind": "item",
+      "matchStacks": [
+        {
+          "item": "ae2fc:wireless_ultra_terminal",
+          "meta": 0
+        }
+      ],
+      "matchUnloc": [],
+      "matchName": [],
+      "summary": [
+        "合成时额外消耗 1 个 ME增广样板终端。"
+      ],
+      "summaryEn": [
+        "Crafting additionally consumes one ME Processing Pattern Terminal."
+      ],
+      "lines": [
+        "原有无线终端投入保持不变；新增 Applied Energistics 2 的 meta 500 终端部件。"
+      ],
+      "linesEn": [
+        "All existing wireless-terminal inputs remain; AE2 multipart metadata 500 is added."
+      ],
+      "newMat": [
+        "ME增广样板终端 ×1"
+      ],
+      "newMatEn": [
+        "1 ME Processing Pattern Terminal"
+      ],
+      "heading": "无线终端合成",
+      "headingEn": "Wireless terminal crafting",
+      "materialInputsChanged": true,
+      "warning": false
+    },
+    {
+      "id": "tooltip-steam-locomotive-trade",
+      "title": "蒸汽机车 交易",
+      "kind": "item",
+      "matchStacks": [
+        {
+          "item": "Railcraft:cart.loco.steam.solid",
+          "meta": 0
+        }
+      ],
+      "matchUnloc": [],
+      "matchName": [
+        "steam locomotive",
+        "蒸汽机车"
+      ],
+      "summary": [
+        "村民交易除 32–40 绿宝石外，还要求 17 块钢板。"
+      ],
+      "summaryEn": [
+        "The villager trade requires 17 Steel Plates in addition to 32–40 Emeralds."
+      ],
+      "lines": [
+        "现有交易库存、普通机车回收和 MobsInfo 预览保持不变。"
+      ],
+      "linesEn": [
+        "Existing offer stock, ordinary locomotive recycling and MobsInfo previews are unchanged."
+      ],
+      "newMat": [
+        "钢板 ×17"
+      ],
+      "newMatEn": [
+        "17 Steel Plates"
+      ],
+      "heading": "蒸汽机车交易",
+      "headingEn": "Steam Locomotive trade",
+      "warning": false
+    },
+    {
+      "id": "tooltip-chainmail-recovery",
+      "title": "锁链甲钢材回收",
+      "kind": "item",
+      "matchStacks": [
+        {
+          "item": "minecraft:chainmail_helmet"
+        },
+        {
+          "item": "minecraft:chainmail_chestplate"
+        },
+        {
+          "item": "minecraft:chainmail_leggings"
+        },
+        {
+          "item": "minecraft:chainmail_boots"
+        }
+      ],
+      "matchUnloc": [],
+      "matchName": [],
+      "summary": [
+        "只保留 研磨机 回收钢粉；电弧炉 与 流体提取机 路线被移除。"
+      ],
+      "summaryEn": [
+        "Only Macerator recovery into Steel Dust remains; Arc Furnace and Fluid Extractor routes are removed."
+      ],
+      "lines": [
+        "锁链甲掉落、铁匠交易和任务奖励不受影响。"
+      ],
+      "linesEn": [
+        "Chainmail drops, blacksmith trades and quest rewards are unchanged."
+      ],
+      "newMat": [],
+      "newMatEn": [],
+      "heading": "锁链甲回收",
+      "headingEn": "Chainmail recovery",
+      "warning": false
+    },
+    {
+      "id": "tooltip-iv-reinforced-glass",
+      "title": "IV 强化硼硅酸盐玻璃",
+      "kind": "item",
+      "matchUnloc": [
+        "gtnhextranerf.tungtungtungstensteel_reinforced_glass"
+      ],
+      "matchName": [
+        "tungtungtungstensteel reinforced borosilicate glass"
+      ],
+      "summary": [
+        "显示名改为 钨钨钨钢强化硼硅酸盐玻璃。"
+      ],
+      "summaryEn": [
+        "Renamed TungTungTungstensteel Reinforced Borosilicate Glass Block."
+      ],
+      "lines": [
+        "Fluid Solidifier 配方使用成品 钨钨钨钢；方块身份和 IV 玻璃档位保持不变。"
+      ],
+      "linesEn": [
+        "Its Fluid Solidifier recipe uses finished TungTungTungstensteel; item identity and IV glass tier remain unchanged."
+      ],
+      "newMat": [],
+      "newMatEn": [],
+      "heading": "IV 玻璃名称",
+      "headingEn": "IV glass name",
+      "warning": false
+    },
+    {
+      "id": "tooltip-americium-boule-machines",
+      "title": "镅掺杂的单晶硅：工业高炉／太阳射流融化核心",
+      "kind": "item",
+      "matchStacks": [
+        {
+          "gt": "Circuit_Silicon_Ingot5"
+        }
+      ],
+      "matchUnloc": [],
+      "matchName": [],
+      "summary": [
+        "两台机器都只保留 鿫 路线，但新增固体投入不同。"
+      ],
+      "summaryEn": [
+        "Both machines keep only the Oganesson route, but their added solid input differs."
+      ],
+      "lines": [
+        "工业高炉：额外消耗 2 镤粉。",
+        "太阳射流融化核心：用 1 放射性矿物混合物 替代 2 镤粉。",
+        "其余硅岩、砷化镓、镅、气体、时间、功率、温度和产量保持不变。"
+      ],
+      "linesEn": [
+        "Electric Blast Furnace: additionally consumes 2 Protactinium Dust.",
+        "Helioflux Melting Core: uses 1 Radioactive Mineral Mix instead of the 2 Protactinium Dust.",
+        "Silicon SG, Gallium Arsenide, Americium, gas, time, power, heat and output remain unchanged."
+      ],
+      "newMat": [
+        "镤粉 ×2（EBF）",
+        "放射性矿物混合物 ×1（Melting Core）"
+      ],
+      "newMatEn": [
+        "2 Protactinium Dust (EBF)",
+        "1 Radioactive Mineral Mix (Melting Core)"
+      ],
+      "heading": "镅晶棒机器差异",
+      "headingEn": "Americium boule machine difference",
+      "warning": false
     }
   ],
   "recipes": [
@@ -3571,12 +3979,22 @@
       ],
       "outputs": [
         {
+          "fluidGt": "bw:RutheniumTetroxide",
+          "phase": "fluid",
+          "mB": 7200
+        },
+        {
+          "fluidGt": "Water",
+          "phase": "fluid",
+          "mB": 1800
+        },
+        {
           "od": "dustSalt",
           "n": 6
         }
       ],
       "before": "蒸馏塔：9000 mB 热四氧化钌溶液分离",
-      "after": "迁移至冷却塔；7200 mB 四氧化钌＋1800 mB 水＋6 盐 Dust；HV 75s",
+      "after": "迁移至冷却塔；7200 mB 四氧化钌＋1800 mB 水＋6 盐 粉；HV75s",
       "changedInputs": [],
       "source": "docs/NERFS.md#coolant-tower-ruthenium-separation",
       "visualChanges": [
@@ -3593,7 +4011,15 @@
       "titleEn": "Coolant Ruthenium",
       "beforeEn": "Distillation Tower separation",
       "afterEn": "Moved to Coolant Tower: 9000 mB hot solution -> 7200 mB Ruthenium Tetroxide, 1800 mB Water and 6 Salt Dust. HV, 75s.",
-      "noteEn": ""
+      "noteEn": "Salt Dust is an unchanged byproduct. Ruthenium separation moves to the Coolant Tower.",
+      "products": [
+        {
+          "fluidGt": "bw:RutheniumTetroxide",
+          "phase": "fluid",
+          "mB": 7200
+        }
+      ],
+      "note": "盐粉是未改用量的副产物；四氧化钌分离路线改在冷却塔进行。"
     },
     {
       "id": "europium-boule",
@@ -3642,7 +4068,12 @@
       "titleEn": "Europium Boule",
       "beforeEn": "Added: 0 NEPTUNIUM HEXAFLUORIDE",
       "afterEn": "Added: quantity shown on the item card NEPTUNIUM HEXAFLUORIDE",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Silicon_Ingot4"
+        }
+      ]
     },
     {
       "id": "americium-boule",
@@ -3692,7 +4123,13 @@
       "titleEn": "Americium Boule",
       "beforeEn": "Eight gas variants, no extra Protactinium",
       "afterEn": "Only Oganesson remains; add 2 Protactinium Dust.",
-      "noteEn": ""
+      "noteEn": "The corresponding Helioflux Melting Core route uses 1 Radioactive Mineral Mix instead of these 2 Protactinium Dust.",
+      "note": "太阳射流融化核心 的对应路线改用 1 放射性矿物混合物，不使用这 2 份镤粉。",
+      "products": [
+        {
+          "gt": "Circuit_Silicon_Ingot5"
+        }
+      ]
     },
     {
       "id": "mutated-solder",
@@ -3740,7 +4177,14 @@
       "titleEn": "Mutated Living Solder",
       "beforeEn": "Input: 8 Gravistar",
       "afterEn": "Input: quantity shown on the item card NuclearStar",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "fluidGt": "misc:MUTATED_LIVING_SOLDER",
+          "phase": "fluid",
+          "mB": 40320
+        }
+      ]
     },
     {
       "id": "bio-medium",
@@ -3787,7 +4231,13 @@
       "titleEn": "Raw Bio Catalyst Medium",
       "beforeEn": "Added: 0 DEEP EARTH REACTOR FUEL DEPOSIT",
       "afterEn": "Added: quantity shown on the item card DEEP EARTH REACTOR FUEL DEPOSIT",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "fluidGt": "BioMediumRaw",
+          "phase": "fluid"
+        }
+      ]
     },
     {
       "id": "pcb-wetware",
@@ -3807,7 +4257,7 @@
         }
       ],
       "before": "硫酸",
-      "after": "改用同量 铜 Plasma；板产出、时间、电压等不变；其他机器路线不变",
+      "after": "改用同量 铜 等离子体；板产出、时间、电压等不变；其他机器路线不变",
       "changedInputs": [
         {
           "fluidGt": "Copper",
@@ -3836,7 +4286,12 @@
       "titleEn": "Wetware Extreme Board",
       "beforeEn": "Input: = Sulfuric Acid",
       "afterEn": "Input: quantity shown on the item card Copper",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Board_Wetware_Extreme"
+        }
+      ]
     },
     {
       "id": "pcb-bioware",
@@ -3856,7 +4311,7 @@
         }
       ],
       "before": "硫酸",
-      "after": "改用同量 铜 Plasma；板产出、时间、电压等不变；其他机器路线不变",
+      "after": "改用同量 铜 等离子体；板产出、时间、电压等不变；其他机器路线不变",
       "changedInputs": [
         {
           "fluidGt": "Copper",
@@ -3885,7 +4340,12 @@
       "titleEn": "Bioware Ultra Board",
       "beforeEn": "Input: = Sulfuric Acid",
       "afterEn": "Input: quantity shown on the item card Copper",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Board_Bio_Ultra"
+        }
+      ]
     },
     {
       "id": "purified-water-naquadah",
@@ -3947,7 +4407,22 @@
       "titleEn": "naquadah",
       "beforeEn": "Added: 0 Grade1Purified Water",
       "afterEn": "Added: quantity shown on the item card Grade1Purified Water",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "any": [
+            {
+              "od": "dustNaquadah"
+            },
+            {
+              "od": "ingotHotNaquadah"
+            },
+            {
+              "od": "ingotNaquadah"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "purified-water-enriched-naquadah",
@@ -4009,7 +4484,22 @@
       "titleEn": "enriched-naquadah",
       "beforeEn": "Added: 0 Grade2Purified Water",
       "afterEn": "Added: quantity shown on the item card Grade2Purified Water",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "any": [
+            {
+              "od": "dustNaquadahEnriched"
+            },
+            {
+              "od": "ingotHotNaquadahEnriched"
+            },
+            {
+              "od": "ingotNaquadahEnriched"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "purified-water-naquadria",
@@ -4071,7 +4561,22 @@
       "titleEn": "naquadria",
       "beforeEn": "Added: 0 Grade3Purified Water",
       "afterEn": "Added: quantity shown on the item card Grade3Purified Water",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "any": [
+            {
+              "od": "dustNaquadria"
+            },
+            {
+              "od": "ingotHotNaquadria"
+            },
+            {
+              "od": "ingotNaquadria"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "lcr-crafting",
@@ -4081,7 +4586,7 @@
       ],
       "inputs": [
         {
-          "od": "circuitExtreme",
+          "od": "circuitData",
           "n": 4
         }
       ],
@@ -4090,11 +4595,11 @@
           "gt": "Machine_Multi_LargeChemicalReactor"
         }
       ],
-      "before": "4 HV 电路",
-      "after": "改用 4 EV 电路；HV 马达、外壳、PTFE 管和不锈钢转子不变",
+      "before": "4HV 电路",
+      "after": "改用 4EV 电路；HV 马达、外壳、PTFE 管和不锈钢转子不变",
       "changedInputs": [
         {
-          "od": "circuitExtreme"
+          "od": "circuitData"
         }
       ],
       "source": "docs/NERFS.md#large-chemical-reactor",
@@ -4104,7 +4609,7 @@
           "labelEn": "Input",
           "kind": "item",
           "stack": {
-            "od": "circuitExtreme"
+            "od": "circuitData"
           },
           "before": "4",
           "after": "",
@@ -4117,7 +4622,12 @@
       "titleEn": "Lcr Crafting",
       "beforeEn": "Input: 4 circuit Advanced",
       "afterEn": "Input: quantity shown on the item card circuit Extreme",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Machine_Multi_LargeChemicalReactor"
+        }
+      ]
     },
     {
       "id": "lcr-assembler",
@@ -4127,7 +4637,7 @@
       ],
       "inputs": [
         {
-          "od": "circuitExtreme"
+          "od": "circuitData"
         }
       ],
       "outputs": [
@@ -4139,7 +4649,7 @@
       "after": "改用同数量 EV 电路；其他材料不变",
       "changedInputs": [
         {
-          "od": "circuitExtreme"
+          "od": "circuitData"
         }
       ],
       "source": "docs/NERFS.md#large-chemical-reactor",
@@ -4149,7 +4659,7 @@
           "labelEn": "Input",
           "kind": "item",
           "stack": {
-            "od": "circuitExtreme"
+            "od": "circuitData"
           },
           "before": "=",
           "after": "",
@@ -4162,7 +4672,12 @@
       "titleEn": "Lcr Assembler",
       "beforeEn": "Input: = circuit Advanced",
       "afterEn": "Input: quantity shown on the item card circuit Extreme",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Machine_Multi_LargeChemicalReactor"
+        }
+      ]
     },
     {
       "id": "flint-steel",
@@ -4227,7 +4742,12 @@
       "titleEn": "Flint Steel",
       "beforeEn": "Input: = gear Gt Small Steel; Input: = spring Small Steel",
       "afterEn": "Input: quantity shown on the item card gear Steel; Input: quantity shown on the item card spring Steel",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "item": "minecraft:flint_and_steel"
+        }
+      ]
     },
     {
       "id": "tool-station-slab",
@@ -4281,7 +4801,14 @@
       "beforeEn": "Crafting saw + full Tool Station -> Tool Station slab (shapeless)",
       "afterEn": "Keep the original saw and full Tool Station; add any one LV circuit",
       "noteEn": "The slab is named Tool Station in game; full Tool Station crafting gains no circuit.",
-      "note": "半砖的游戏名为“工具组装台”；普通完整工具台配方不增加电路。"
+      "note": "半砖的游戏名为“工具组装台”；普通完整工具台配方不增加电路。",
+      "products": [
+        {
+          "item": "TConstruct:CraftingSlab",
+          "meta": 1,
+          "n": 1
+        }
+      ]
     },
     {
       "id": "lv-circuit-assembler-craft",
@@ -4300,7 +4827,7 @@
           "gt": "Machine_LV_CircuitAssembler"
         }
       ],
-      "before": "2 MV 电路",
+      "before": "2MV 电路",
       "after": "改用 2 任意 LV 电路（允许混合）；其他部件不变",
       "changedInputs": [
         {
@@ -4327,7 +4854,12 @@
       "titleEn": "Lv Circuit Assembler Craft",
       "beforeEn": "Input: 2 circuit Good",
       "afterEn": "Input: quantity shown on the item card circuit Basic",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Machine_LV_CircuitAssembler"
+        }
+      ]
     },
     {
       "id": "bronze-crafting",
@@ -4351,7 +4883,7 @@
           "n": 1
         }
       ],
-      "before": "3 铜 Dust＋1 锡 Dust → 3 青铜粉",
+      "before": "3 铜 粉＋1 锡 粉 → 3 青铜粉",
       "after": "同样输入只产出 1 青铜粉",
       "changedInputs": [],
       "source": "docs/NERFS.md#bronze-dust",
@@ -4371,7 +4903,13 @@
       "titleEn": "Bronze Dust",
       "beforeEn": "Output: 3 dust Bronze",
       "afterEn": "Output: quantity shown on the item card dust Bronze",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustBronze",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "rings",
@@ -4414,7 +4952,12 @@
       "titleEn": "GT／BartWorks／Workstoff",
       "beforeEn": "Input: = material",
       "afterEn": "Input: quantity shown on the item card material",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "odPrefix": "ring"
+        }
+      ]
     },
     {
       "id": "extreme-heat-exchanger",
@@ -4447,8 +4990,8 @@
           "unloc": "extremeheatexchanger"
         }
       ],
-      "before": "4 钨钢流体管道＋IV机器外壳＋2 MAR-Ce-M200特种钢板＋2 高级热交换器",
-      "after": "4 三钛板＋ZPM机器外壳；2 MAR-Ce-M200特种钢板 与 2 高级热交换器 保留",
+      "before": "4 钨钢流体管道＋IV机器外壳＋2MAR-Ce-M200特种钢板＋2 高级热交换器",
+      "after": "4 三钛板＋ZPM机器外壳；2MAR-Ce-M200特种钢板 与 2 高级热交换器 保留",
       "changedInputs": [
         {
           "od": "plateTritanium"
@@ -4491,7 +5034,12 @@
       "titleEn": "Extreme Heat Exchanger",
       "beforeEn": "Input: 4 pipe Medium Tungsten Steel; Input: 1 Hull IV",
       "afterEn": "Input: quantity shown on the item card plate Tritanium; Input: quantity shown on the item card Hull ZPM",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "unloc": "extremeheatexchanger"
+        }
+      ]
     },
     {
       "id": "sticky-piston",
@@ -4541,7 +5089,12 @@
       "titleEn": "Sticky Piston",
       "beforeEn": "Input: 1 slime_ball",
       "afterEn": "Input: quantity shown on the item card EMT Adhesive",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "item": "minecraft:sticky_piston"
+        }
+      ]
     },
     {
       "id": "coated-board-1",
@@ -4595,7 +5148,13 @@
       "titleEn": "Coated Circuit Board",
       "beforeEn": "Input: ? slime_ball",
       "afterEn": "Input: quantity shown on the item card EMT Adhesive",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Board_Coated",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "coated-board-3",
@@ -4649,7 +5208,13 @@
       "titleEn": "Coated Circuit Board",
       "beforeEn": "Input: ? slime_ball",
       "afterEn": "Input: quantity shown on the item card EMT Adhesive",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Board_Coated",
+          "n": 3
+        }
+      ]
     },
     {
       "id": "resistors",
@@ -4695,24 +5260,29 @@
       "titleEn": "Resistor",
       "beforeEn": "Added: 0 EMT Adhesive",
       "afterEn": "Added: quantity shown on the item card EMT Adhesive",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Parts_Resistor"
+        }
+      ]
     },
     {
       "id": "steel-cast-iron",
-      "title": "钢 · 铸铁高炉制钢",
+      "title": "铸铁粉低阶高炉炼钢",
       "maps": [
         "gt.recipe.blastfurnace"
       ],
       "inputs": [
         {
           "od": "dustCastIron",
-          "n": 3
+          "n": 1
         },
         {
           "circuit": "11"
         },
         {
-          "mB": 6000,
+          "mB": 1000,
           "fluidGt": "Oxygen",
           "phase": "gas"
         }
@@ -4720,50 +5290,26 @@
       "outputs": [
         {
           "od": "ingotSteel",
-          "n": 3
+          "n": 1
         }
       ],
-      "before": "原铸铁路线（来源只列出现版完整参数）",
-      "after": "3 铸铁 Dust＋6000 mB O2 → 3 钢＋1 Ash＋2500 mB CO2；MV 45s／1000K",
-      "changedInputs": [
+      "before": "1 铸铁粉＋电路 11＋1,000 mB 氧 → 1 钢锭＋1 灰；MV5 秒。",
+      "after": "这条低阶路线已移除。",
+      "changedInputs": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "visualChanges": [],
+      "titleEn": "Low-tier Cast Iron Dust steelmaking",
+      "beforeEn": "1 Cast Iron Dust + circuit 11 + 1,000 mB Oxygen -> 1 Steel Ingot + 1 Ash; MV, 5s.",
+      "afterEn": "This low-tier route is removed.",
+      "noteEn": "Use the Electric Iron Bath, slow Primitive Blast Furnace, or UHV remelting / late bulk routes.",
+      "removed": true,
+      "note": "使用 电力铁浴、慢速砖高炉，或 UHV 重熔 / 后期批量路线。",
+      "products": [
         {
-          "od": "dustCastIron"
-        },
-        {
-          "fluidGt": "Oxygen",
-          "phase": "gas"
+          "od": "ingotSteel",
+          "n": 1
         }
-      ],
-      "source": "docs/NERFS.md#electric-blast-furnace-steel-routes",
-      "visualChanges": [
-        {
-          "label": "投入",
-          "labelEn": "Input",
-          "kind": "item",
-          "stack": {
-            "od": "dustCastIron"
-          },
-          "before": "?",
-          "after": "",
-          "output": false
-        },
-        {
-          "label": "投入",
-          "labelEn": "Input",
-          "kind": "item",
-          "stack": {
-            "fluidGt": "Oxygen",
-            "phase": "gas"
-          },
-          "before": "?",
-          "after": "",
-          "output": false
-        }
-      ],
-      "titleEn": "Steel",
-      "beforeEn": "Old Cast Iron route; full old quantities are not documented",
-      "afterEn": "3 Cast Iron Dust + 6000 mB Oxygen -> 3 Steel, 1 Ash and 2500 mB CO2. MV, 45s, 1000K.",
-      "noteEn": ""
+      ]
     },
     {
       "id": "cast-iron-new",
@@ -4801,7 +5347,7 @@
         }
       ],
       "before": "无此电路 1 路线",
-      "after": "3 铁 Dust＋2 Any 碳 → 3 铸铁；MV 20s／1000K",
+      "after": "3 铁 粉＋2 任意碳源 → 3 铸铁；MV20s／1000K",
       "changedInputs": [],
       "source": "docs/NERFS.md#electric-blast-furnace-steel-routes",
       "visualChanges": [
@@ -4818,7 +5364,13 @@
       "titleEn": "Cast Iron",
       "beforeEn": "No circuit-1 route",
       "afterEn": "New route: 3 Iron Dust + 2 Carbon-family Dust -> 3 Cast Iron. MV, 20s, 1000K.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "ingotCastIron",
+          "n": 3
+        }
+      ]
     },
     {
       "id": "aluminium-cryolite",
@@ -4861,7 +5413,13 @@
       "titleEn": "Aluminium",
       "beforeEn": "Time: 80s ",
       "afterEn": "Time: 120s ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "ingotAluminium",
+          "n": 4
+        }
+      ]
     },
     {
       "id": "aluminium-nitrogen",
@@ -4909,6 +5467,11 @@
           "item": "TConstruct:materials",
           "meta": 12
         }
+      ],
+      "products": [
+        {
+          "od": "ingotAluminium"
+        }
       ]
     },
     {
@@ -4951,6 +5514,11 @@
         {
           "item": "TConstruct:materials",
           "meta": 12
+        }
+      ],
+      "products": [
+        {
+          "od": "ingotAluminium"
         }
       ]
     },
@@ -5004,7 +5572,21 @@
       "titleEn": "tconstruct aluminium nitrogen",
       "beforeEn": "Time: 60s ",
       "afterEn": "Time: 90s ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "any": [
+            {
+              "item": "TConstruct:materials",
+              "meta": 11
+            },
+            {
+              "dn": "aluminum ingot",
+              "dnzh": "铝锭"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "tconstruct-aluminium-no-gas",
@@ -5058,7 +5640,21 @@
       "titleEn": "tconstruct aluminium no gas",
       "beforeEn": "Time: 75s ; Heat: 1300K ",
       "afterEn": "Time: 120s ; Heat: 1600K ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "any": [
+            {
+              "item": "TConstruct:materials",
+              "meta": 11
+            },
+            {
+              "dn": "aluminum ingot",
+              "dnzh": "铝锭"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "ilmenite-ebf",
@@ -5078,7 +5674,7 @@
       ],
       "outputs": [
         {
-          "od": "ingotWroughtIron",
+          "od": "ingotCastIron",
           "n": 2
         },
         {
@@ -5086,8 +5682,8 @@
           "n": 6
         }
       ],
-      "before": "5 钛铁矿＋1 碳 → 1 锻铁＋3 金红石＋1000 mB CO；160s",
-      "after": "10 钛铁矿＋2 碳 → 2 锻铁＋6 金红石＋1 Slag＋2000 mB CO；300s；HV 1700K",
+      "before": "5 钛铁矿＋1 碳 → 1 铸铁＋3 金红石＋1,000 mBCO；160 秒",
+      "after": "10 钛铁矿＋2 碳 → 2 铸铁＋6 金红石＋1 矿渣＋2,000 mBCO；300 秒；HV1,700K",
       "changedInputs": [
         {
           "od": "dustIlmenite"
@@ -5096,7 +5692,7 @@
           "od": "dustCarbon"
         }
       ],
-      "source": "docs/NERFS.md#ilmenite-blast-furnace",
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md; runtime BlastFurnaceNerf.java (Cast Iron overrides stale upstream table wording)",
       "visualChanges": [
         {
           "label": "投入",
@@ -5143,7 +5739,7 @@
           "labelEn": "Output",
           "kind": "item",
           "stack": {
-            "od": "ingotWroughtIron"
+            "od": "ingotCastIron"
           },
           "before": "1",
           "after": "",
@@ -5151,9 +5747,15 @@
         }
       ],
       "titleEn": "Ilmenite",
-      "beforeEn": "Input: 5 dust Ilmenite; Input: 1 dust Carbon; Time: 160s ; Output: 3 dust Rutile; Output: 1 ingot Wrought Iron",
-      "afterEn": "Input: quantity shown on the item card dust Ilmenite; Input: quantity shown on the item card dust Carbon; Time: 300s ; Output: quantity shown on the item card dust Rutile; Output: quantity shown on the item card ingot Wrought Iron",
-      "noteEn": ""
+      "beforeEn": "5 Ilmenite + 1 Carbon -> 1 Cast Iron + 3 Rutile + 1,000 mB CO; 160s.",
+      "afterEn": "10 Ilmenite + 2 Carbon -> 2 Cast Iron + 6 Rutile + 1 Slag + 2,000 mB CO; 300s, HV, 1,700 K.",
+      "noteEn": "",
+      "products": [
+        {
+          "od": "ingotCastIron",
+          "n": 2
+        }
+      ]
     },
     {
       "id": "ilmenite-slag",
@@ -5196,7 +5798,12 @@
       "titleEn": "Ilmenite Slag",
       "beforeEn": "2s; original Iron, Niobium, Tantalum, Manganese and Magnesium outputs.",
       "afterEn": "10s; original outputs and chances are retained. No additional Gallium output.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustIron"
+        }
+      ]
     },
     {
       "id": "titanium-ebf",
@@ -5223,12 +5830,12 @@
           "od": "ingotHotTitanium"
         },
         {
-          "od": "dustMagnesiumChloride",
+          "od": "dustMagnesiumchloride",
           "n": 4
         }
       ],
-      "before": "6 氯化镁 Dust 副产物",
-      "after": "副产物减少为 4；热钛锭、HV 40s／2140K 不变",
+      "before": "6 氯化镁 粉 副产物",
+      "after": "副产物减少为 4；热钛锭、HV40s／2140K 不变",
       "changedInputs": [],
       "source": "docs/NERFS.md#titanium-blast-furnace",
       "visualChanges": [
@@ -5237,7 +5844,7 @@
           "labelEn": "Output",
           "kind": "item",
           "stack": {
-            "od": "dustMagnesiumChloride"
+            "od": "dustMagnesiumchloride"
           },
           "before": "6",
           "after": "",
@@ -5247,7 +5854,12 @@
       "titleEn": "Titanium",
       "beforeEn": "Output: 6 dust Magnesium Chloride",
       "afterEn": "Output: quantity shown on the item card dust Magnesium Chloride",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "ingotHotTitanium"
+        }
+      ]
     },
     {
       "id": "indium-concentrate",
@@ -5275,8 +5887,8 @@
           "od": "dustTinyIndium"
         }
       ],
-      "before": "4 铝 Dust",
-      "after": "8 铝 Dust；tiny 铟＋8000 mB 铅-锌 Solution 不变",
+      "before": "4 铝 粉",
+      "after": "8 铝 粉；小撮 铟＋8000 mB 铅-锌 溶液 不变",
       "changedInputs": [
         {
           "od": "dustAluminium"
@@ -5299,7 +5911,12 @@
       "titleEn": "Indium Concentrate",
       "beforeEn": "Input: 4 dust Aluminium",
       "afterEn": "Input: quantity shown on the item card dust Aluminium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustTinyIndium"
+        }
+      ]
     },
     {
       "id": "silicon-sodium",
@@ -5310,12 +5927,21 @@
       ],
       "inputs": [
         {
-          "od": "dustSodium"
+          "od": "dustSodium",
+          "n": 4
+        },
+        {
+          "circuit": "1"
+        },
+        {
+          "fluidGt": "SiliconTetrachloride",
+          "phase": "fluid",
+          "mB": 1000
         }
       ],
       "outputs": [
         {
-          "od": "dustSiliconSG",
+          "od": "dustSiliconSolarGrade",
           "n": 1
         },
         {
@@ -5323,8 +5949,8 @@
           "n": 7
         }
       ],
-      "before": "8 盐 Dust 副产物",
-      "after": "7 盐 Dust；1 Silicon SG Dust 不变",
+      "before": "8 盐 粉 副产物",
+      "after": "7 盐 粉；1 太阳能级硅粉 不变",
       "changedInputs": [],
       "source": "docs/NERFS.md#silicon-from-sodium",
       "visualChanges": [
@@ -5343,7 +5969,13 @@
       "titleEn": "Silicon SG",
       "beforeEn": "Output: 8 dust Salt",
       "afterEn": "Output: quantity shown on the item card dust Salt",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustSiliconSolarGrade",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "silicon-hydrogen",
@@ -5357,18 +5989,35 @@
           "any": [
             {
               "fluidGt": "Trichlorosilane",
-              "phase": "fluid"
+              "phase": "fluid",
+              "mB": 1000
             },
             {
-              "dn": "trichlorosilane",
-              "dnzh": "三氯硅烷"
+              "od": "cellTrichlorosilane",
+              "n": 1
+            }
+          ]
+        },
+        {
+          "circuit": "1"
+        },
+        {
+          "any": [
+            {
+              "fluidGt": "Hydrogen",
+              "phase": "gas",
+              "mB": 2000
+            },
+            {
+              "od": "cellHydrogen",
+              "n": 2
             }
           ]
         }
       ],
       "outputs": [
         {
-          "od": "dustSiliconSG"
+          "od": "dustSiliconSolarGrade"
         },
         {
           "mB": 2000,
@@ -5376,28 +6025,34 @@
           "phase": "fluid"
         }
       ],
-      "before": "3000 mB 氢氯酸",
-      "after": "2000 mB 氢氯酸；3 种容器／LCR 路线均适用",
+      "before": "副产氢氯酸 3,000 mB；硅粉产量不变。",
+      "after": "副产氢氯酸 2,000 mB，减少 1,000 mB（33.3%）。",
       "changedInputs": [],
       "source": "docs/NERFS.md#silicon-from-hydrogentrichlorosilane",
       "visualChanges": [
         {
-          "label": "产出",
-          "labelEn": "Output",
-          "kind": "item",
+          "label": "氢氯酸副产物（mB）",
+          "labelEn": "Acid byproduct (mB)",
+          "kind": "fluid",
           "stack": {
             "fluidGt": "HydrochloricAcid",
             "phase": "fluid"
           },
           "before": "3000",
-          "after": "",
+          "after": "2000",
           "output": true
         }
       ],
       "titleEn": "Silicon SG",
-      "beforeEn": "Output: 3000 Hydrochloric Acid",
-      "afterEn": "Output: quantity shown on the item card Hydrochloric Acid",
-      "noteEn": ""
+      "beforeEn": "Hydrochloric Acid byproduct: 3,000 mB. Silicon yield is unchanged.",
+      "afterEn": "Hydrochloric Acid byproduct: 2,000 mB; down 1,000 mB (33.3%).",
+      "noteEn": "Applies to the Hydrogen-cell, Trichlorosilane-cell and LCR routes. Gold frames are local to these recipes.",
+      "products": [
+        {
+          "od": "dustSiliconSolarGrade"
+        }
+      ],
+      "note": "仅影响氢气单元、三氯硅烷单元和大型化学反应釜三条路线。金框只显示在这些配方内。"
     },
     {
       "id": "silicon-zinc",
@@ -5422,7 +6077,7 @@
       ],
       "outputs": [
         {
-          "od": "dustSiliconSG",
+          "od": "dustSiliconSolarGrade",
           "n": 1
         },
         {
@@ -5431,8 +6086,8 @@
           "n": 5
         }
       ],
-      "before": "6 BartWorks 副产粉",
-      "after": "减少至 5；1 Silicon SG Dust 不变",
+      "before": "6BartWorks 副产粉",
+      "after": "减少至 5；1 太阳能级硅粉 不变",
       "changedInputs": [],
       "source": "docs/NERFS.md#bartworks-zinc-route",
       "visualChanges": [
@@ -5453,7 +6108,13 @@
       "titleEn": "Silicon SG",
       "beforeEn": "Byproduct: 6 dust Silicon SG",
       "afterEn": "Byproduct: quantity shown on the item card dust Silicon SG",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustSiliconSolarGrade",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "lubricant-lightoil",
@@ -5504,7 +6165,14 @@
       "titleEn": "Lubricant",
       "beforeEn": "Input: 12 Oil Light",
       "afterEn": "Input: quantity shown on the item card Oil Light",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 3,
+          "fluidGt": "Lubricant",
+          "phase": "fluid"
+        }
+      ]
     },
     {
       "id": "lubricant-oil",
@@ -5555,7 +6223,14 @@
       "titleEn": "Lubricant",
       "beforeEn": "Input: 12 Oil Medium",
       "afterEn": "Input: quantity shown on the item card Oil Medium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 6,
+          "fluidGt": "Lubricant",
+          "phase": "fluid"
+        }
+      ]
     },
     {
       "id": "lubricant-heavyoil",
@@ -5606,7 +6281,14 @@
       "titleEn": "Lubricant",
       "beforeEn": "Input: 12 Oil Heavy",
       "afterEn": "Input: quantity shown on the item card Oil Heavy",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 9,
+          "fluidGt": "Lubricant",
+          "phase": "fluid"
+        }
+      ]
     },
     {
       "id": "plutonium-circuit-8",
@@ -5644,8 +6326,8 @@
           "phase": "gas"
         }
       ],
-      "before": "64 钚 Dust",
-      "after": "63 钚 Dust；HV 75s 和 氡 输出不变",
+      "before": "64 钚 粉",
+      "after": "63 钚 粉；HV75s 和 氡 输出不变",
       "changedInputs": [],
       "source": "docs/NERFS.md#circuit-8-route",
       "visualChanges": [
@@ -5664,7 +6346,13 @@
       "titleEn": "Plutonium",
       "beforeEn": "Output: 64 dust Plutonium",
       "afterEn": "Output: quantity shown on the item card dust Plutonium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustPlutonium",
+          "n": 63
+        }
+      ]
     },
     {
       "id": "plutonium-circuit-10",
@@ -5707,7 +6395,7 @@
         }
       ],
       "before": "无此 氦 路线",
-      "after": "63 钚 Dust＋960 mB 氡；HV 75s",
+      "after": "63 钚 粉＋960 mB 氡；HV75s",
       "changedInputs": [],
       "source": "docs/NERFS.md#circuit-10-helium-route",
       "visualChanges": [
@@ -5724,7 +6412,13 @@
       "titleEn": "Plutonium",
       "beforeEn": "New route: None ",
       "afterEn": "New route: IC 10 ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustPlutonium",
+          "n": 63
+        }
+      ]
     },
     {
       "id": "endstone-centrifuge",
@@ -5780,7 +6474,12 @@
       "titleEn": "Endstone",
       "beforeEn": "Helium output: 4,320 mB; Tungstate chance: 37.5%.",
       "afterEn": "Helium output: 1,500 mB; Tungstate chance: 10%. Platinum Dust and Sand chances are unchanged.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustTungstate"
+        }
+      ]
     },
     {
       "id": "staballoy-centrifuge",
@@ -5797,7 +6496,7 @@
       ],
       "outputs": [
         {
-          "od": "dustUranium238",
+          "od": "dustUranium",
           "n": 9
         },
         {
@@ -5805,8 +6504,8 @@
           "n": 1
         }
       ],
-      "before": "HV 480 EU/t",
-      "after": "IV 7680 EU/t；48s、材料和保证产率不变",
+      "before": "HV480EU/t",
+      "after": "IV7680EU/t；48s、材料和保证产率不变",
       "changedInputs": [],
       "source": "docs/NERFS.md#staballoy-centrifuging",
       "visualChanges": [
@@ -5821,7 +6520,13 @@
       "titleEn": "Staballoy",
       "beforeEn": "Voltage: HV ",
       "afterEn": "Voltage: IV ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustUranium",
+          "n": 9
+        }
+      ]
     },
     {
       "id": "lead-tellurium",
@@ -5844,7 +6549,7 @@
         }
       ],
       "before": "来源没有列出原概率",
-      "after": "铅 100%；2 碲 Nuggets 0.1%；MV 4s",
+      "after": "铅 100%；2 碲 粒 0.1%；MV4s",
       "changedInputs": [],
       "source": "docs/NERFS.md#tellurium-from-crushed-lead",
       "visualChanges": [
@@ -5863,7 +6568,12 @@
       "titleEn": "Lead",
       "beforeEn": "Chance: ? nugget Tellurium",
       "afterEn": "Chance: 0.1% nugget Tellurium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "ingotLead"
+        }
+      ]
     },
     {
       "id": "europium-base",
@@ -5891,7 +6601,7 @@
         }
       ],
       "before": "16 钕＋48 氢 → 16 铕",
-      "after": "64＋192 → 4；单位材料成本 ×16；32 ticks／24576 EU/t",
+      "after": "64＋192 → 4；单位材料成本 ×16；32 ticks／24576EU/t",
       "changedInputs": [
         {
           "mB": 64,
@@ -5949,7 +6659,14 @@
       "titleEn": "Europium",
       "beforeEn": "Input: 16 Neodymium; Input: 48 Hydrogen; Output: 16 Europium",
       "afterEn": "Input: quantity shown on the item card Neodymium; Input: quantity shown on the item card Hydrogen; Output: quantity shown on the item card Europium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 4,
+          "fluidGt": "Europium",
+          "phase": "molten"
+        }
+      ]
     },
     {
       "id": "europium-promethium",
@@ -6042,7 +6759,14 @@
       "titleEn": "Europium",
       "beforeEn": "Input: 32 Neodymium; Input: 16 Promethium; Output: 32 Europium; Time: 8t ",
       "afterEn": "Input: quantity shown on the item card Neodymium; Input: quantity shown on the item card Promethium; Output: quantity shown on the item card Europium; Time: 32t ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 16,
+          "fluidGt": "Europium",
+          "phase": "molten"
+        }
+      ]
     },
     {
       "id": "americium-base",
@@ -6070,7 +6794,7 @@
         }
       ],
       "before": "16 镥＋16 铬 → 16 镅",
-      "after": "64＋64 → 4；单位材料成本 ×16；96 ticks／49152 EU/t",
+      "after": "64＋64 → 4；单位材料成本 ×16；96 ticks／49152EU/t",
       "changedInputs": [
         {
           "mB": 64,
@@ -6128,7 +6852,14 @@
       "titleEn": "Americium",
       "beforeEn": "Input: 16 Lutetium; Input: 16 Chrome; Output: 16 Americium",
       "afterEn": "Input: quantity shown on the item card Lutetium; Input: quantity shown on the item card Chrome; Output: quantity shown on the item card Americium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 4,
+          "fluidGt": "Americium",
+          "phase": "molten"
+        }
+      ]
     },
     {
       "id": "americium-promethium",
@@ -6156,7 +6887,7 @@
         }
       ],
       "before": "32 镥＋16 钷 → 32 镅；24 ticks",
-      "after": "16＋8 → 16；96 ticks；38764 EU/t",
+      "after": "16＋8 → 16；96 ticks；38764EU/t",
       "changedInputs": [
         {
           "mB": 16,
@@ -6221,7 +6952,14 @@
       "titleEn": "Americium",
       "beforeEn": "Input: 32 Lutetium; Input: 16 Promethium; Output: 32 Americium; Time: 24t ",
       "afterEn": "Input: quantity shown on the item card Lutetium; Input: quantity shown on the item card Promethium; Output: quantity shown on the item card Americium; Time: 96t ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 16,
+          "fluidGt": "Americium",
+          "phase": "molten"
+        }
+      ]
     },
     {
       "id": "americium-plasma",
@@ -6248,8 +6986,8 @@
           "phase": "plasma"
         }
       ],
-      "before": "MK3；500000000 EU 点火",
-      "after": "MK4；1000000000 EU 点火；64 ticks 和 98304 EU/t 不变",
+      "before": "MK3；500000000EU 点火",
+      "after": "MK4；1000000000EU 点火；64 ticks 和 98304EU/t 不变",
       "changedInputs": [],
       "source": "docs/NERFS.md#americium-plasma-ignition",
       "visualChanges": [
@@ -6271,7 +7009,14 @@
       "titleEn": "Americium Plasma",
       "beforeEn": "Fusion tier: MK3 ; Start energy: 500M ",
       "afterEn": "Fusion tier: MK4 ; Start energy: 1000M ",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mB": 144,
+          "fluidGt": "Americium",
+          "phase": "plasma"
+        }
+      ]
     },
     {
       "id": "platinum-salt",
@@ -6315,7 +7060,13 @@
       "titleEn": "Refined Platinum Salt",
       "beforeEn": "Removed: 87 Chlorine",
       "afterEn": "Removed: 0 Chlorine",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "material": "bw:PTMetallicPowder",
+          "prefix": "dust"
+        }
+      ]
     },
     {
       "id": "raw-platinum",
@@ -6367,7 +7118,13 @@
       "titleEn": "Raw Platinum Powder",
       "beforeEn": "Output: 3 Calcium Chloride",
       "afterEn": "Output: quantity shown on the item card Calcium Chloride",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustPlatinum",
+          "n": 2
+        }
+      ]
     },
     {
       "id": "samarium-dephosphated",
@@ -6408,7 +7165,12 @@
       "titleEn": "dephosphated samarium concentrate",
       "beforeEn": "Chance: 90% dust Samarium",
       "afterEn": "Chance: 5% dust Samarium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustSamarium"
+        }
+      ]
     },
     {
       "id": "samarium-small",
@@ -6434,7 +7196,7 @@
         }
       ],
       "before": "原有产物概率（来源未列出具体值）",
-      "after": "钐 10%；钠 和 rare-earth residue 100%",
+      "after": "钐 10%；钠 和 稀土残渣 100%",
       "changedInputs": [],
       "source": "docs/NERFS.md#small-samarium-blend",
       "visualChanges": [
@@ -6453,7 +7215,13 @@
       "titleEn": "small samarium blend",
       "beforeEn": "Chance: ? dust Samarium",
       "afterEn": "Chance: 10% dust Samarium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustSamarium",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "samarium-large",
@@ -6479,7 +7247,7 @@
         }
       ],
       "before": "原有产物概率（来源未列出具体值）",
-      "after": "钐 10%；钠 和 rare-earth residue 100%",
+      "after": "钐 10%；钠 和 稀土残渣 100%",
       "changedInputs": [],
       "source": "docs/NERFS.md#large-samarium-blend",
       "visualChanges": [
@@ -6498,7 +7266,13 @@
       "titleEn": "large samarium blend",
       "beforeEn": "Chance: ? dust Samarium",
       "afterEn": "Chance: 10% dust Samarium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustSamarium",
+          "n": 9
+        }
+      ]
     },
     {
       "id": "integrated-logic",
@@ -6541,7 +7315,12 @@
       "titleEn": "Integrated Logic Circuit",
       "beforeEn": "Input: 1 Circuit Chip ILC",
       "afterEn": "Input: quantity shown on the item card Circuit Chip ILC",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Basic"
+        }
+      ]
     },
     {
       "id": "good-circuit",
@@ -6587,7 +7366,12 @@
       "titleEn": "Good Electronic Circuit",
       "beforeEn": "Input: 2 itemPartCircuit",
       "afterEn": "Input: quantity shown on the item card itemPartCircuit",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Good"
+        }
+      ]
     },
     {
       "id": "advanced-circuit",
@@ -6610,8 +7394,8 @@
           "ic2": "advancedCircuit"
         }
       ],
-      "before": "2 逻辑IC＋2 RAM芯片",
-      "after": "8 逻辑IC＋8 RAM芯片；标准和 ASMD 两种路线都适用",
+      "before": "2 逻辑IC＋2RAM芯片",
+      "after": "8 逻辑IC＋8RAM芯片；标准和 ASMD 两种路线都适用",
       "changedInputs": [
         {
           "gt": "Circuit_Chip_ILC"
@@ -6648,7 +7432,12 @@
       "titleEn": "Advanced Circuit",
       "beforeEn": "Input: 2 Circuit Chip ILC; Input: 2 Circuit Chip Ram",
       "afterEn": "Input: quantity shown on the item card Circuit Chip ILC; Input: quantity shown on the item card Circuit Chip Ram",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "ic2": "advancedCircuit"
+        }
+      ]
     },
     {
       "id": "nanoprocessor",
@@ -6687,7 +7476,12 @@
       "titleEn": "nanoprocessor",
       "beforeEn": "Original consumable item inputs",
       "afterEn": "Inputs x6, capped at 64 per slot. Non-consumables, fluids and SoC routes remain unchanged.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Nanoprocessor"
+        }
+      ]
     },
     {
       "id": "quantumprocessor",
@@ -6726,7 +7520,12 @@
       "titleEn": "quantumprocessor",
       "beforeEn": "Original consumable item inputs",
       "afterEn": "Inputs x6, capped at 64 per slot. Non-consumables, fluids and SoC routes remain unchanged.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Quantumprocessor"
+        }
+      ]
     },
     {
       "id": "elite-circuit",
@@ -6747,7 +7546,7 @@
         }
       ],
       "before": "原焊料标准／ASMD 路线",
-      "after": "无尘室＋100 mB 灵魂灌注溶剂；标准 HV 80s，ASMD HV 40s",
+      "after": "无尘室＋100 mB 灵魂灌注溶剂；标准 HV80s，ASMDHV40s",
       "changedInputs": [
         {
           "fluidGt": "SoulInfusedMedium",
@@ -6786,7 +7585,12 @@
       "titleEn": "Elite Circuit",
       "beforeEn": "Old standard and ASMD solder routes",
       "afterEn": "Cleanroom with 100 mB Soul Infused Medium. Standard HV 80s, ASMD HV 40s.",
-      "noteEn": "Elite Circuit production needs a cleanroom and 100 mB Soul Infused Medium."
+      "noteEn": "Elite Circuit production needs a cleanroom and 100 mB Soul Infused Medium.",
+      "products": [
+        {
+          "gt": "Circuit_Elite"
+        }
+      ]
     },
     {
       "id": "ppic-wafer",
@@ -6807,7 +7611,7 @@
         }
       ],
       "before": "1 纳米功率IC晶圆",
-      "after": "64 纳米功率IC晶圆；64 磷化铟镓 Dust＋1440 mB Molten 阳光化合物 不变",
+      "after": "64 纳米功率IC晶圆；64 磷化铟镓 粉＋1440 mB 熔融 阳光化合物 不变",
       "changedInputs": [
         {
           "gt": "Circuit_Wafer_NPIC"
@@ -6830,7 +7634,12 @@
       "titleEn": "PPIC Wafer",
       "beforeEn": "Input: 1 Circuit Wafer NPIC",
       "afterEn": "Input: quantity shown on the item card Circuit Wafer NPIC",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Circuit_Wafer_PPIC"
+        }
+      ]
     },
     {
       "id": "cupronickel-coil-wool",
@@ -6854,7 +7663,7 @@
         }
       ],
       "before": "8 根 2x 白铜 Wire；绝缘材料 12",
-      "after": "8 根 8x Wire；绝缘材料 24；其他参数不变",
+      "after": "8 根 8倍导线；绝缘材料 24；其他参数不变",
       "changedInputs": [
         {
           "od": "wireGt08Cupronickel"
@@ -6894,7 +7703,12 @@
       "titleEn": "Cupronickel Coil",
       "beforeEn": "Input: 8 wire Gt02Cupronickel; Input: 12 Alumino Silicate Wool",
       "afterEn": "Input: quantity shown on the item card wire Gt08Cupronickel; Input: quantity shown on the item card Alumino Silicate Wool",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Casing_Coil_Cupronickel"
+        }
+      ]
     },
     {
       "id": "cupronickel-coil-mica",
@@ -6918,7 +7732,7 @@
         }
       ],
       "before": "8 根 2x 白铜 Wire；绝缘材料 8",
-      "after": "8 根 8x Wire；绝缘材料 16；其他参数不变",
+      "after": "8 根 8倍导线；绝缘材料 16；其他参数不变",
       "changedInputs": [
         {
           "od": "wireGt08Cupronickel"
@@ -6958,7 +7772,12 @@
       "titleEn": "Cupronickel Coil",
       "beforeEn": "Input: 8 wire Gt02Cupronickel; Input: 8 Mica Insulator Foil",
       "afterEn": "Input: quantity shown on the item card wire Gt08Cupronickel; Input: quantity shown on the item card Mica Insulator Foil",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Casing_Coil_Cupronickel"
+        }
+      ]
     },
     {
       "id": "mv-energy-hatch",
@@ -7001,7 +7820,12 @@
       "titleEn": "MV Energy Hatch",
       "beforeEn": "Input: 2 Circuit Chip ULPIC",
       "afterEn": "Input: quantity shown on the item card Circuit Chip ULPIC",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hatch_Energy_MV"
+        }
+      ]
     },
     {
       "id": "machine-casings",
@@ -7098,7 +7922,64 @@
       "titleEn": "ULV–UMV Machine Casing",
       "beforeEn": "Input: 8 material",
       "afterEn": "8 matching Double Plates; ULV is finished, LV–UMV outputs need Chisel finishing.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "any": [
+            {
+              "gt": "Casing_ULV"
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 0
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 1
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 2
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 3
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 4
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 5
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 6
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 7
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 8
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 9
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 10
+            },
+            {
+              "item": "gtnhextranerf:raw_machine_casing",
+              "meta": 11
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "diamond-sawblade",
@@ -7147,7 +8028,12 @@
       "titleEn": "Diamond Sawblade",
       "beforeEn": "Input: = gear Cobalt Brass",
       "afterEn": "Input: quantity shown on the item card BLOODSTEEL",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Component_Sawblade_Diamond"
+        }
+      ]
     },
     {
       "id": "superconductor-coil-luv",
@@ -7171,7 +8057,7 @@
         }
       ],
       "before": "64 根 2x 超导线；绝缘箔 48",
-      "after": "64 根 8x 超导线；绝缘箔 192；50s／9001 EU/t",
+      "after": "64 根 8x 超导线；绝缘箔 192；50s／9001EU/t",
       "changedInputs": [
         {
           "od": "wireGt08SuperconductorLuV"
@@ -7211,7 +8097,12 @@
       "titleEn": "LUV Superconducting Coil Block",
       "beforeEn": "Input: 64 wire Gt02Superconductor Lu V; Input: 48 Mica Insulator Foil",
       "afterEn": "Input: quantity shown on the item card wire Gt08Superconductor Lu V; Input: quantity shown on the item card Mica Insulator Foil",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Casing_Coil_Superconductor"
+        }
+      ]
     },
     {
       "id": "superconductor-coil-zpm",
@@ -7235,7 +8126,7 @@
         }
       ],
       "before": "32 根 2x 超导线；绝缘箔 4",
-      "after": "32 根 4x 超导线；绝缘箔 8；50s／9001 EU/t",
+      "after": "32 根 4x 超导线；绝缘箔 8；50s／9001EU/t",
       "changedInputs": [
         {
           "od": "wireGt04SuperconductorZPM"
@@ -7275,7 +8166,12 @@
       "titleEn": "ZPM Superconducting Coil Block",
       "beforeEn": "Input: 32 wire Gt02Superconductor ZPM; Input: 4 naquarite universal insulator foil",
       "afterEn": "Input: quantity shown on the item card wire Gt04Superconductor ZPM; Input: quantity shown on the item card naquarite universal insulator foil",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Casing_Coil_Superconductor"
+        }
+      ]
     },
     {
       "id": "hull-uv-assembler",
@@ -7296,7 +8192,7 @@
         }
       ],
       "before": "不需要新增绝缘流体",
-      "after": "288 mB Molten 凯芙拉；其他参数不变",
+      "after": "288 mB 熔融 凯芙拉；其他参数不变",
       "changedInputs": [
         {
           "fluidGt": "Kevlar",
@@ -7321,7 +8217,12 @@
       "titleEn": "UV Hull",
       "beforeEn": "Insulation: 0 Kevlar",
       "afterEn": "Insulation: quantity shown on the item card Kevlar",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UV"
+        }
+      ]
     },
     {
       "id": "hull-uv-crafting",
@@ -7364,7 +8265,12 @@
       "titleEn": "UV Hull",
       "beforeEn": "Insulation: 0 plate Kevlar",
       "afterEn": "Insulation: quantity shown on the item card plate Kevlar",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UV"
+        }
+      ]
     },
     {
       "id": "hull-uhv-assembler",
@@ -7385,7 +8291,7 @@
         }
       ],
       "before": "不需要新增绝缘流体",
-      "after": "288 mB Molten 凯芙拉；其他参数不变",
+      "after": "288 mB 熔融 凯芙拉；其他参数不变",
       "changedInputs": [
         {
           "fluidGt": "Kevlar",
@@ -7410,7 +8316,12 @@
       "titleEn": "UHV Hull",
       "beforeEn": "Insulation: 0 Kevlar",
       "afterEn": "Insulation: quantity shown on the item card Kevlar",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_MAX"
+        }
+      ]
     },
     {
       "id": "hull-uhv-crafting",
@@ -7453,7 +8364,12 @@
       "titleEn": "UHV Hull",
       "beforeEn": "Insulation: 0 plate Kevlar",
       "afterEn": "Insulation: quantity shown on the item card plate Kevlar",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_MAX"
+        }
+      ]
     },
     {
       "id": "hull-uev-assembler",
@@ -7499,7 +8415,12 @@
       "titleEn": "UEV Hull",
       "beforeEn": "Insulation: 0 Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UEV"
+        }
+      ]
     },
     {
       "id": "hull-uev-crafting",
@@ -7509,7 +8430,7 @@
       ],
       "inputs": [
         {
-          "od": "plateDoubleRadoxPolymer",
+          "od": "plateDoubleRadoxPoly",
           "n": 2
         }
       ],
@@ -7522,7 +8443,7 @@
       "after": "额外 2 双重拉多X聚合物板；回收不返还新增绝缘层",
       "changedInputs": [
         {
-          "od": "plateDoubleRadoxPolymer"
+          "od": "plateDoubleRadoxPoly"
         }
       ],
       "source": "docs/NERFS.md#high-tier-hull-insulation",
@@ -7532,7 +8453,7 @@
           "labelEn": "Insulation",
           "kind": "item",
           "stack": {
-            "od": "plateDoubleRadoxPolymer"
+            "od": "plateDoubleRadoxPoly"
           },
           "before": "0",
           "after": "",
@@ -7542,7 +8463,12 @@
       "titleEn": "UEV Hull",
       "beforeEn": "Insulation: 0 plate Double Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card plate Double Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UEV"
+        }
+      ]
     },
     {
       "id": "hull-uiv-assembler",
@@ -7588,7 +8514,12 @@
       "titleEn": "UIV Hull",
       "beforeEn": "Insulation: 0 Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UIV"
+        }
+      ]
     },
     {
       "id": "hull-uiv-crafting",
@@ -7598,7 +8529,7 @@
       ],
       "inputs": [
         {
-          "od": "plateDoubleRadoxPolymer",
+          "od": "plateDoubleRadoxPoly",
           "n": 2
         }
       ],
@@ -7611,7 +8542,7 @@
       "after": "额外 2 双重拉多X聚合物板；回收不返还新增绝缘层",
       "changedInputs": [
         {
-          "od": "plateDoubleRadoxPolymer"
+          "od": "plateDoubleRadoxPoly"
         }
       ],
       "source": "docs/NERFS.md#high-tier-hull-insulation",
@@ -7621,7 +8552,7 @@
           "labelEn": "Insulation",
           "kind": "item",
           "stack": {
-            "od": "plateDoubleRadoxPolymer"
+            "od": "plateDoubleRadoxPoly"
           },
           "before": "0",
           "after": "",
@@ -7631,7 +8562,12 @@
       "titleEn": "UIV Hull",
       "beforeEn": "Insulation: 0 plate Double Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card plate Double Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UIV"
+        }
+      ]
     },
     {
       "id": "hull-umv-assembler",
@@ -7677,7 +8613,12 @@
       "titleEn": "UMV Hull",
       "beforeEn": "Insulation: 0 Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UMV"
+        }
+      ]
     },
     {
       "id": "hull-umv-crafting",
@@ -7687,7 +8628,7 @@
       ],
       "inputs": [
         {
-          "od": "plateDoubleRadoxPolymer",
+          "od": "plateDoubleRadoxPoly",
           "n": 2
         }
       ],
@@ -7700,7 +8641,7 @@
       "after": "额外 2 双重拉多X聚合物板；回收不返还新增绝缘层",
       "changedInputs": [
         {
-          "od": "plateDoubleRadoxPolymer"
+          "od": "plateDoubleRadoxPoly"
         }
       ],
       "source": "docs/NERFS.md#high-tier-hull-insulation",
@@ -7710,7 +8651,7 @@
           "labelEn": "Insulation",
           "kind": "item",
           "stack": {
-            "od": "plateDoubleRadoxPolymer"
+            "od": "plateDoubleRadoxPoly"
           },
           "before": "0",
           "after": "",
@@ -7720,7 +8661,12 @@
       "titleEn": "UMV Hull",
       "beforeEn": "Insulation: 0 plate Double Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card plate Double Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UMV"
+        }
+      ]
     },
     {
       "id": "hull-uxv-assembler",
@@ -7766,7 +8712,12 @@
       "titleEn": "UXV Hull",
       "beforeEn": "Insulation: 0 Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UXV"
+        }
+      ]
     },
     {
       "id": "hull-uxv-crafting",
@@ -7776,7 +8727,7 @@
       ],
       "inputs": [
         {
-          "od": "plateDenseRadoxPolymer",
+          "od": "plateDenseRadoxPoly",
           "n": 2
         }
       ],
@@ -7789,7 +8740,7 @@
       "after": "额外 2 致密拉多X聚合物板；回收不返还新增绝缘层",
       "changedInputs": [
         {
-          "od": "plateDenseRadoxPolymer"
+          "od": "plateDenseRadoxPoly"
         }
       ],
       "source": "docs/NERFS.md#high-tier-hull-insulation",
@@ -7799,7 +8750,7 @@
           "labelEn": "Insulation",
           "kind": "item",
           "stack": {
-            "od": "plateDenseRadoxPolymer"
+            "od": "plateDenseRadoxPoly"
           },
           "before": "0",
           "after": "",
@@ -7809,7 +8760,12 @@
       "titleEn": "UXV Hull",
       "beforeEn": "Insulation: 0 plate Dense Radox Polymer",
       "afterEn": "Insulation: quantity shown on the item card plate Dense Radox Polymer",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "Hull_UXV"
+        }
+      ]
     },
     {
       "id": "raw-neutronium",
@@ -7837,8 +8793,8 @@
           "nh": "RawNeutronium"
         }
       ],
-      "before": "144 mB 氦 Plasma",
-      "after": "1440 mB 氦 Plasma（×10）；其他参数不变",
+      "before": "144 mB 氦 等离子体",
+      "after": "1440 mB 氦 等离子体（×10）；其他参数不变",
       "changedInputs": [
         {
           "fluidGt": "Helium",
@@ -7864,7 +8820,12 @@
       "titleEn": "Raw Neutronium",
       "beforeEn": "Helium Plasma input: 144 mB.",
       "afterEn": "Helium Plasma input: 1,440 mB (x10); other parameters are unchanged.",
-      "noteEn": "Raw Neutronium mixing uses 1,440 mB Helium Plasma instead of 144 mB."
+      "noteEn": "Raw Neutronium mixing uses 1,440 mB Helium Plasma instead of 144 mB.",
+      "products": [
+        {
+          "nh": "RawNeutronium"
+        }
+      ]
     },
     {
       "id": "tpv-mixer",
@@ -7888,10 +8849,10 @@
         {
           "any": [
             {
-              "od": "dustTpv"
+              "od": "dustTPVAlloy"
             },
             {
-              "od": "dustTPV"
+              "od": "dustTPVAlloy"
             }
           ],
           "n": 3
@@ -7907,7 +8868,7 @@
           "labelEn": "Output",
           "kind": "item",
           "stack": {
-            "od": "dustTpv"
+            "od": "dustTPVAlloy"
           },
           "before": "7",
           "after": "",
@@ -7917,7 +8878,20 @@
       "titleEn": "TPV Alloy Dust",
       "beforeEn": "Output: 7 dust Tpv",
       "afterEn": "Output: quantity shown on the item card dust Tpv",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "any": [
+            {
+              "od": "dustTPVAlloy"
+            },
+            {
+              "od": "dustTPVAlloy"
+            }
+          ],
+          "n": 3
+        }
+      ]
     },
     {
       "id": "ae2-controller",
@@ -7929,10 +8903,10 @@
         {
           "any": [
             {
-              "od": "plateTpv"
+              "od": "plateTPVAlloy"
             },
             {
-              "od": "plateTPV"
+              "od": "plateTPVAlloy"
             }
           ],
           "n": 4
@@ -7952,16 +8926,16 @@
           "item": "appliedenergistics2:tile.BlockController"
         }
       ],
-      "before": "组装机：4 钛板＋2 HV 电路＋2 工程处理器＋福鲁伊克斯块；HV 5s；无流体",
-      "after": "4 钛铂钒合金板＋原电路／处理器／福鲁伊克斯块＋576 mB 焊料；LuV 30s；64k Cell 扫描 HV 60s",
+      "before": "组装机：4 钛板＋2HV 电路＋2 工程处理器＋福鲁伊克斯块；HV5s；无流体",
+      "after": "4 钛铂钒合金板＋原电路／处理器／福鲁伊克斯块＋576 mB 焊料；LuV30s；64k Cell 扫描 HV60s",
       "changedInputs": [
         {
           "any": [
             {
-              "od": "plateTpv"
+              "od": "plateTPVAlloy"
             },
             {
-              "od": "plateTPV"
+              "od": "plateTPVAlloy"
             }
           ]
         },
@@ -7980,10 +8954,10 @@
           "stack": {
             "any": [
               {
-                "od": "plateTpv"
+                "od": "plateTPVAlloy"
               },
               {
-                "od": "plateTPV"
+                "od": "plateTPVAlloy"
               }
             ]
           },
@@ -8017,7 +8991,12 @@
       "titleEn": "ME Controller",
       "beforeEn": "Input: = plate Tpv / plate TPV; Added: 0 Soldering Alloy; Machine: Assembler ",
       "afterEn": "Input: quantity shown on the item card plate Tpv / plate TPV; Added: quantity shown on the item card Soldering Alloy; Machine: Ass. line ",
-      "noteEn": "Research consumes the 64k Storage Cell and its contents; empty it first."
+      "noteEn": "Research consumes the 64k Storage Cell and its contents; empty it first.",
+      "products": [
+        {
+          "item": "appliedenergistics2:tile.BlockController"
+        }
+      ]
     },
     {
       "id": "ae2-blank-pattern",
@@ -8064,7 +9043,13 @@
       "titleEn": "Blank Pattern",
       "beforeEn": "Input: 3 plate Glowstone",
       "afterEn": "Input: quantity shown on the item card plate Sunnarium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "item": "appliedenergistics2:item.ItemMultiMaterial",
+          "meta": 52
+        }
+      ]
     },
     {
       "id": "quantum-star",
@@ -8113,7 +9098,12 @@
       "titleEn": "Quantum Star",
       "beforeEn": "Input: 1250 Radon",
       "afterEn": "Input: quantity shown on the item card Radon",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "gt": "QuantumStar"
+        }
+      ]
     },
     {
       "id": "indium-comb-concentrate",
@@ -8158,7 +9148,13 @@
       "titleEn": "Indium",
       "beforeEn": "Output: 3 dust Indium",
       "afterEn": "Output: quantity shown on the item card dust Indium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustIndium",
+          "n": 2
+        }
+      ]
     },
     {
       "id": "indium-comb-phosphate",
@@ -8207,7 +9203,13 @@
       "titleEn": "Indium",
       "beforeEn": "Output: 6 dust Indium",
       "afterEn": "Output: quantity shown on the item card dust Indium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustIndium",
+          "n": 4
+        }
+      ]
     },
     {
       "id": "indium-comb-purified",
@@ -8253,7 +9255,13 @@
       "titleEn": "Indium",
       "beforeEn": "Output: 12 crushed Purified Indium",
       "afterEn": "Output: quantity shown on the item card crushed Purified Indium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "crushedPurifiedIndium",
+          "n": 8
+        }
+      ]
     },
     {
       "id": "indium-comb-roquesite",
@@ -8300,7 +9308,13 @@
       "titleEn": "Indium",
       "beforeEn": "Output: 3 dust Indium",
       "afterEn": "Output: quantity shown on the item card dust Indium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustIndium",
+          "n": 2
+        }
+      ]
     },
     {
       "id": "praseodymium-indium",
@@ -8344,7 +9358,13 @@
       "titleEn": "Praseodymium",
       "beforeEn": "Output: 12 dust Indium",
       "afterEn": "Output: quantity shown on the item card dust Indium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustIndium",
+          "n": 8
+        }
+      ]
     },
     {
       "id": "sphalerite-vacuum",
@@ -8388,7 +9408,13 @@
       "titleEn": "Sphalerite",
       "beforeEn": "Output: 192 dust Indium",
       "afterEn": "Output: quantity shown on the item card dust Indium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustIndium",
+          "n": 96
+        }
+      ]
     },
     {
       "id": "chalcopyrite-vacuum",
@@ -8432,7 +9458,13 @@
       "titleEn": "Chalcopyrite",
       "beforeEn": "Output: 30 dust Indium",
       "afterEn": "Output: quantity shown on the item card dust Indium",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustIndium",
+          "n": 20
+        }
+      ]
     },
     {
       "id": "cable-pps",
@@ -8474,7 +9506,12 @@
       "titleEn": "Cable",
       "beforeEn": "Original five insulation recipe families",
       "afterEn": "Add PPS Foil, scaled with insulation amount. Specified MV/HV materials are exempt; EV+ routes move to LATEX.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "odPrefix": "cableGt"
+        }
+      ]
     },
     {
       "id": "ae2-tpv-materials",
@@ -8488,7 +9525,7 @@
         {
           "any": [
             {
-              "odSuffix": "Tpv"
+              "odSuffix": "TPVAlloy"
             },
             {
               "fluidGt": "TPV",
@@ -8508,7 +9545,7 @@
         {
           "any": [
             {
-              "odSuffix": "Tpv"
+              "odSuffix": "TPVAlloy"
             },
             {
               "fluidGt": "TPV",
@@ -8526,7 +9563,7 @@
           "stack": {
             "any": [
               {
-                "odSuffix": "Tpv"
+                "odSuffix": "TPVAlloy"
               },
               {
                 "fluidGt": "TPV",
@@ -8543,11 +9580,16 @@
       "titleEn": "AE2",
       "beforeEn": "Titanium materials",
       "afterEn": "Use the same form and amount of TPV. Only Applied Energistics 2 outputs are affected.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "mod": "appliedenergistics2"
+        }
+      ]
     },
     {
       "id": "raw-tungstensteel-mixer",
-      "title": "钨钢 · Raw Tungstensteel混合",
+      "title": "钨钢 · 粗制钨钢混合",
       "maps": [
         "gt.recipe.mixer",
         "gt.recipe.multimixer"
@@ -8565,8 +9607,8 @@
           "od": "dustRawTungstenSteel"
         }
       ],
-      "before": "产出已完成的 钨钢 Dust",
-      "after": "改为 Raw Tungstensteel Dust；需经过 Industrial Brainrotter 精炼",
+      "before": "产出已完成的 钨钢 粉",
+      "after": "改为 粗制钨钢 粉；需经过 工业脑腐机 精炼",
       "changedInputs": [],
       "source": "docs/NERFS.md#brainrot-materials-and-prototype-brainrotter",
       "visualChanges": [
@@ -8588,7 +9630,12 @@
       "titleEn": "Tungstensteel",
       "beforeEn": "Replaced: = dust Tungsten Steel",
       "afterEn": "Replaced: quantity shown on the item card dust Raw Tungsten Steel",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustRawTungstenSteel"
+        }
+      ]
     },
     {
       "id": "raw-tungstensteel-qft",
@@ -8625,7 +9672,12 @@
       "titleEn": "Tungstensteel",
       "beforeEn": "Replaced: = dust Tungsten Steel",
       "afterEn": "Replaced: quantity shown on the item card dust Raw Tungsten Steel",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustRawTungstenSteel"
+        }
+      ]
     },
     {
       "id": "raw-tungstensteel-ebf",
@@ -8644,7 +9696,7 @@
         }
       ],
       "before": "热成品钨钢锭",
-      "after": "改产Hot Raw Tungstensteel Ingot；需先真空冷却再精炼",
+      "after": "改产热 粗制钨钢 锭；需先真空冷却再精炼",
       "changedInputs": [],
       "source": "docs/NERFS.md#brainrot-materials-and-prototype-brainrotter",
       "visualChanges": [
@@ -8666,7 +9718,12 @@
       "titleEn": "Tungstensteel",
       "beforeEn": "Replaced: = ingot Hot Tungsten Steel",
       "afterEn": "Replaced: quantity shown on the item card ingot Hot Raw Tungsten Steel",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "ingotHotRawTungstenSteel"
+        }
+      ]
     },
     {
       "id": "raw-tungstensteel-foundry",
@@ -8684,7 +9741,7 @@
         }
       ],
       "before": "熔融成品钨钢",
-      "after": "改为熔融Raw Tungstensteel；需 Industrial Brainrotter 精炼",
+      "after": "改为熔融粗制钨钢；需 工业脑腐机 精炼",
       "changedInputs": [],
       "source": "docs/NERFS.md#brainrot-materials-and-prototype-brainrotter",
       "visualChanges": [
@@ -8710,7 +9767,15 @@
       "titleEn": "Tungstensteel",
       "beforeEn": "Replaced: = Tungsten Steel",
       "afterEn": "Replaced: quantity shown on the item card material",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "fany": [
+            "molten.rawtungstensteel",
+            "rawtungstensteel.molten"
+          ]
+        }
+      ]
     },
     {
       "id": "dense-netherite",
@@ -8755,7 +9820,13 @@
       "titleEn": "First-tier Fusion Computer - Dense Netherite Plates",
       "beforeEn": "First-tier Fusion Computer Assembly Line: 1 Dense Netherite Plate",
       "afterEn": "The same recipe requires 64 Dense Netherite Plates; other inputs and processing parameters are retained",
-      "noteEn": "Exact target: FusionComputer_LuV. Other Fusion Computers and plate production are outside this rule."
+      "noteEn": "Exact target: FusionComputer_LuV. Other Fusion Computers and plate production are outside this rule.",
+      "products": [
+        {
+          "gt": "FusionComputer_LuV",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "uu-unamplified",
@@ -8782,7 +9853,14 @@
       "titleEn": "Unamplified UU-Matter production",
       "beforeEn": "Previously ran on power without UU-Amplifier.",
       "afterEn": "This route is removed.",
-      "noteEn": "Use an amplified production route."
+      "noteEn": "Use an amplified production route.",
+      "products": [
+        {
+          "fany": [
+            "uumatter"
+          ]
+        }
+      ]
     },
     {
       "id": "uu-extraction",
@@ -8808,7 +9886,14 @@
       "titleEn": "Plant-to-UU-Matter extraction",
       "beforeEn": "Previously extracted UU-Matter from UU-Matter Berry or Space Flower.",
       "afterEn": "This route is removed.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "fany": [
+            "uumatter"
+          ]
+        }
+      ]
     },
     {
       "id": "flocculation-recovery",
@@ -8833,7 +9918,12 @@
       "titleEn": "Flocculation Waste recovery",
       "beforeEn": "Previously recovered Aluminium, Oxygen and Hydrochloric Acid in Distillation Tower or Distillery.",
       "afterEn": "This route is removed.",
-      "noteEn": "The waste can still be stored, transported or disposed of, but not recovered this way."
+      "noteEn": "The waste can still be stored, transported or disposed of, but not recovered this way.",
+      "products": [
+        {
+          "od": "dustAluminium"
+        }
+      ]
     },
     {
       "id": "good-circuit-crafting-removed",
@@ -8857,7 +9947,12 @@
       "titleEn": "Good Circuit hand-crafting",
       "beforeEn": "Previously made Good Electronic Circuits in a crafting table.",
       "afterEn": "This route is removed.",
-      "noteEn": "Use the Circuit Assembler route."
+      "noteEn": "Use the Circuit Assembler route.",
+      "products": [
+        {
+          "gt": "Circuit_Good"
+        }
+      ]
     },
     {
       "id": "lv-motor-iron-removed",
@@ -8882,7 +9977,12 @@
       "titleEn": "Magnetic-Iron LV Motor",
       "beforeEn": "Previously made LV Motors from Iron Magnetic and Iron parts.",
       "afterEn": "This route is removed.",
-      "noteEn": "Steel Magnetic / Steel variants remain available and dismantleable."
+      "noteEn": "Steel Magnetic / Steel variants remain available and dismantleable.",
+      "products": [
+        {
+          "gt": "Electric_Motor_LV"
+        }
+      ]
     },
     {
       "id": "slime-extractor",
@@ -8906,7 +10006,12 @@
       "titleEn": "Slime-family Rubber extraction",
       "beforeEn": "Rubber extraction from Slimeballs, TConstruct slime and specified Slimy Leaves.",
       "afterEn": "This route is removed.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustRawRubber"
+        }
+      ]
     },
     {
       "id": "slime-centrifuge",
@@ -8927,7 +10032,8 @@
       "titleEn": "Slime-family centrifuging",
       "beforeEn": "Recovery of six slime-family materials in ordinary and industrial Centrifuges.",
       "afterEn": "This route is removed.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": []
     },
     {
       "id": "ev-cable-assembler",
@@ -8947,7 +10053,8 @@
       "titleEn": "EV+ cable insulation in Assembler",
       "beforeEn": "All widths and insulation variants of EV+ cable Assembler production.",
       "afterEn": "This route is removed.",
-      "noteEn": "Use Cable Coater / LATEX. HV and lower cables and bare wires are unchanged."
+      "noteEn": "Use Cable Coater / LATEX. HV and lower cables and bare wires are unchanged.",
+      "products": []
     },
     {
       "id": "pbf-non-coke",
@@ -8971,7 +10078,12 @@
       "titleEn": "Primitive steelmaking without Coke",
       "beforeEn": "The 39 steelmaking recipes using fuels other than the allowed Coke families.",
       "afterEn": "This route is removed.",
-      "noteEn": "Seven Coke-family steelmaking routes remain."
+      "noteEn": "Seven Coke-family steelmaking routes remain.",
+      "products": [
+        {
+          "od": "ingotSteel"
+        }
+      ]
     },
     {
       "id": "steel-iron-removed",
@@ -8989,14 +10101,19 @@
       "before": "原料为铁粉、碳类粉、氧气和电路 11，MV，25 秒。",
       "after": "这条路线已移除。",
       "changedInputs": [],
-      "source": "docs/NERFS.md#electric-blast-furnace-steel-routes",
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
       "removed": true,
-      "note": "使用铸铁粉路线，或仍保留的 EV 大批量路线。",
+      "note": "使用 电力铁浴、慢速砖高炉，或 UHV 重熔 / 后期批量路线。",
       "visualChanges": [],
       "titleEn": "Direct Iron Dust steelmaking",
       "beforeEn": "Used Iron Dust, Carbon-family Dust, Oxygen and circuit 11, MV, 25 seconds.",
       "afterEn": "This route is removed.",
-      "noteEn": "Use the Cast Iron route or the retained bulk EV route."
+      "noteEn": "Use the Electric Iron Bath, slow Primitive Blast Furnace, or UHV remelting / late bulk routes.",
+      "products": [
+        {
+          "od": "ingotSteel"
+        }
+      ]
     },
     {
       "id": "aluminium-oxide-removed",
@@ -9021,7 +10138,12 @@
       "titleEn": "Direct Aluminium Oxide reduction",
       "beforeEn": "Used 10 Aluminium Oxide Dust and 3 Carbon Dust to yield 4 Aluminium ingots and 3,000 mB CO2.",
       "afterEn": "This route is removed.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "ingotAluminium"
+        }
+      ]
     },
     {
       "id": "aluminium-noble-gases",
@@ -9046,7 +10168,12 @@
       "titleEn": "Noble-gas Aluminium smelting",
       "beforeEn": "Routes using Helium, Argon, Radon, Neon, Krypton, Xenon or Oganesson, including TConstruct Aluminium.",
       "afterEn": "This route is removed.",
-      "noteEn": "Nitrogen and no-gas routes remain, with adjusted durations."
+      "noteEn": "Nitrogen and no-gas routes remain, with adjusted durations.",
+      "products": [
+        {
+          "od": "ingotAluminium"
+        }
+      ]
     },
     {
       "id": "ilmenite-baths",
@@ -9070,7 +10197,12 @@
       "titleEn": "Sulfuric Acid Ilmenite washing",
       "beforeEn": "Previously washed crushed or purified crushed Ilmenite with Sulfuric Acid to obtain Rutile and byproducts.",
       "afterEn": "This route is removed.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "od": "dustRutile"
+        }
+      ]
     },
     {
       "id": "ruby-juice",
@@ -9093,7 +10225,8 @@
       "titleEn": "Ruby Juice production and recovery",
       "beforeEn": "The eight Mixer recipes and one Centrifuge recovery recipe.",
       "afterEn": "This route is removed.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": []
     },
     {
       "id": "silicon-boule-water",
@@ -9117,7 +10250,12 @@
       "titleEn": "Water-based Silicon Boule cutting",
       "beforeEn": "Previously cut with 37 mB Water or 28 mB Distilled Water, LV, 40 seconds.",
       "afterEn": "This route is removed.",
-      "noteEn": "1.1.1 filters every ordinary/Distilled Water cutter variant; Lubricant and other special-fluid routes remain."
+      "noteEn": "1.1.1 filters every ordinary/Distilled Water cutter variant; Lubricant and other special-fluid routes remain.",
+      "products": [
+        {
+          "gt": "Circuit_Silicon_Wafer"
+        }
+      ]
     },
     {
       "id": "diode-assembler",
@@ -9141,7 +10279,12 @@
       "titleEn": "Four LV Diode Assembler routes",
       "beforeEn": "Gallium Arsenide or Silicon Wafer with Molten Glass, 4 fine Copper Wires and circuit 4.",
       "afterEn": "This route is removed.",
-      "noteEn": "Use another Diode recipe still available in NEI."
+      "noteEn": "Use another Diode recipe still available in NEI.",
+      "products": [
+        {
+          "gt": "Circuit_Parts_Diode"
+        }
+      ]
     },
     {
       "id": "mv-hatch-crafting",
@@ -9165,7 +10308,12 @@
       "titleEn": "MV Energy Hatch hand-crafting",
       "beforeEn": "The former crafting-table recipe used 2 ULPIC Chips.",
       "afterEn": "This route is removed.",
-      "noteEn": "Use the Assembler with 4 ULPIC Chips."
+      "noteEn": "Use the Assembler with 4 ULPIC Chips.",
+      "products": [
+        {
+          "gt": "Hatch_Energy_MV"
+        }
+      ]
     },
     {
       "id": "ae2-controller-old",
@@ -9190,7 +10338,12 @@
       "titleEn": "Old ME Controller production",
       "beforeEn": "The former crafting-table and HV Assembler recipes.",
       "afterEn": "This route is removed.",
-      "noteEn": "Use the LuV Assembly Line after researching a 64k Storage Cell."
+      "noteEn": "Use the LuV Assembly Line after researching a 64k Storage Cell.",
+      "products": [
+        {
+          "item": "appliedenergistics2:tile.BlockController"
+        }
+      ]
     },
     {
       "id": "crafting-input-proxy",
@@ -9241,6 +10394,12 @@
           "after": "1",
           "output": false
         }
+      ],
+      "products": [
+        {
+          "gt": "Hatch_CraftingInput_Bus_Slave",
+          "n": 1
+        }
       ]
     },
     {
@@ -9290,7 +10449,13 @@
       ],
       "note": "工作台与组装机路线均适用。组件装配线的 MV 马达仍使用长磁化钢棒。",
       "noteEn": "Hand crafting and Assembler routes change. Component Assembly Line MV motors retain Long Magnetic Steel Rods.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Electric_Motor_MV",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "hv-motor-magicnetized",
@@ -9339,7 +10504,13 @@
       ],
       "note": "先在 MV 组装机制作所需的新棒材；其他马达材料保持原样。",
       "noteEn": "Produce the new rod in an MV Assembler. Other motor ingredients are retained.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Electric_Motor_HV",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "magicnetized-manasteel-arcane",
@@ -9431,10 +10602,16 @@
           "afterEn": "Place; retained"
         }
       ],
-      "note": "弱磁兰不消耗，磁化钢棒会变为普通钢棒。",
-      "noteEn": "Solegnolia is retained; the magnetic rods return as Steel Rods.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md",
-      "materialInputsChanged": true
+      "note": "弱磁兰不消耗，磁化钢棒会变为普通钢棒；奥术合成终端 自动化同样保留弱磁兰。",
+      "noteEn": "Solegnolia is retained and magnetic rods return as Steel Rods; Arcane Crafting Terminal automation also retains the flower.",
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": true,
+      "products": [
+        {
+          "item": "gtnhextranerf:magicnetized_manasteel_rod",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "magicnetized-manasteel-assembler",
@@ -9477,7 +10654,7 @@
         }
       ],
       "before": "旧版没有这条自动化路线。",
-      "after": "1 魔力钢棒＋2 磁化钢棒＋2 世界盐＋144 mB 汞；弱磁兰不消耗；HV 20 秒。",
+      "after": "1 魔力钢棒＋2 磁化钢棒＋2 世界盐＋144 mB 汞；弱磁兰不消耗；HV20 秒。",
       "beforeEn": "No previous automation route.",
       "afterEn": "1 Manasteel Rod, 2 Magnetic Steel Rods, 2 Salis Mundus, 144 mB Mercury and reusable Solegnolia. HV, 20s, 480 EU/t.",
       "changedInputs": [
@@ -9566,8 +10743,14 @@
       ],
       "note": "同时返还 2 钢棒。",
       "noteEn": "Also returns 2 Steel Rods.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md",
-      "materialInputsChanged": true
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": true,
+      "products": [
+        {
+          "item": "gtnhextranerf:magicnetized_manasteel_rod",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "magicnetized-void-assembler",
@@ -9614,7 +10797,7 @@
         }
       ],
       "before": "旧版没有此物品和配方。",
-      "after": "1 虚空金属棒＋2 魔法磁化魔力钢棒＋4 磁化钢箔＋2 世界盐＋144 mB 汞；弱磁兰不消耗；MV 30 秒。",
+      "after": "1 虚空金属棒＋2 魔法磁化魔力钢棒＋4 磁化钢箔＋2 世界盐＋144 mB 汞；弱磁兰不消耗；MV30 秒。",
       "beforeEn": "This item and recipe did not exist.",
       "afterEn": "1 Void Metal Rod, 2 Magicnetized Manasteel Rods, 4 Magnetic Steel Foils, 2 Salis Mundus and 144 mB Mercury; reusable Solegnolia. MV, 30s, 120 EU/t.",
       "changedInputs": [
@@ -9717,8 +10900,14 @@
       ],
       "note": "同时返还 2 魔力钢棒；组装机新增第二输出槽以接收返还材料。",
       "noteEn": "Also returns 2 Manasteel Rods; Assemblers now have two output slots.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md",
-      "materialInputsChanged": true
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": true,
+      "products": [
+        {
+          "item": "gtnhextranerf:magicnetized_void_metal_rod",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "lv-floral-fertilizer",
@@ -9802,8 +10991,14 @@
       ],
       "note": "暮色传送门激活水晶会消耗；提供受限维度和 GoG 玩法的植物魔法入口。",
       "noteEn": "The Portal Generator is consumed. Provides Botania access in GoG or dimension-restricted worlds.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md",
-      "materialInputsChanged": false
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "item": "Botania:fertilizer",
+          "n": 6
+        }
+      ]
     },
     {
       "id": "livingrock-plate-hammer",
@@ -9829,7 +11024,7 @@
         }
       ],
       "before": "旧版没有此锻造锤路线。",
-      "after": "1 活石＋22 mB 润滑油 → 1 活石板；150 秒、30 EU/t。",
+      "after": "1 活石＋22 mB 润滑油 → 1 活石板；150 秒、30EU/t。",
       "beforeEn": "This Forge Hammer route did not exist.",
       "afterEn": "1 Livingrock + 22 mB Lubricant -> 1 Livingrock Plate; 150s, 30 EU/t.",
       "changedInputs": [
@@ -9866,8 +11061,14 @@
       ],
       "note": "提供 LV 魔力池入口，原有其他活石板路线保留。",
       "noteEn": "Provides an LV route to the Diluted Mana Pool; other plate routes remain.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md",
-      "materialInputsChanged": false
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "plateLivingrock",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-kanthal",
@@ -9933,7 +11134,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_Kanthal",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-nichrome",
@@ -9999,7 +11206,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_Nichrome",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-tpv",
@@ -10010,7 +11223,7 @@
       ],
       "inputs": [
         {
-          "od": "wireGt08TPV",
+          "od": "wireGt08TPVAlloy",
           "n": 8
         },
         {
@@ -10030,7 +11243,7 @@
       "afterEn": "8 octal wires and 40 Mica Insulator Foil; original voltage, time and solder are retained.",
       "changedInputs": [
         {
-          "od": "wireGt08TPV"
+          "od": "wireGt08TPVAlloy"
         },
         {
           "nh": "MicaInsulatorFoil"
@@ -10042,13 +11255,13 @@
           "labelEn": "Input",
           "kind": "item",
           "stack": {
-            "od": "wireGt08TPV"
+            "od": "wireGt08TPVAlloy"
           },
           "before": "8",
           "after": "",
           "output": false,
           "oldStack": {
-            "od": "wireGt02TPV"
+            "od": "wireGt02TPVAlloy"
           }
         },
         {
@@ -10065,7 +11278,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_TungstenSteel",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-hssg",
@@ -10131,7 +11350,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_HSSG",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-hsss",
@@ -10197,7 +11422,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_HSSS",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-naquadah",
@@ -10263,7 +11494,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_Naquadah",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-naquadah-alloy",
@@ -10329,7 +11566,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_NaquadahAlloy",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-trinium",
@@ -10395,7 +11638,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_Trinium",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-electrum-flux",
@@ -10461,7 +11710,13 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_ElectrumFlux",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "heating-coil-awakened-draconium",
@@ -10527,74 +11782,59 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "gt": "Casing_Coil_AwakenedDraconium",
+          "n": 1
+        }
+      ]
     },
     {
       "id": "steel-alloy-blast-smelter",
-      "title": "钢 · 合金高炉",
-      "titleEn": "Steel · Alloy Blast Smelter",
+      "title": "铸铁粉低阶合金高炉炼钢",
+      "titleEn": "Low-tier Cast Iron Dust Alloy Blast Smelter steelmaking",
       "maps": [
         "gt.recipe.alloyblastsmelter"
       ],
       "inputs": [
         {
           "od": "dustCastIron",
-          "n": 3
+          "n": 1
         },
         {
+          "circuit": "11"
+        },
+        {
+          "mB": 1000,
           "fluidGt": "Oxygen",
-          "phase": "gas",
-          "mB": 6000
+          "phase": "gas"
         }
       ],
       "outputs": [
         {
           "fluidGt": "Steel",
           "phase": "molten",
-          "mB": 432
+          "mB": 144
         }
       ],
-      "before": "原合金高炉铸铁路线。",
-      "after": "3 铸铁粉＋6000 mB 氧 → 432 mB 熔融钢；MV 36 秒。",
-      "beforeEn": "Original Alloy Blast Smelter Cast Iron route.",
-      "afterEn": "3 Cast Iron Dust + 6000 mB Oxygen -> 432 mB Molten Steel; MV, 36s.",
-      "changedInputs": [
+      "before": "1 铸铁粉＋电路 11＋1,000 mB 氧 → 144 mB 熔融钢；MV4 秒。",
+      "after": "这条低阶路线已移除。",
+      "beforeEn": "1 Cast Iron Dust + circuit 11 + 1,000 mB Oxygen -> 144 mB Molten Steel; MV, 4s.",
+      "afterEn": "This low-tier route is removed.",
+      "changedInputs": [],
+      "visualChanges": [],
+      "note": "使用 电力铁浴，或 UHV 重熔 / 后期批量路线。",
+      "noteEn": "Use the Electric Iron Bath or UHV remelting / late bulk routes.",
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "removed": true,
+      "products": [
         {
-          "od": "dustCastIron"
-        },
-        {
-          "fluidGt": "Oxygen",
-          "phase": "gas"
+          "fluidGt": "Steel",
+          "phase": "molten",
+          "mB": 144
         }
-      ],
-      "visualChanges": [
-        {
-          "label": "投入",
-          "labelEn": "Input",
-          "kind": "item",
-          "stack": {
-            "od": "dustCastIron"
-          },
-          "before": "?",
-          "after": "",
-          "output": false
-        },
-        {
-          "label": "投入",
-          "labelEn": "Input",
-          "kind": "item",
-          "stack": {
-            "fluidGt": "Oxygen",
-            "phase": "gas"
-          },
-          "before": "?",
-          "after": "",
-          "output": false
-        }
-      ],
-      "note": "",
-      "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      ]
     },
     {
       "id": "aluminium-nitrogen-alloy-smelter",
@@ -10644,6 +11884,13 @@
           "item": "TConstruct:materials",
           "meta": 12
         }
+      ],
+      "products": [
+        {
+          "fluidGt": "Aluminium",
+          "phase": "molten",
+          "mB": 144
+        }
       ]
     },
     {
@@ -10688,6 +11935,13 @@
         {
           "item": "TConstruct:materials",
           "meta": 12
+        }
+      ],
+      "products": [
+        {
+          "fluidGt": "Aluminium",
+          "phase": "molten",
+          "mB": 144
         }
       ]
     },
@@ -10734,7 +11988,14 @@
       "titleEn": "tconstruct aluminium nitrogen · Alloy Blast Smelter",
       "beforeEn": "Time: 60s ",
       "afterEn": "Produces 144 mB Molten Aluminium in 72s; gas restrictions match the corresponding EBF route.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "fluidGt": "Aluminium",
+          "phase": "molten",
+          "mB": 144
+        }
+      ]
     },
     {
       "id": "tconstruct-aluminium-no-gas-alloy-smelter",
@@ -10774,7 +12035,14 @@
       "titleEn": "tconstruct aluminium no gas · Alloy Blast Smelter",
       "beforeEn": "Time: 75s ; Heat: 1300K ",
       "afterEn": "Produces 144 mB Molten Aluminium in 96s; gas restrictions match the corresponding EBF route.",
-      "noteEn": ""
+      "noteEn": "",
+      "products": [
+        {
+          "fluidGt": "Aluminium",
+          "phase": "molten",
+          "mB": 144
+        }
+      ]
     },
     {
       "id": "machine-casing-uxv",
@@ -10791,7 +12059,7 @@
               "od": "plateDenseMagnetohydrodynamicallyConstrainedStarMatter"
             },
             {
-              "od": "plateDenseMHDCSM"
+              "od": "plateDenseMagnetohydrodynamicallyConstrainedStarMatter"
             }
           ],
           "n": 1
@@ -10802,7 +12070,7 @@
               "od": "plateDoubleMagmatter"
             },
             {
-              "od": "plateDoubleMagMatter"
+              "od": "plateDoubleMagmatter"
             }
           ],
           "n": 4
@@ -10815,7 +12083,7 @@
           "n": 1
         }
       ],
-      "before": "4 MHDCSM 板＋4 磁物质板。",
+      "before": "4MHDCSM 板＋4 磁物质板。",
       "after": "1 致密 MHDCSM 板＋4 双重磁物质板；产出生机械方块。",
       "beforeEn": "4 MHDCSM Plates and 4 Magmatter Plates.",
       "afterEn": "1 Dense MHDCSM Plate and 4 Double Magmatter Plates; produces a raw casing.",
@@ -10826,7 +12094,7 @@
               "od": "plateDenseMagnetohydrodynamicallyConstrainedStarMatter"
             },
             {
-              "od": "plateDenseMHDCSM"
+              "od": "plateDenseMagnetohydrodynamicallyConstrainedStarMatter"
             }
           ]
         },
@@ -10836,7 +12104,7 @@
               "od": "plateDoubleMagmatter"
             },
             {
-              "od": "plateDoubleMagMatter"
+              "od": "plateDoubleMagmatter"
             }
           ]
         }
@@ -10852,7 +12120,7 @@
                 "od": "plateDenseMagnetohydrodynamicallyConstrainedStarMatter"
               },
               {
-                "od": "plateDenseMHDCSM"
+                "od": "plateDenseMagnetohydrodynamicallyConstrainedStarMatter"
               }
             ]
           },
@@ -10865,7 +12133,7 @@
                 "od": "plateMagnetohydrodynamicallyConstrainedStarMatter"
               },
               {
-                "od": "plateMHDCSM"
+                "od": "plateMagnetohydrodynamicallyConstrainedStarMatter"
               }
             ]
           }
@@ -10880,7 +12148,7 @@
                 "od": "plateDoubleMagmatter"
               },
               {
-                "od": "plateDoubleMagMatter"
+                "od": "plateDoubleMagmatter"
               }
             ]
           },
@@ -10893,7 +12161,7 @@
                 "od": "plateMagmatter"
               },
               {
-                "od": "plateMagMatter"
+                "od": "plateMagmatter"
               }
             ]
           }
@@ -10901,7 +12169,14 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "gtnhextranerf:raw_machine_casing",
+          "meta": 12,
+          "n": 1
+        }
+      ]
     },
     {
       "id": "metal-duplication",
@@ -10943,9 +12218,15 @@
       ],
       "note": "仅匹配 GT 金属及同材质的复制配方；非金属不受影响。",
       "noteEn": "Matches real GT metal recipes with the same input/output material; non-metals are unaffected.",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
       "materialInputsChanged": false,
-      "rule": "metal-duplication"
+      "rule": "metal-duplication",
+      "products": [
+        {
+          "odPrefix": "dustTiny",
+          "n": 2
+        }
+      ]
     },
     {
       "id": "iron-steel-transmutation",
@@ -11007,10 +12288,1590 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.1.1 / docs/NERFS.md"
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "od": "dustTinySteel",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "universal-wireless-terminal",
+      "title": "无线通用终端 · 增广样板终端",
+      "titleEn": "Universal Wireless Terminal · Processing Pattern Terminal",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [
+        {
+          "item": "appliedenergistics2:item.ItemMultiPart",
+          "meta": 500,
+          "n": 1
+        }
+      ],
+      "outputs": [
+        {
+          "item": "ae2fc:wireless_ultra_terminal",
+          "meta": 0,
+          "n": 1
+        }
+      ],
+      "before": "原无线终端组合，不需要 ME增广样板终端。",
+      "after": "额外消耗 1 个 ME增广样板终端。",
+      "beforeEn": "The original wireless-terminal combination did not need an ME Processing Pattern Terminal.",
+      "afterEn": "Adds 1 ME Processing Pattern Terminal.",
+      "changedInputs": [
+        {
+          "item": "appliedenergistics2:item.ItemMultiPart",
+          "meta": 500
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "item": "appliedenergistics2:item.ItemMultiPart",
+            "meta": 500
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": true,
+      "products": [
+        {
+          "item": "ae2fc:wireless_ultra_terminal",
+          "meta": 0,
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-0",
+      "title": "工具装配台 · 铁版本",
+      "titleEn": "Tool Forge · Iron variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 0
+        }
+      ],
+      "before": "使用铁块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Iron blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 0
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-1",
+      "title": "工具装配台 · 金版本",
+      "titleEn": "Tool Forge · Gold variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 1
+        }
+      ],
+      "before": "使用金块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Gold blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 1
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-2",
+      "title": "工具装配台 · 钻石版本",
+      "titleEn": "Tool Forge · Diamond variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 2
+        }
+      ],
+      "before": "使用钻石块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Diamond blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 2
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-3",
+      "title": "工具装配台 · 绿宝石版本",
+      "titleEn": "Tool Forge · Emerald variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 3
+        }
+      ],
+      "before": "使用绿宝石块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Emerald blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 3
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-4",
+      "title": "工具装配台 · 钴版本",
+      "titleEn": "Tool Forge · Cobalt variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 4
+        }
+      ],
+      "before": "使用钴块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Cobalt blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 4
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-5",
+      "title": "工具装配台 · 阿迪特版本",
+      "titleEn": "Tool Forge · Ardite variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 5
+        }
+      ],
+      "before": "使用阿迪特块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Ardite blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 5
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-6",
+      "title": "工具装配台 · 玛玉灵版本",
+      "titleEn": "Tool Forge · Manyullyn variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 6
+        }
+      ],
+      "before": "使用玛玉灵块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Manyullyn blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 6
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-7",
+      "title": "工具装配台 · 铜版本",
+      "titleEn": "Tool Forge · Copper variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 7
+        }
+      ],
+      "before": "使用铜块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Copper blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 7
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-8",
+      "title": "工具装配台 · 青铜版本",
+      "titleEn": "Tool Forge · Bronze variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 8
+        }
+      ],
+      "before": "使用青铜块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Bronze blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 8
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-9",
+      "title": "工具装配台 · 锡版本",
+      "titleEn": "Tool Forge · Tin variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 9
+        }
+      ],
+      "before": "使用锡块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Tin blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 9
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-11",
+      "title": "工具装配台 · 铝黄铜版本",
+      "titleEn": "Tool Forge · Aluminium Brass variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 11
+        }
+      ],
+      "before": "使用铝黄铜块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Aluminium Brass blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 11
+        }
+      ]
+    },
+    {
+      "id": "tool-forge-removed-12",
+      "title": "工具装配台 · 耐酸铝版本",
+      "titleEn": "Tool Forge · Alumite variant",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 12
+        }
+      ],
+      "before": "使用耐酸铝块的 工具装配台 工作台配方。",
+      "after": "这条配方已移除。",
+      "beforeEn": "The Tool Forge crafting recipe using Alumite blocks.",
+      "afterEn": "This recipe is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "仅 铝 与 钢 版本保留。",
+      "noteEn": "Only the Aluminium and Steel variants remain.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "item": "TConstruct:ToolForgeBlock",
+          "meta": 12
+        }
+      ]
+    },
+    {
+      "id": "kevlar-drone-small",
+      "title": "液晶凯芙拉 · 9,000 mB 批次",
+      "titleEn": "Liquid Crystal Kevlar · 9,000 mB batch",
+      "maps": [
+        "gt.recipe.largechemicalreactor"
+      ],
+      "inputs": [
+        {
+          "od": "dustCalciumChloride",
+          "n": 1
+        },
+        {
+          "od": "dustpPhenylenediamine",
+          "n": 9
+        },
+        {
+          "od": "dustTerephthaloylChloride",
+          "n": 9
+        },
+        {
+          "circuit": "1"
+        },
+        {
+          "fluidGt": "NMethylIIPyrrolidone",
+          "phase": "fluid",
+          "mB": 1000
+        },
+        {
+          "item": "Forestry:beeDroneGE",
+          "n": 1,
+          "beeSpecies": "gregtech.bee.speciesKevlar"
+        }
+      ],
+      "outputs": [
+        {
+          "fluidGt": "LiquidCrystalKevlar",
+          "phase": "fluid",
+          "mB": 9000
+        },
+        {
+          "fluidGt": "DilutedHydrochloricAcid",
+          "phase": "fluid",
+          "mB": 2000
+        }
+      ],
+      "before": "原 9,000 mB 批次不消耗雄蜂。",
+      "after": "额外消耗 1 个显性物种为 凯芙拉 的雄蜂。",
+      "beforeEn": "The original 9,000 mB batch consumed no drone.",
+      "afterEn": "Additionally consumes 1 drone whose active species is Kevlar.",
+      "changedInputs": [
+        {
+          "item": "Forestry:beeDroneGE",
+          "beeSpecies": "gregtech.bee.speciesKevlar"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增雄蜂",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "item": "Forestry:beeDroneGE",
+            "beeSpecies": "gregtech.bee.speciesKevlar"
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "note": "只对液晶凯芙拉显示此生产改动；稀盐酸是未削弱的副产物。雄蜂显性物种必须为凯芙拉。",
+      "noteEn": "Production provenance belongs to Liquid Crystal Kevlar, not unchanged dilute acid. The drone active species must be Kevlar.",
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": true,
+      "products": [
+        {
+          "fluidGt": "LiquidCrystalKevlar",
+          "phase": "fluid",
+          "mB": 9000
+        }
+      ]
+    },
+    {
+      "id": "kevlar-drone-large",
+      "title": "液晶凯芙拉 · 63,000 mB 批次",
+      "titleEn": "Liquid Crystal Kevlar · 63,000 mB batch",
+      "maps": [
+        "gt.recipe.largechemicalreactor"
+      ],
+      "inputs": [
+        {
+          "od": "dustCalciumChloride",
+          "n": 7
+        },
+        {
+          "od": "dustpPhenylenediamine",
+          "n": 63
+        },
+        {
+          "od": "dustTerephthaloylChloride",
+          "n": 63
+        },
+        {
+          "circuit": "9"
+        },
+        {
+          "fluidGt": "NMethylIIPyrrolidone",
+          "phase": "fluid",
+          "mB": 7000
+        },
+        {
+          "item": "Forestry:beeDroneGE",
+          "n": 7,
+          "beeSpecies": "gregtech.bee.speciesKevlar"
+        }
+      ],
+      "outputs": [
+        {
+          "fluidGt": "LiquidCrystalKevlar",
+          "phase": "fluid",
+          "mB": 63000
+        },
+        {
+          "fluidGt": "DilutedHydrochloricAcid",
+          "phase": "fluid",
+          "mB": 14000
+        }
+      ],
+      "before": "原 63,000 mB 批次不消耗雄蜂。",
+      "after": "额外消耗 7 个显性物种为 凯芙拉 的雄蜂。",
+      "beforeEn": "The original 63,000 mB batch consumed no drone.",
+      "afterEn": "Additionally consumes 7 drones whose active species is Kevlar.",
+      "changedInputs": [
+        {
+          "item": "Forestry:beeDroneGE",
+          "beeSpecies": "gregtech.bee.speciesKevlar"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增雄蜂",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "item": "Forestry:beeDroneGE",
+            "beeSpecies": "gregtech.bee.speciesKevlar"
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "note": "只对液晶凯芙拉显示此生产改动；稀盐酸是未削弱的副产物。雄蜂显性物种必须为凯芙拉。",
+      "noteEn": "Production provenance belongs to Liquid Crystal Kevlar, not unchanged dilute acid. The drone active species must be Kevlar.",
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": true,
+      "products": [
+        {
+          "fluidGt": "LiquidCrystalKevlar",
+          "phase": "fluid",
+          "mB": 63000
+        }
+      ]
+    },
+    {
+      "id": "crystal-blood-conversion",
+      "title": "结晶血液 · BOP 血转换",
+      "titleEn": "Crystal Blood · BOP Blood conversion",
+      "maps": [
+        "gt.recipe.largechemicalreactor"
+      ],
+      "inputs": [
+        {
+          "item": "TaintedMagic:ItemMaterial",
+          "meta": 7,
+          "n": 1
+        },
+        {
+          "f": "blood",
+          "mB": 100
+        }
+      ],
+      "outputs": [
+        {
+          "f": "hell_blood",
+          "mB": 100
+        }
+      ],
+      "before": "无此转换路线。",
+      "after": "1 瓶装结晶血液＋100 mB 匠魂血 → 100 mBBOP血水；HV20 秒。",
+      "beforeEn": "No conversion route.",
+      "afterEn": "1 Phial of Crystal Blood + 100 mB TConstruct Blood -> 100 mB BOP Blood; HV, 20s.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "路线",
+          "labelEn": "Route",
+          "kind": "route",
+          "before": "无",
+          "after": "HV20 秒",
+          "beforeEn": "None",
+          "afterEn": "HV, 20s"
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "f": "hell_blood",
+          "mB": 100
+        }
+      ]
+    },
+    {
+      "id": "plutonium-small-batch",
+      "title": "钚 · 小批量衰变",
+      "titleEn": "Plutonium · Small-batch decay",
+      "maps": [
+        "gt.recipe.chemicalreactor",
+        "gt.recipe.largechemicalreactor"
+      ],
+      "inputs": [
+        {
+          "od": "ingotPlutonium",
+          "n": 8
+        },
+        {
+          "od": "dustTinyUranium",
+          "n": 1
+        },
+        {
+          "fluidGt": "Air",
+          "phase": "gas",
+          "mB": 1000
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustPlutonium",
+          "n": 7
+        },
+        {
+          "fluidGt": "Radon",
+          "phase": "gas",
+          "mB": 100
+        }
+      ],
+      "before": "8 钚锭 → 8 钚粉。",
+      "after": "8 钚锭 → 7 钚粉＋100 mB 氡；ULV10 分钟。",
+      "beforeEn": "8 Plutonium Ingots -> 8 Plutonium Dust.",
+      "afterEn": "8 Plutonium Ingots -> 7 Plutonium Dust + 100 mB Radon; ULV, 10 minutes.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "产出",
+          "labelEn": "Output",
+          "kind": "item",
+          "stack": {
+            "od": "dustPlutonium"
+          },
+          "before": "8",
+          "after": "",
+          "output": true
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "od": "dustPlutonium",
+          "n": 7
+        }
+      ]
+    },
+    {
+      "id": "steel-remelt-normal-ebf",
+      "title": "钢粉 · 工业高炉重熔",
+      "titleEn": "Steel Dust · Electric Blast Furnace remelting",
+      "maps": [
+        "gt.recipe.blastfurnace"
+      ],
+      "inputs": [
+        {
+          "od": "dustSteel",
+          "n": 1
+        },
+        {
+          "circuit": "1"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "ingotSteel",
+          "n": 1
+        }
+      ],
+      "before": "MV50 秒、1,000K。",
+      "after": "UHV 配方电压，1 tick；产出 1 钢锭。",
+      "beforeEn": "MV, 50s, 1,000 K.",
+      "afterEn": "UHV recipe voltage, one tick; outputs 1 Steel Ingot.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "路线",
+          "labelEn": "Route",
+          "kind": "route",
+          "before": "MV50s",
+          "after": "UHV1 tick",
+          "beforeEn": "MV, 50s",
+          "afterEn": "UHV, 1 tick"
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "ingotSteel",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "steel-remelt-magnetic-ebf",
+      "title": "磁化钢粉 · 工业高炉重熔",
+      "titleEn": "Magnetic Steel Dust · Electric Blast Furnace remelting",
+      "maps": [
+        "gt.recipe.blastfurnace"
+      ],
+      "inputs": [
+        {
+          "od": "dustSteelMagnetic",
+          "n": 1
+        },
+        {
+          "circuit": "1"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "ingotSteel",
+          "n": 1
+        }
+      ],
+      "before": "MV50 秒、1,000K。",
+      "after": "UHV 配方电压，1 tick；产出 1 钢锭。",
+      "beforeEn": "MV, 50s, 1,000 K.",
+      "afterEn": "UHV recipe voltage, one tick; outputs 1 Steel Ingot.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "路线",
+          "labelEn": "Route",
+          "kind": "route",
+          "before": "MV50s",
+          "after": "UHV1 tick",
+          "beforeEn": "MV, 50s",
+          "afterEn": "UHV, 1 tick"
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "ingotSteel",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "id": "steel-remelt-normal-abs",
+      "title": "钢粉 · 合金高炉重熔",
+      "titleEn": "Steel Dust · Alloy Blast Smelter remelting",
+      "maps": [
+        "gt.recipe.alloyblastsmelter"
+      ],
+      "inputs": [
+        {
+          "od": "dustSteel",
+          "n": 1
+        },
+        {
+          "circuit": "1"
+        }
+      ],
+      "outputs": [
+        {
+          "fluidGt": "Steel",
+          "phase": "molten",
+          "mB": 144
+        }
+      ],
+      "before": "MV40 秒。",
+      "after": "UHV 配方电压，1 tick；产出 144 mB 熔融钢。",
+      "beforeEn": "MV, 40s.",
+      "afterEn": "UHV recipe voltage, one tick; outputs 144 mB Molten Steel.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "路线",
+          "labelEn": "Route",
+          "kind": "route",
+          "before": "MV40s",
+          "after": "UHV1 tick",
+          "beforeEn": "MV, 40s",
+          "afterEn": "UHV, 1 tick"
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "fluidGt": "Steel",
+          "phase": "molten",
+          "mB": 144
+        }
+      ]
+    },
+    {
+      "id": "steel-remelt-magnetic-abs",
+      "title": "磁化钢粉 · 合金高炉重熔",
+      "titleEn": "Magnetic Steel Dust · Alloy Blast Smelter remelting",
+      "maps": [
+        "gt.recipe.alloyblastsmelter"
+      ],
+      "inputs": [
+        {
+          "od": "dustSteelMagnetic",
+          "n": 1
+        },
+        {
+          "circuit": "1"
+        }
+      ],
+      "outputs": [
+        {
+          "fluidGt": "Steel",
+          "phase": "molten",
+          "mB": 144
+        }
+      ],
+      "before": "MV40 秒。",
+      "after": "UHV 配方电压，1 tick；产出 144 mB 熔融钢。",
+      "beforeEn": "MV, 40s.",
+      "afterEn": "UHV recipe voltage, one tick; outputs 144 mB Molten Steel.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "路线",
+          "labelEn": "Route",
+          "kind": "route",
+          "before": "MV40s",
+          "after": "UHV1 tick",
+          "beforeEn": "MV, 40s",
+          "afterEn": "UHV, 1 tick"
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "fluidGt": "Steel",
+          "phase": "molten",
+          "mB": 144
+        }
+      ]
+    },
+    {
+      "id": "steel-bulk-50-ebf",
+      "title": "钢 · 50 铁批量工业高炉",
+      "titleEn": "Steel · 50-Iron EBF batch",
+      "maps": [
+        "gt.recipe.blastfurnace"
+      ],
+      "inputs": [
+        {
+          "od": "dustIron",
+          "n": 50
+        },
+        {
+          "any": [
+            {
+              "od": "dustCarbon"
+            },
+            {
+              "od": "dustCoal"
+            },
+            {
+              "od": "dustCharcoal"
+            }
+          ],
+          "n": 1
+        },
+        {
+          "circuit": "2"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "ingotSteel",
+          "n": 50
+        }
+      ],
+      "before": "EV150 秒、2,000K。",
+      "after": "UHV 配方电压，1 tick；产出 50 钢锭。",
+      "beforeEn": "EV, 150s, 2,000 K.",
+      "afterEn": "UHV recipe voltage, one tick; outputs 50 Steel Ingots.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "路线",
+          "labelEn": "Route",
+          "kind": "route",
+          "before": "EV150 秒",
+          "after": "UHV1 tick",
+          "beforeEn": "EV, 150s",
+          "afterEn": "UHV, 1 tick"
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "ingotSteel",
+          "n": 50
+        }
+      ]
+    },
+    {
+      "id": "steel-bulk-50-abs",
+      "title": "钢 · 50 铁批量合金高炉",
+      "titleEn": "Steel · 50-Iron Alloy Blast Smelter batch",
+      "maps": [
+        "gt.recipe.alloyblastsmelter"
+      ],
+      "inputs": [
+        {
+          "od": "dustIron",
+          "n": 50
+        },
+        {
+          "any": [
+            {
+              "od": "dustCarbon"
+            },
+            {
+              "od": "dustCoal"
+            },
+            {
+              "od": "dustCharcoal"
+            }
+          ],
+          "n": 1
+        },
+        {
+          "circuit": "2"
+        }
+      ],
+      "outputs": [
+        {
+          "fluidGt": "Steel",
+          "phase": "molten",
+          "mB": 7200
+        }
+      ],
+      "before": "无对应批量熔融路线。",
+      "after": "新增 UHV 配方电压、1 tick 路线，产出 7,200 mB 熔融钢。",
+      "beforeEn": "No corresponding bulk molten route.",
+      "afterEn": "Adds a UHV recipe-voltage, one-tick route yielding 7,200 mB Molten Steel.",
+      "changedInputs": [],
+      "visualChanges": [
+        {
+          "label": "路线",
+          "labelEn": "Route",
+          "kind": "route",
+          "before": "无",
+          "after": "UHV1 tick",
+          "beforeEn": "None",
+          "afterEn": "UHV, 1 tick"
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "fluidGt": "Steel",
+          "phase": "molten",
+          "mB": 7200
+        }
+      ]
+    },
+    {
+      "id": "iron-bath-stainless-nickel",
+      "title": "不锈钢 · 镍路线",
+      "titleEn": "Stainless Steel · Nickel route",
+      "maps": [
+        "gt.recipe.mixer",
+        "gt.recipe.multimixer"
+      ],
+      "inputs": [
+        {
+          "od": "dustWroughtIron",
+          "n": 6
+        },
+        {
+          "od": "dustNickel",
+          "n": 1
+        },
+        {
+          "od": "dustManganese",
+          "n": 1
+        },
+        {
+          "od": "dustChrome",
+          "n": 1
+        },
+        {
+          "circuit": "2"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustStainlessSteel",
+          "n": 9
+        }
+      ],
+      "before": "6 铁粉＋1 镍＋1 锰＋1 铬。",
+      "after": "6 锻铁粉＋1 镍＋1 锰＋1 铬；产出 9 不锈钢粉。",
+      "beforeEn": "6 Iron + 1 Nickel + 1 Manganese + 1 Chrome.",
+      "afterEn": "6 Wrought Iron + 1 Nickel + 1 Manganese + 1 Chrome; outputs 9 Stainless Steel Dust.",
+      "changedInputs": [
+        {
+          "od": "dustWroughtIron"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "投入",
+          "labelEn": "Input",
+          "kind": "item",
+          "stack": {
+            "od": "dustWroughtIron"
+          },
+          "oldStack": {
+            "od": "dustIron"
+          },
+          "before": "=",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "dustStainlessSteel",
+          "n": 9
+        }
+      ]
+    },
+    {
+      "id": "iron-bath-stainless-invar",
+      "title": "不锈钢 · 因瓦路线",
+      "titleEn": "Stainless Steel · Invar route",
+      "maps": [
+        "gt.recipe.mixer",
+        "gt.recipe.multimixer"
+      ],
+      "inputs": [
+        {
+          "od": "dustWroughtIron",
+          "n": 4
+        },
+        {
+          "od": "dustInvar",
+          "n": 3
+        },
+        {
+          "od": "dustManganese",
+          "n": 1
+        },
+        {
+          "od": "dustChrome",
+          "n": 1
+        },
+        {
+          "circuit": "1"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustStainlessSteel",
+          "n": 9
+        }
+      ],
+      "before": "4 铁粉＋3 因瓦＋1 锰＋1 铬。",
+      "after": "4 锻铁粉＋3 因瓦＋1 锰＋1 铬；产出 9 不锈钢粉。",
+      "beforeEn": "4 Iron + 3 Invar + 1 Manganese + 1 Chrome.",
+      "afterEn": "4 Wrought Iron + 3 Invar + 1 Manganese + 1 Chrome; outputs 9 Stainless Steel Dust.",
+      "changedInputs": [
+        {
+          "od": "dustWroughtIron"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "投入",
+          "labelEn": "Input",
+          "kind": "item",
+          "stack": {
+            "od": "dustWroughtIron"
+          },
+          "oldStack": {
+            "od": "dustIron"
+          },
+          "before": "=",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "dustStainlessSteel",
+          "n": 9
+        }
+      ]
+    },
+    {
+      "id": "iron-bath-electrical-steel",
+      "title": "磁钢 · 铸铁投入",
+      "titleEn": "Electrical Steel · Cast Iron feed",
+      "maps": [
+        "gt.recipe.mixer",
+        "gt.recipe.multimixer"
+      ],
+      "inputs": [
+        {
+          "od": "dustSteel",
+          "n": 1
+        },
+        {
+          "od": "dustCoal",
+          "n": 1
+        },
+        {
+          "od": "dustSilicon",
+          "n": 1
+        },
+        {
+          "od": "dustCastIron",
+          "n": 1
+        },
+        {
+          "circuit": "2"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustElectricalSteel",
+          "n": 3
+        }
+      ],
+      "before": "钢＋煤＋Raw Silicon，不需要铸铁。",
+      "after": "另加 1 铸铁粉；产出仍为 3 磁钢 粉。",
+      "beforeEn": "Steel + Coal + Raw Silicon, without Cast Iron.",
+      "afterEn": "Adds 1 Cast Iron Dust; output remains 3 Electrical Steel Dust.",
+      "changedInputs": [
+        {
+          "od": "dustCastIron"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "od": "dustCastIron"
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "dustElectricalSteel",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "id": "iron-bath-dark-steel-small",
+      "title": "玄钢 · 磁钢 路线",
+      "titleEn": "Dark Steel · Electrical Steel route",
+      "maps": [
+        "gt.recipe.mixer",
+        "gt.recipe.multimixer"
+      ],
+      "inputs": [
+        {
+          "od": "dustElectricalSteel",
+          "n": 1
+        },
+        {
+          "od": "dustCoal",
+          "n": 1
+        },
+        {
+          "od": "dustObsidian",
+          "n": 1
+        },
+        {
+          "od": "dustPigIron",
+          "n": 1
+        },
+        {
+          "circuit": "2"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustDarkSteel",
+          "n": 3
+        }
+      ],
+      "before": "磁钢＋煤＋黑曜石，不需要生铁。",
+      "after": "另加 1 生铁粉；产出仍为 3 玄钢 粉。",
+      "beforeEn": "Electrical Steel + Coal + Obsidian, without Pig Iron.",
+      "afterEn": "Adds 1 Pig Iron Dust; output remains 3 Dark Steel Dust.",
+      "changedInputs": [
+        {
+          "od": "dustPigIron"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "od": "dustPigIron"
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "dustDarkSteel",
+          "n": 3
+        }
+      ]
+    },
+    {
+      "id": "iron-bath-dark-steel-large",
+      "title": "玄钢 · 直接钢路线",
+      "titleEn": "Dark Steel · Direct Steel route",
+      "maps": [
+        "gt.recipe.mixer",
+        "gt.recipe.multimixer"
+      ],
+      "inputs": [
+        {
+          "od": "dustSteel",
+          "n": 1
+        },
+        {
+          "od": "dustCoal",
+          "n": 4
+        },
+        {
+          "od": "dustSilicon",
+          "n": 1
+        },
+        {
+          "od": "dustObsidian",
+          "n": 3
+        },
+        {
+          "od": "dustPigIron",
+          "n": 3
+        },
+        {
+          "circuit": "14"
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustDarkSteel",
+          "n": 9
+        }
+      ],
+      "before": "钢＋煤＋Raw Silicon＋黑曜石，不需要生铁。",
+      "after": "另加 3 生铁粉；产出仍为 9 玄钢 粉。",
+      "beforeEn": "Steel + Coal + Raw Silicon + Obsidian, without Pig Iron.",
+      "afterEn": "Adds 3 Pig Iron Dust; output remains 9 Dark Steel Dust.",
+      "changedInputs": [
+        {
+          "od": "dustPigIron"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "od": "dustPigIron"
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "dustDarkSteel",
+          "n": 9
+        }
+      ]
+    },
+    {
+      "id": "iron-bath-electrical-steel-crafting",
+      "title": "磁钢 · 工作台铸铁投入",
+      "titleEn": "Electrical Steel · Crafting Cast Iron feed",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [
+        {
+          "od": "dustSteel",
+          "n": 1
+        },
+        {
+          "od": "dustCoal",
+          "n": 1
+        },
+        {
+          "od": "dustSilicon",
+          "n": 1
+        },
+        {
+          "od": "dustCastIron",
+          "n": 1
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustElectricalSteel",
+          "n": 2
+        }
+      ],
+      "before": "钢＋煤＋Raw Silicon → 2 磁钢 粉。",
+      "after": "另加 1 铸铁粉；产出仍为 2。",
+      "beforeEn": "Steel + Coal + Raw Silicon -> 2 Electrical Steel Dust.",
+      "afterEn": "Adds 1 Cast Iron Dust; output remains 2.",
+      "changedInputs": [
+        {
+          "od": "dustCastIron"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "od": "dustCastIron"
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "dustElectricalSteel",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "id": "iron-bath-dark-steel-crafting",
+      "title": "玄钢 · 工作台生铁投入",
+      "titleEn": "Dark Steel · Crafting Pig Iron feed",
+      "maps": [
+        "crafting"
+      ],
+      "inputs": [
+        {
+          "od": "dustElectricalSteel",
+          "n": 1
+        },
+        {
+          "od": "dustCoal",
+          "n": 1
+        },
+        {
+          "od": "dustObsidian",
+          "n": 1
+        },
+        {
+          "od": "dustPigIron",
+          "n": 1
+        }
+      ],
+      "outputs": [
+        {
+          "od": "dustDarkSteel",
+          "n": 2
+        }
+      ],
+      "before": "磁钢＋煤＋黑曜石 → 2 玄钢 粉。",
+      "after": "另加 1 生铁粉；产出仍为 2。",
+      "beforeEn": "Electrical Steel + Coal + Obsidian -> 2 Dark Steel Dust.",
+      "afterEn": "Adds 1 Pig Iron Dust; output remains 2.",
+      "changedInputs": [
+        {
+          "od": "dustPigIron"
+        }
+      ],
+      "visualChanges": [
+        {
+          "label": "新增",
+          "labelEn": "Added",
+          "kind": "item",
+          "stack": {
+            "od": "dustPigIron"
+          },
+          "before": "0",
+          "after": "",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "materialInputsChanged": false,
+      "products": [
+        {
+          "od": "dustDarkSteel",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "id": "windmill-shaft-arc-furnace",
+      "title": "风车传动轴 · 电弧炉 玄钢 回收",
+      "titleEn": "Windmill Shaft · Arc Furnace Dark Steel recovery",
+      "maps": [
+        "gt.recipe.arcFurnace"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "od": "nuggetDarkSteel",
+          "n": 37
+        }
+      ],
+      "before": "风车传动轴 可通过 电弧炉 回收 玄钢。",
+      "after": "这条回收路线已移除。",
+      "beforeEn": "The Windmill Shaft could recover Dark Steel through the Arc Furnace.",
+      "afterEn": "This recovery route is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "避免从模具形状中获得含糊的合金回收。",
+      "noteEn": "Prevents ambiguous alloy recovery from the extruder shape.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "od": "nuggetDarkSteel",
+          "n": 37
+        }
+      ]
+    },
+    {
+      "id": "windmill-shaft-fluid-extractor",
+      "title": "风车传动轴 · 流体提取机 玄钢 回收",
+      "titleEn": "Windmill Shaft · Fluid Extractor Dark Steel recovery",
+      "maps": [
+        "gt.recipe.fluidextractor"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "fluidGt": "DarkSteel",
+          "phase": "molten",
+          "mB": 594
+        }
+      ],
+      "before": "风车传动轴 可通过 流体提取机 回收 玄钢。",
+      "after": "这条回收路线已移除。",
+      "beforeEn": "The Windmill Shaft could recover Dark Steel through the Fluid Extractor.",
+      "afterEn": "This recovery route is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "避免从模具形状中获得含糊的合金回收。",
+      "noteEn": "Prevents ambiguous alloy recovery from the extruder shape.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "fluidGt": "DarkSteel",
+          "phase": "molten",
+          "mB": 594
+        }
+      ]
+    },
+    {
+      "id": "windmill-shaft-macerator",
+      "title": "风车传动轴 · 研磨机 玄钢 回收",
+      "titleEn": "Windmill Shaft · Macerator Dark Steel recovery",
+      "maps": [
+        "gt.recipe.macerator"
+      ],
+      "inputs": [],
+      "outputs": [
+        {
+          "od": "dustTinyDarkSteel",
+          "n": 37
+        }
+      ],
+      "before": "风车传动轴 可通过 研磨机 回收 玄钢。",
+      "after": "这条回收路线已移除。",
+      "beforeEn": "The Windmill Shaft could recover Dark Steel through the Macerator.",
+      "afterEn": "This recovery route is removed.",
+      "changedInputs": [],
+      "removed": true,
+      "note": "避免从模具形状中获得含糊的合金回收。",
+      "noteEn": "Prevents ambiguous alloy recovery from the extruder shape.",
+      "visualChanges": [],
+      "source": "ExtraNerf 1.2.0 / docs/NERFS.md",
+      "products": [
+        {
+          "od": "dustTinyDarkSteel",
+          "n": 37
+        }
+      ]
     }
   ],
   "schemaVersion": 3,
-  "extraNerfVersion": "1.1.1",
-  "sourceCommit": "ba670257e49cd7b25153e63678e8ceb11f1cf7f1"
+  "extraNerfVersion": "1.2.0",
+  "sourceCommit": "a210637b7d3d31dd68de129bf42d5e83294d6ce3"
 }

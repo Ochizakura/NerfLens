@@ -53,7 +53,7 @@ public final class MaterialPolicyChecks {
     public static int run(Item unrelated, Map<String, ItemStack> items, Map<String, Fluid> fluids, String mode) throws Exception {
         Item bronze = fixture("fixture:policy_bronze"), tpv = fixture("fixture:policy_tpv");
         OreDictionary.registerOre("dustBronze", new ItemStack(bronze));
-        OreDictionary.registerOre("dustTPV", new ItemStack(tpv));
+        OreDictionary.registerOre("dustTPVAlloy", new ItemStack(tpv));
         Fluid helium = new Fluid("fixture.policy.helium"), plasma = new Fluid("fixture.policy.helium_plasma");
         FluidRegistry.registerFluid(helium); FluidRegistry.registerFluid(plasma);
         fluids.put("Helium:gas", helium); fluids.put("Helium:plasma", plasma);

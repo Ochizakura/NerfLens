@@ -11,6 +11,7 @@ import net.minecraft.util.EnumChatFormatting;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -24,6 +25,7 @@ import codechicken.nei.recipe.IRecipeHandler;
 import codechicken.nei.recipe.widget.RecipeWidget;
 import nerflens.NerfBadges;
 import nerflens.NerfDB;
+import nerflens.NerfItems;
 import nerflens.NerfRecipes;
 import nerflens.NerfTooltipLayout;
 import nerflens.TooltipHandler;
@@ -49,16 +51,33 @@ public abstract class MixinRecipeWidget {
     @Shadow
     protected abstract List<PositionedStack> getCyclingStacks();
 
-    @Inject(method = "drawItem(Lcodechicken/nei/PositionedStack;IIIZ)V", at = @At("RETURN"), require = 1)
-    private void nerflens$drawFrame(PositionedStack pStack, int mouseX, int mouseY, int yShift, boolean input,
-        CallbackInfo ci) {
+    @Shadow
+    protected abstract List<PositionedStack> getOutputs();
+
+    @Inject(
+        method = "draw",
+        at = @At(
+            value = "INVOKE",
+            target = "Lcodechicken/nei/recipe/IRecipeHandler;drawForeground(I)V",
+            shift = At.Shift.AFTER),
+        require = 1)
+    private void nerflens$drawFrame(int mouseX, int mouseY, CallbackInfo ci) {
         try {
-            if (pStack == null || showAsWidget || !(Minecraft.getMinecraft().currentScreen instanceof GuiRecipe))
-                return;
-            for (Badge frame : NerfBadges.forRecipe(handler, getRecipeIndex(), pStack, input))
-                frame.draw(new Rectangle4i(pStack.relx, pStack.rely, pStack.width, pStack.height));
+            if (showAsWidget || !(Minecraft.getMinecraft().currentScreen instanceof GuiRecipe)) return;
+            nerflens$drawFrames(getCyclingStacks(), true);
+            nerflens$drawFrames(getOutputs(), false);
         } catch (Throwable ignored) {
             // 显示类功能绝不引发崩溃
+        }
+    }
+
+    @Unique
+    private void nerflens$drawFrames(List<PositionedStack> positions, boolean input) {
+        if (positions == null) return;
+        for (PositionedStack pStack : positions) {
+            if (pStack == null) continue;
+            for (Badge frame : NerfBadges.forRecipe(handler, getRecipeIndex(), pStack, input))
+                frame.draw(new Rectangle4i(pStack.relx, pStack.rely, pStack.width, pStack.height));
         }
     }
 
@@ -88,10 +107,12 @@ public abstract class MixinRecipeWidget {
                     NerfTooltipLayout
                         .wrap(Minecraft.getMinecraft().fontRenderer, EnumChatFormatting.GOLD + line, "", "", 260));
             }
-            if (input) {
+            if (input || NerfItems.recipesFor(stack)
+                .isEmpty()) {
                 List<NerfDB.RecipeEntry> changes = new ArrayList<>();
                 for (NerfDB.RecipeEntry recipe : NerfRecipes.match(handler, getRecipeIndex())) {
-                    if (NerfRecipes.changedInput(recipe, position)) changes.add(recipe);
+                    if (input ? NerfRecipes.changedInput(recipe, position)
+                        : NerfRecipes.changedOutput(recipe, position)) changes.add(recipe);
                 }
                 TooltipHandler.appendRecipeChanges(result, changes, GuiScreen.isShiftKeyDown());
             }

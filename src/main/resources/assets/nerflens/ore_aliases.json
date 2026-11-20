@@ -1,0 +1,16 @@
+{
+  "exact": {
+    "circuitExtreme": "circuitData"
+  },
+  "materials": {
+    "SiliconSG": "SiliconSolarGrade",
+    "MagnesiumChloride": "Magnesiumchloride",
+    "Uranium238": "Uranium",
+    "RadoxPolymer": "RadoxPoly",
+    "Tpv": "TPVAlloy",
+    "TPV": "TPVAlloy",
+    "MHDCSM": "MagnetohydrodynamicallyConstrainedStarMatter",
+    "MagMatter": "Magmatter",
+    "ParaPhenylenediamine": "pPhenylenediamine"
+  }
+}

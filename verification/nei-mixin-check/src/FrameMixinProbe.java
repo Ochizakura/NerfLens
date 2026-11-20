@@ -62,10 +62,15 @@ public final class FrameMixinProbe {
         ClassNode node = new ClassNode(); new ClassReader(after).accept(node, 0);
         int drawHooks = 0, tooltipHooks = 0, explanations = 0;
         for (MethodNode method : node.methods) {
+            boolean foregroundSeen = false;
             for (AbstractInsnNode instruction = method.instructions.getFirst(); instruction != null; instruction = instruction.getNext()) {
                 if (!(instruction instanceof MethodInsnNode)) continue;
                 MethodInsnNode call = (MethodInsnNode) instruction;
-                if (method.name.equals("drawItem") && call.name.contains("nerflens$drawFrame")) drawHooks++;
+                if (method.name.equals("draw") && call.name.equals("drawForeground")) foregroundSeen = true;
+                if (method.name.equals("draw") && call.name.contains("nerflens$drawFrame")) {
+                    if (!foregroundSeen) throw new AssertionError("Frames must be drawn after native foreground/fluid rendering");
+                    drawHooks++;
+                }
                 if (method.name.equals("handleItemTooltip") && call.name.contains("nerflens$frameTooltip")) tooltipHooks++;
                 if (call.owner.equals("nerflens/TooltipHandler") && call.name.equals("appendRecipeChanges")) explanations++;
             }

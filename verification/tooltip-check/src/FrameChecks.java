@@ -160,7 +160,7 @@ public final class FrameChecks {
 
         Item tpv = named("fixture:tpv", "钛铂钒合金板", "TPV Plate");
         Item pps = named("fixture:pps", "聚苯硫醚箔", "PPS Foil");
-        OreDictionary.registerOre("plateTPV", s(tpv, 1, 0));
+        OreDictionary.registerOre("plateTPVAlloy", s(tpv, 1, 0));
         OreDictionary.registerOre("foilPolyphenyleneSulfide", s(pps, 1, 0));
         ShapelessOreRecipe modifiedAe = new ShapelessOreRecipe(s(ae, 1, 990), s(tpv, 1, 0));
         ShapelessOreRecipe untouchedAe = new ShapelessOreRecipe(s(ae, 1, 991), s(unrelated, 1, 0));
@@ -289,6 +289,9 @@ public final class FrameChecks {
         assertions += MaterialPolicyChecks.run(unrelated, gtItems, gtFluids, args[2]);
         assertions += ExtraNerf111Checks.run(gtItems, gtFluids);
         assertions += VersionMatrixChecks.run(new File(args[0]), gtItems);
+        assertions += FixRegressionChecks.run(new File(args[0]), gtFluids);
+        assertions += CatalogScopeChecks.run(new File(args[0]), gtItems);
+        assertions += NativeSolarOracleChecks.run(new File(args[0]), gtFluids, gtItems);
         assertions += nerflens.CertificateTooltipChecks.run(new File(args[0]));
         scenarios.add("fluid descriptions, recipe-only products, scoped provenance, bilingual summaries and Shift");
 

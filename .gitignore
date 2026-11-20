@@ -45,3 +45,11 @@ layout.json
 /verification/**/classes/
 /verification/**/*.log
 /verification/**/config-*/
+
+# Generated probe inputs and output must not enter release source.
+/verification/nei-mixin-check/*.class
+/verification/nei-mixin-check/*.class.transformed
+/verification/**/logs/
+/verification/nei-mixin-check/mixins.nerflens.frameprobe.json
+/verification/tooltip-check/tooltip-samples-*.txt
+/verification/tooltip-check/unavailable-gt-keys.txt

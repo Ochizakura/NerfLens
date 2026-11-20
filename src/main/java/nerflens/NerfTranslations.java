@@ -42,6 +42,7 @@ public final class NerfTranslations {
 
         String english;
         String chinese;
+        String generatedExtraNerfVersion;
     }
 
     private static final class State {
@@ -140,6 +141,11 @@ public final class NerfTranslations {
         if (!current.chinese || !FALLBACKS.containsKey(key) || current.suppliedKeys.contains(key)) return original;
         Fallback fallback = FALLBACKS.get(key);
         String english = current.english.get(key);
+        // GT registers these material names dynamically. The returned native English is the reference;
+        // only the verified owner version may use it when no resource-file English exists.
+        if (english == null && fallback.generatedExtraNerfVersion != null
+            && fallback.generatedExtraNerfVersion.equals(NerfDB.profileVersion())
+            && fallback.english.equals(original)) return fallback.chinese;
         if (!NUMERIC_FORMAT.matcher(fallback.english)
             .replaceAll("%$1s")
             .equals(english)) return original;

@@ -20,7 +20,7 @@ public final class NerfBadges {
     public static List<Badge> forRecipe(IRecipeHandler handler, int index, PositionedStack stack, boolean input) {
         if (stack == null || stack.item == null) return Collections.emptyList();
         for (NerfDB.RecipeEntry recipe : NerfRecipes.match(handler, index)) {
-            if (!input || NerfRecipes.changedInput(recipe, stack)) {
+            if (input ? NerfRecipes.changedInput(recipe, stack) : NerfRecipes.changedOutput(recipe, stack)) {
                 return Collections.singletonList(
                     new FrameBadge(
                         input ? 0xFFFFDE59 : 0xFFFFB82E,

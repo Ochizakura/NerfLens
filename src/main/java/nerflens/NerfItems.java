@@ -1,5 +1,6 @@
 package nerflens;
 
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,9 +17,12 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+import com.google.gson.Gson;
 
 import codechicken.nei.PositionedStack;
 import codechicken.nei.item.ItemFluidDisplay;
@@ -31,6 +36,7 @@ public final class NerfItems {
 
     private static final Map<Item, Map<Integer, Boolean>> CACHE = new HashMap<>();
     private static final Map<ItemKey, List<NerfDB.RecipeEntry>> DISCOVERED = new HashMap<>();
+    private static final ScopePolicy POLICY = loadPolicy();
     private static List<NerfDB.Entry> indexedEntries;
     private static List<NerfDB.RecipeEntry> indexedRecipes;
     private static int cachedItems;
@@ -39,26 +45,46 @@ public final class NerfItems {
 
     private NerfItems() {}
 
+    private static final class ScopePolicy {
+
+        List<String> localOnlyRecipes = Collections.emptyList();
+        List<String> localOnlyEntries = Collections.emptyList();
+    }
+
+    private static ScopePolicy loadPolicy() {
+        try (InputStreamReader reader = new InputStreamReader(
+            NerfItems.class.getResourceAsStream("/assets/nerflens/material_scope_policy.json"),
+            "UTF-8")) {
+            return new Gson().fromJson(reader, ScopePolicy.class);
+        } catch (Exception failure) {
+            FMLLog.warning("[NerfLens] unavailable material scope policy: %s", failure);
+            return new ScopePolicy();
+        }
+    }
+
     private static final class ItemKey {
 
         final Item item;
         final int damage;
+        final NBTTagCompound tag;
 
         ItemKey(ItemStack stack) {
             item = stack.getItem();
             damage = stack.getItemDamage();
+            tag = stack.hasTagCompound() ? (NBTTagCompound) stack.getTagCompound()
+                .copy() : null;
         }
 
         @Override
         public int hashCode() {
-            return System.identityHashCode(item) * 31 + damage;
+            return (System.identityHashCode(item) * 31 + damage) * 31 + Objects.hashCode(tag);
         }
 
         @Override
         public boolean equals(Object other) {
             if (!(other instanceof ItemKey)) return false;
             ItemKey key = (ItemKey) other;
-            return item == key.item && damage == key.damage;
+            return item == key.item && damage == key.damage && Objects.equals(tag, key.tag);
         }
     }
 
@@ -81,7 +107,7 @@ public final class NerfItems {
         for (NerfDB.RecipeEntry recipe : indexedRecipes) {
             if (recipe.removed || recipe.noticeOnly || recipe.outputs.isEmpty()) continue;
             boolean broad = false;
-            for (NerfDB.StackSpec output : recipe.outputs) broad |= broadSelector(output);
+            for (NerfDB.StackSpec output : products(recipe)) broad |= broadSelector(output);
             if (!broad) continue;
             if (recipe.maps.contains("crafting")) scanCrafting(recipe);
             scanGregTech(recipe);
@@ -120,21 +146,22 @@ public final class NerfItems {
 
     private static boolean affectedUncached(ItemStack stack) {
         for (NerfDB.Entry entry : indexedEntries) {
-            if (!entry.materialInputsChanged) continue;
+            if (!entry.materialInputsChanged || POLICY.localOnlyEntries.contains(entry.id)) continue;
             for (NerfDB.StackSpec product : entry.matchStacks) if (explicitProduct(product, stack)) return true;
         }
         List<NerfDB.RecipeEntry> discovered = DISCOVERED.get(new ItemKey(stack));
         for (NerfDB.RecipeEntry recipe : indexedRecipes) {
             if (!materialInputsChanged(recipe)) continue;
             if (discovered != null && discovered.contains(recipe)) return true;
-            for (NerfDB.StackSpec output : recipe.outputs) if (explicitProduct(output, stack)) return true;
+            for (NerfDB.StackSpec output : products(recipe)) if (explicitProduct(output, stack)) return true;
         }
         return false;
     }
 
     /** Output quantities, chances, processing conditions and removed routes do not change material inputs. */
     public static boolean materialInputsChanged(NerfDB.RecipeEntry recipe) {
-        if (recipe == null || recipe.removed || recipe.noticeOnly) return false;
+        if (recipe == null || recipe.removed || recipe.noticeOnly || POLICY.localOnlyRecipes.contains(recipe.id))
+            return false;
         if (recipe.materialInputsChanged != null) return recipe.materialInputsChanged;
         if (recipe.allInputsChanged || !recipe.changedInputs.isEmpty()) return true;
         for (NerfDB.VisualChange change : recipe.visualChanges) {
@@ -155,12 +182,17 @@ public final class NerfItems {
                 result.add(recipe);
                 continue;
             }
-            for (NerfDB.StackSpec output : recipe.outputs) if (explicitProduct(output, stack)) {
+            for (NerfDB.StackSpec output : products(recipe)) if (explicitProduct(output, stack)) {
                 result.add(recipe);
                 break;
             }
         }
         return result;
+    }
+
+    /** Complete output vectors match routes; only declared products inherit their production provenance. */
+    public static List<NerfDB.StackSpec> products(NerfDB.RecipeEntry recipe) {
+        return recipe.products == null ? recipe.outputs : recipe.products;
     }
 
     private static boolean broadSelector(NerfDB.StackSpec spec) {
@@ -184,7 +216,7 @@ public final class NerfItems {
 
     private static boolean candidate(NerfDB.RecipeEntry recipe, ItemStack[] outputs) {
         if (outputs == null) return false;
-        for (ItemStack stack : outputs) for (NerfDB.StackSpec output : recipe.outputs) {
+        for (ItemStack stack : outputs) for (NerfDB.StackSpec output : products(recipe)) {
             if (NerfRecipes.matchesItem(output, stack)) return true;
         }
         return false;
@@ -197,7 +229,7 @@ public final class NerfItems {
         if (!NerfRecipes.matchesRecipe(recipe, map, inputs, out)) return;
         if (outputs != null) for (ItemStack output : outputs) {
             if (output == null || output.getItem() == null) continue;
-            for (NerfDB.StackSpec selector : recipe.outputs) if (NerfRecipes.matchesItem(selector, output)) {
+            for (NerfDB.StackSpec selector : products(recipe)) if (NerfRecipes.matchesItem(selector, output)) {
                 List<NerfDB.RecipeEntry> changes = DISCOVERED
                     .computeIfAbsent(new ItemKey(output), key -> new ArrayList<>());
                 if (!changes.contains(recipe)) changes.add(recipe);

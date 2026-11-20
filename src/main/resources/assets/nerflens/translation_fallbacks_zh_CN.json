@@ -50,5 +50,389 @@
   "gtnhextranerf.consent.link.team": {
     "english": "Team tracking policy",
     "chinese": "队伍追踪政策"
+  },
+  "tile.gtnhextranerf.iron_bath_casing.0.name": {
+    "english": "Steel-Bound Refractory Casing",
+    "chinese": "钢箍耐火机械方块"
+  },
+  "tile.gtnhextranerf.iron_bath_casing.1.name": {
+    "english": "Wrought Iron-Reinforced Refractory Casing",
+    "chinese": "锻铁强化耐火机械方块"
+  },
+  "gtnhextranerf.recipe.iron_bath": {
+    "english": "Electric Iron Bath: Material Balances",
+    "chinese": "电力铁浴：物料平衡"
+  },
+  "gtnhextranerf.iron_bath.tap.name": {
+    "english": "%s Bath Tapping Hatch",
+    "chinese": "%s 铁浴浇铸仓"
+  },
+  "gtnhextranerf.iron_bath.tap.description": {
+    "english": "Draws from its height band, prioritizing slag",
+    "chinese": "从所在高度层排出液体，优先排渣"
+  },
+  "gtnhextranerf.iron_bath.tap.screwdriver": {
+    "english": "Screwdriver: discharge amount. Sneak: redstone mode",
+    "chinese": "螺丝刀：排出量；潜行：红石模式"
+  },
+  "gtnhextranerf.iron_bath.tap.settings": {
+    "english": "Discharge: %s mB, %s",
+    "chinese": "排出量：%s mB，%s"
+  },
+  "gtnhextranerf.iron_bath.tap.amount": {
+    "english": "Batch size",
+    "chinese": "单次排出量"
+  },
+  "gtnhextranerf.iron_bath.tap.control": {
+    "english": "Redstone",
+    "chinese": "红石控制"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.0": {
+    "english": "On pulse",
+    "chinese": "脉冲触发"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.1": {
+    "english": "Powered",
+    "chinese": "有信号时排出"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.2": {
+    "english": "Always",
+    "chinese": "持续排出"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.3": {
+    "english": "Stopped",
+    "chinese": "停止"
+  },
+  "gtnhextranerf.iron_bath.capacity_error": {
+    "english": "The contents exceed this coil tier's capacity",
+    "chinese": "炉内物料超过当前线圈等级的容量上限"
+  },
+  "gtnhextranerf.iron_bath.buffered_inputs": {
+    "english": "Use buffered item and fluid input hatches",
+    "chinese": "请使用缓冲输入总线和输入仓"
+  },
+  "gtnhextranerf.iron_bath.gui.temperature": {
+    "english": "Temperature: %s K",
+    "chinese": "温度：%s K"
+  },
+  "gtnhextranerf.iron_bath.gui.temperature_range": {
+    "english": "Temperature: %s / %s K",
+    "chinese": "温度：%s / %s K"
+  },
+  "gtnhextranerf.iron_bath.gui.maximum_temperature": {
+    "english": "Coil limit: %s K",
+    "chinese": "线圈温度上限：%s K"
+  },
+  "gtnhextranerf.iron_bath.gui.layer": {
+    "english": "%s: %s mB",
+    "chinese": "%s：%s mB"
+  },
+  "gtnhextranerf.iron_bath.gui.layer_solid": {
+    "english": "%s (solid)",
+    "chinese": "%s（固态）"
+  },
+  "gtnhextranerf.iron_bath.gui.layer_partial": {
+    "english": "%s (%s mB molten)",
+    "chinese": "%s（已熔化 %s mB）"
+  },
+  "gtnhextranerf.iron_bath.gui.carbon": {
+    "english": "Carbon: %s units",
+    "chinese": "碳：%s 单位"
+  },
+  "gtnhextranerf.iron_bath.gui.ratio": {
+    "english": "C / Fe: %s",
+    "chinese": "碳铁比：%s"
+  },
+  "gtnhextranerf.iron_bath.gui.impurities": {
+    "english": "Impurities: %s",
+    "chinese": "杂质：%s"
+  },
+  "gtnhextranerf.iron_bath.gui.calcite": {
+    "english": "Calcite reserve: %s / %s",
+    "chinese": "方解石储量：%s / %s"
+  },
+  "gtnhextranerf.iron_bath.gui.slag": {
+    "english": "Slag: %s mB",
+    "chinese": "炉渣：%s mB"
+  },
+  "gtnhextranerf.iron_bath.gui.product": {
+    "english": "Product: %s",
+    "chinese": "产物：%s"
+  },
+  "gtnhextranerf.iron_bath.gui.power": {
+    "english": "Power: %s EU/t",
+    "chinese": "功率：%s EU/t"
+  },
+  "gtnhextranerf.iron_bath.gui.vessel": {
+    "english": "Bath contents",
+    "chinese": "浴槽内容"
+  },
+  "gtnhextranerf.iron_bath.gui.fill": {
+    "english": "%s / %s mB",
+    "chinese": "%s / %s mB"
+  },
+  "gtnhextranerf.iron_bath.gui.metal_capacity": {
+    "english": "Metal limit (including queued): %s mB",
+    "chinese": "金属容量上限（含待熔物料）：%s mB"
+  },
+  "gtnhextranerf.iron_bath.tap.amount.range": {
+    "english": "Range: 1-%s mB",
+    "chinese": "范围：1-%s mB"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.description.0": {
+    "english": "Discharge once when the redstone signal turns on",
+    "chinese": "红石信号开启时排出一次"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.description.1": {
+    "english": "Discharge every tick while redstone is on",
+    "chinese": "有红石信号时每刻排出"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.description.2": {
+    "english": "Discharge every tick",
+    "chinese": "每刻排出"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.description.3": {
+    "english": "Keep the furnace outlet closed",
+    "chinese": "保持炉口关闭"
+  },
+  "gtnhextranerf.iron_bath.tap.mode.cycle": {
+    "english": "Left click: next mode. Right click: previous mode",
+    "chinese": "左键：下一模式；右键：上一模式"
+  },
+  "gtnhextranerf.iron_bath.gui.melting_items": {
+    "english": "Melting items: %s",
+    "chinese": "待熔物品：%s"
+  },
+  "gtnhextranerf.iron_bath.gui.charge_help": {
+    "english": "Matching items with the same progress share a melting group and divide the available heating power. Queued metal reserves tank space. Carbon enters the bath directly",
+    "chinese": "数据与进度相同的物品归为一组，分摊可用加热功率。待熔金属预占浴槽空间；碳直接进入浴槽"
+  },
+  "gtnhextranerf.iron_bath.gui.charge_count": {
+    "english": "Items in group: %s",
+    "chinese": "组内物品数：%s"
+  },
+  "gtnhextranerf.iron_bath.gui.charge_empty": {
+    "english": "Empty melting slot",
+    "chinese": "空熔化槽"
+  },
+  "gtnhextranerf.iron_bath.gui.charge_progress": {
+    "english": "Processed: %s%%",
+    "chinese": "进度：%s%%"
+  },
+  "gtnhextranerf.nei.iron_bath.title": {
+    "english": "Electric Iron Bath",
+    "chinese": "电力铁浴"
+  },
+  "gtnhextranerf.nei.iron_bath.continuous": {
+    "english": "Continuous bath",
+    "chinese": "连续铁浴"
+  },
+  "gtnhextranerf.nei.iron_bath.feed": {
+    "english": "Feed",
+    "chinese": "进料"
+  },
+  "gtnhextranerf.nei.iron_bath.tap": {
+    "english": "Tap",
+    "chinese": "浇铸"
+  },
+  "gtnhextranerf.nei.iron_bath.separation": {
+    "english": "Steel + Slag balance",
+    "chinese": "钢与炉渣物料平衡"
+  },
+  "gtnhextranerf.nei.iron_bath.reference": {
+    "english": "Reference C/Fe: %s%%",
+    "chinese": "参考碳铁比：%s%%"
+  },
+  "gtnhextranerf.nei.iron_bath.range": {
+    "english": "C/Fe ranges (hover)",
+    "chinese": "碳铁比区间（悬停查看）"
+  },
+  "gtnhextranerf.nei.iron_bath.heat": {
+    "english": "Electric melting: %s K",
+    "chinese": "电力熔化：%s K"
+  },
+  "gtnhextranerf.nei.iron_bath.zero": {
+    "english": "R = 0%%",
+    "chinese": "R = 0%%"
+  },
+  "gtnhextranerf.nei.iron_bath.wrought_range": {
+    "english": "0%% < R <= 0.2%%",
+    "chinese": "0%% < R <= 0.2%%"
+  },
+  "gtnhextranerf.nei.iron_bath.steel_range": {
+    "english": "0.2%% < R < 2%%",
+    "chinese": "0.2%% < R < 2%%"
+  },
+  "gtnhextranerf.nei.iron_bath.above": {
+    "english": "R >= %s%%",
+    "chinese": "R >= %s%%"
+  },
+  "gtnhextranerf.nei.iron_bath.between": {
+    "english": "%s%% <= R < %s%%",
+    "chinese": "%s%% <= R < %s%%"
+  },
+  "gtnhextranerf.nei.iron_bath.ratio": {
+    "english": "R (%%) = carbon units / (iron mB / 144)",
+    "chinese": "R（%%）= 碳单位数 /（铁量 mB / 144）"
+  },
+  "gtnhextranerf.nei.iron_bath.electric": {
+    "english": "Electric heat melts the charge",
+    "chinese": "电力加热使炉料熔化"
+  },
+  "gtnhextranerf.nei.iron_bath.oxygen": {
+    "english": "Optional Oxygen trim: 32 mB removes 1 C",
+    "chinese": "可选氧气脱碳：32 mB 氧气去除 1 单位碳"
+  },
+  "gtnhextranerf.nei.iron_bath.flux": {
+    "english": "1 Calcite binds up to 20 impurity units",
+    "chinese": "1 份方解石最多结合 20 单位杂质"
+  },
+  "gtnhextranerf.nei.iron_bath.calcite_consumption": {
+    "english": "This balance consumes %s Calcite dust",
+    "chinese": "此物料平衡消耗 %s 份方解石粉"
+  },
+  "gtnhextranerf.nei.iron_bath.calcite_reserve": {
+    "english": "Load %s whole dust. Unused flux capacity remains in the bath",
+    "chinese": "投入 %s 份完整粉末；未用完的助熔容量保留在浴槽中"
+  },
+  "gtnhextranerf.nei.iron_bath.carbon": {
+    "english": "Per piece: %s C, %s impurity units",
+    "chinese": "每份提供：%s 单位碳、%s 单位杂质"
+  },
+  "gtnhextranerf.nei.iron_bath.heated": {
+    "english": "Carbon enters the bath directly without melting",
+    "chinese": "碳直接进入浴槽，无须熔化"
+  },
+  "gtnhextranerf.nei.iron_bath.iron": {
+    "english": "1 Iron ingot or dust supplies 144 mB",
+    "chinese": "1 份铁锭或铁粉提供 144 mB 铁"
+  },
+  "gtnhextranerf.nei.iron_bath.slag": {
+    "english": "32 mB Slag per bound impurity unit",
+    "chinese": "每结合 1 单位杂质产生 32 mB 炉渣"
+  },
+  "gtnhextranerf.nei.iron_bath.tap_control": {
+    "english": "Tap the liquid at the selected carbon range",
+    "chinese": "在所选碳含量区间排出液体"
+  },
+  "gtnhextranerf.iron_bath.measurement.name": {
+    "english": "Bath Measurement Hatch",
+    "chinese": "铁浴测量仓"
+  },
+  "gtnhextranerf.iron_bath.measurement.description": {
+    "english": "Read-only exact measurements from a formed Iron Bath",
+    "chinese": "只读获取已成形铁浴的精确测量值"
+  },
+  "gtnhextranerf.iron_bath.measurement.connection": {
+    "english": "Optional side platform hatch. Connect an OpenComputers Adapter and call read()",
+    "chinese": "侧平台可选仓位；连接 OpenComputers 适配器并调用 read()"
+  },
+  "gtnhextranerf.iron_bath.energy_hatches": {
+    "english": "Use between one and eight energy hatches",
+    "chinese": "请使用 1 至 8 个能源仓"
+  },
+  "gtnhextranerf.iron_bath.gui.charge_page": {
+    "english": "Page %s/%s",
+    "chinese": "第 %s/%s 页"
+  },
+  "gtnhextranerf.iron_bath.tooltip.type": {
+    "english": "Iron Bath Furnace",
+    "chinese": "铁浴炉"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.0": {
+    "english": "Electrically heats a persistent iron and carbon bath",
+    "chinese": "使用电力加热可持久保存的铁碳浴槽"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.1": {
+    "english": "Accepts ingots, dusts, carbon additives, Calcite and Oxygen",
+    "chinese": "接受锭、粉、碳添加剂、方解石和氧气"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.2": {
+    "english": "Tapping height selects molten metal, slag or empty space",
+    "chinese": "浇铸仓高度决定抽取熔融金属、炉渣或空层"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.3": {
+    "english": "Cupronickel coils provide 512 ingots of bath capacity",
+    "chinese": "白铜线圈提供 512 锭的浴槽容量"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.4": {
+    "english": "Higher coils double bath capacity",
+    "chinese": "每升一级线圈，浴槽容量翻倍"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.5": {
+    "english": "Queued metal reserves tank space and shares the available heating power",
+    "chinese": "待熔金属预占浴槽空间，并共享可用加热功率"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.6": {
+    "english": "Extra amperage gives proportional throughput at the same EU per ingot",
+    "chinese": "增加电流会按比例提高产能，每锭耗电不变"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.7": {
+    "english": "Higher voltage applies native EBF overclocks and coil heat bonuses",
+    "chinese": "更高电压采用原生工业高炉超频及线圈温度加成"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.8": {
+    "english": "Calcite reserve: 180 binding units, plus 160 per coil upgrade",
+    "chinese": "方解石储备为 180 结合单位，每升一级线圈增加 160"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.9": {
+    "english": "Refractory chimney with exposed coils and a raised feed conveyor",
+    "chinese": "带外露线圈与高架进料输送带的耐火烟囱"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.10": {
+    "english": "Start with base refractory casings and Cupronickel coils",
+    "chinese": "从基础耐火机械方块和白铜线圈起步"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.11": {
+    "english": "Optional LuV Measurement Hatch: read-only OpenComputers telemetry",
+    "chinese": "可选 LuV 测量仓：OpenComputers 只读测量"
+  },
+  "gtnhextranerf.iron_bath.tooltip.info.12": {
+    "english": "Wrought Iron reinforcement improves insulation after the first bath",
+    "chinese": "首次铁浴生产后可用锻铁强化，提高隔热性能"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.controller": {
+    "english": "Side platform beside the feed conveyor",
+    "chinese": "进料输送带旁的侧平台"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.chimney_base": {
+    "english": "Chimney base",
+    "chinese": "烟囱底座"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.buffered_inputs": {
+    "english": "Side platform, buffered inputs",
+    "chinese": "侧平台，缓冲输入位置"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.side_platform": {
+    "english": "Side platform",
+    "chinese": "侧平台"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.taps": {
+    "english": "1+ tapping hatches",
+    "chinese": "至少 1 个浇铸仓"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.tap_walls": {
+    "english": "Narrow chimney walls beside coils",
+    "chinese": "线圈旁的狭窄烟囱壁"
+  },
+  "Material.wroughtiron": {
+    "english": "Wrought Iron",
+    "chinese": "锻铁",
+    "generatedExtraNerfVersion": "1.2.0"
+  },
+  "Material.overcarburizediron": {
+    "english": "Overcarburized Iron",
+    "chinese": "过渗碳铁",
+    "generatedExtraNerfVersion": "1.2.0"
+  },
+  "Material.slag": {
+    "english": "Slag",
+    "chinese": "炉渣",
+    "generatedExtraNerfVersion": "1.2.0"
+  },
+  "Material.tungstensteel": {
+    "english": "TungTungTungstensteel",
+    "chinese": "钨钨钨钢",
+    "generatedExtraNerfVersion": "1.2.0"
   }
 }

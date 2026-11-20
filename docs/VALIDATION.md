@@ -1,23 +1,14 @@
 # Release validation
 
-NerfLens 0.2.0-rc3 is a GitHub prerelease. The following results describe the released code and its automated checks.
+NerfLens 0.2.0 promotes the verified rc6 implementation and display data to a stable release. No gameplay or display algorithm changes are introduced by this promotion.
 
-- Gradle check includes 35 dependency-free version/profile checks shipped with the source.
-- The complete offline harness passes 324 assertions with Chromatic Tooltips and 308 without it.
-- An additional 16 shipped certificate state checks verify exact ownership keys, missing/unknown/ready states, prerequisite revocation and no world record load/create/save/dirty operations.
-- The integration harness includes 55 certificate tooltip assertions covering three version classifiers, individual certificate items, LV and higher requirements, compact/Shift states and unknown-version exclusion.
-- The matrix covers ExtraNerf 1.0.1, 1.1.0 and 1.1.1, reading actual Forge mod metadata through isolated mod containers, reusing NEI handlers across profile changes, and checking that cached global frames do not leak between versions.
-- Unknown, absent and unverified prerelease versions do not receive an invented built-in profile. Versioned user overrides stay scoped; unversioned overrides remain available.
-- NBT-sensitive catalysts, native item identity fields, output-only frames, returned rods, resource reload and translation precedence are exercised.
-- Changed future English wording and missing owner text do not receive old Chinese fallback text.
-- Ten comparison-card boundary checks cover valid scoped records with empty inputs, fluid-only inputs, zero-count tools and null slots, plus ordinary quantity comparisons and native-stack preservation.
-- All four production client Mixins are applied to actual NEI RecipeWidget/GuiRecipe and Minecraft Locale/StringTranslate bytecode. The comparison footer reserve, draw, tooltip and click hooks are checked.
-- The installed GTNH mods expose all 135 referenced selector fields and 17 direct interface contracts checked by the release audit.
-- Two existing native certification save records were parsed read-only to verify the `certifiedTiers` schema. Private save records are not redistributed.
-- The source ZIP is built without a `.git` directory and its generated version and runtime artifact are checked against the release.
+- Offline Gradle build, Spotless and Checkstyle; 51 version/profile assertions and 16 certificate-state assertions.
+- Integration harness: 794 assertions with Chromatic Tooltips and 778 without it, including 74 native solar-oracle assertions, 46 display regressions, 207 catalog-scope assertions, 73 certificate-tooltip assertions and 10 comparison-card boundary checks per environment.
+- Four display profiles contain 582 version-scoped recipe records. Older profile resource bytes remain frozen.
+- Live GTNH 2.9.0 registry identities corrected 55 exact selectors and the TPV suffix. Eleven client-native solar routes were captured: seven affected routes match and four unchanged Silane routes remain excluded.
+- Production Mixin probes cover NEI frame/tooltip hooks, comparison footer hooks, Minecraft translation hooks and certificate registration. No forbidden world load/write calls are present.
+- Chinese fallback precedence, English-reference matching, resource reload, native generated material references and owner-version boundaries are checked.
 
-The harness uses real Minecraft, NEI and optional Chromatic interfaces with isolated GregTech/Thaumcraft registries. Full in-game visuals, processing in real saves and steam-consumption readouts are outside these automated checks.
+The optional harness uses real Minecraft/NEI interfaces with isolated GT/BW/Thaumcraft registries and a Forestry API fixture. The native solar fixture records the actual client item IDs, metadata, ore identities, quantities and container layouts. This does not claim automated processing of every machine in a real save.
 
-## Reproduction
-
-Build normally to run the shipped compatibility checks. The source distribution also includes `verification/README.md`, which describes the optional complete offline harness. It requires your own GTNH mods and installed JDKs; no dependency JARs are redistributed.
+Reproduction: build normally, generate the local classpath with `verification/export-classpath.gradle`, and follow `verification/README.md` with your own GTNH mods and JDKs.

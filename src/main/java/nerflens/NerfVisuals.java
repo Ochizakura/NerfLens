@@ -26,14 +26,14 @@ public final class NerfVisuals {
         if (recipe.allInputsChanged) {
             for (PositionedStack position : NerfRecipes.recipeStacks(handler, index, false)) {
                 if (position == null || position.item == null
-                    || StackInfo.getAmount(position.item) <= 0
+                    || NerfRecipes.stackAmount(position, position.item) <= 0
                     || StackInfo.getFluid(position.item) != null) continue;
                 Card card = new Card();
                 card.label = NerfText.tr("scale");
                 card.kind = "item";
                 card.current = position.item.copy();
                 card.previous = position.item.copy();
-                long amount = StackInfo.getAmount(position.item);
+                long amount = NerfRecipes.stackAmount(position, position.item);
                 card.before = amount < 64 && amount % 6 == 0 ? String.valueOf(amount / 6) : "?";
                 card.after = String.valueOf(amount);
                 card.note = NerfText.tr(amount >= 64 ? "scale.capped" : "scale.note");

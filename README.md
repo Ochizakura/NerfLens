@@ -1,79 +1,68 @@
 # NerfLens
 
-NerfLens 是用于 **GregTech: New Horizons 2.9.0** 的客户端辅助模组，在物品提示和 NEI 配方页中显示 ExtraNerf 的改动、材料对照与认证状态。当前版本：**0.2.0-rc3（预发布）**。作者：**ochizakura**。
+**NerfLens 0.2.0 正式版**，用于 GregTech: New Horizons 2.9.0 的客户端显示辅助模组。作者：ochizakura。
 
-**[下载 NerfLens-0.2.0-rc3.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar)** · [发布页与其他文件](https://github.com/Ochizakura/NerfLens/releases/tag/v0.2.0-rc3)
+在物品提示与 NEI 配方页中显示 ExtraNerf 的玩法改动、投入与产物对照、材料标记以及认证状态。
 
 ## 安装
 
-1. 关闭 Minecraft 客户端。
-2. [下载 NerfLens-0.2.0-rc3.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar)。
-3. 将 JAR 放进**正在使用的 GTNH 实例**的 `mods` 文件夹。使用启动器的版本隔离功能时，以该实例的游戏目录为准。
-4. 升级时移出旧版 NerfLens，同一实例保留一个 NerfLens JAR。
-5. 重新启动游戏；主菜单的 **Mods** 列表中应显示 NerfLens 0.2.0-rc3。
+1. 保存并关闭 Minecraft 客户端。
+2. 从 [0.2.0 正式发布](https://github.com/Ochizakura/NerfLens/releases/tag/v0.2.0) 下载 `NerfLens-0.2.0.jar`。
+3. 升级时移出旧 NerfLens，将新 JAR 放进正在使用的 GTNH 实例 `mods` 目录，每种模组保留一个版本。
+4. 重新启动，Mods 列表应显示 NerfLens 0.2.0。
 
-JAR 由 Forge 随游戏自动加载，无须单独运行。NerfLens 安装在客户端，服务器无需安装。
+Forge 随游戏加载 JAR。服务器无需安装 NerfLens。
 
-| 下载文件 | 用途 |
+| 文件 | 用途 |
 | --- | --- |
-| `NerfLens-0.2.0-rc3.jar` | 玩家安装使用，将它放入实例的 `mods` 文件夹。 |
-| 绿色 **Code → Download ZIP** | 下载源码仓库，供查看或自行编译。 |
-| `NerfLens-0.2.0-rc3-source.zip` | 发布版源码、许可证及可复现检查脚本。 |
-| `NerfLens-0.2.0-rc3-release.zip` | 离线完整包，包含 JAR、源码、发布说明、验证记录和许可证；安装时取出其中的 JAR。 |
+| `NerfLens-0.2.0.jar` | 玩家安装使用。 |
+| `NerfLens-0.2.0-source.zip` | 源码、许可证及验证脚本。 |
+| `NerfLens-0.2.0-release.zip` | JAR、源码、说明与验证记录的完整离线包。 |
 
-## 在游戏中使用
+## 使用
 
-- **查看改动提示：**进入游戏后，按 `E` 打开背包，将鼠标移到受 ExtraNerf 影响的机器或物品上，查看 `ExtraNerf` 提示。
-- **展开详细说明：**保持鼠标悬停，按住 `Shift`，查看完整改动、原版与削弱后的说明及新增材料。
-- **查看配方对照：**在 NEI 中搜索目标物品，打开配方页。默认 `R` 查看配方、`U` 查看用途，具体以游戏按键设置为准。已覆盖的配方会显示黄色投入框、金色产物框及页面底部的改动对照。
-- **查看认证状态：**悬停适用的机器或证书，查看所需认证与状态；按住 `Shift` 查看各项前置认证。单机可显示已有认证状态，无法取得联机服务器状态时显示“未知”。
+- 背包中悬停受影响物品查看说明；Shift 展开细节。
+- NEI 默认用 R 查看配方、U 查看用途。黄色框标记本配方改动的投入，金色框标记受影响主产物或明确改动的副产物。
+- 只有特定路线变化的公共材料使用配方局部标记，未变化的其他路线不会继承金框。
+- 悬停适用机器或证书查看认证状态；远程服务器未提供状态时显示“未知”。
 
-这些功能直接显示在背包、物品提示和 NEI 配方页中；当前版本没有独立的 NerfLens 窗口或打开快捷键。
+例如太阳能级硅的氢气／三氯硅烷路线，悬停右侧氢氯酸可查看副产量 `3,000 → 2,000 mB`，硅粉产量保留。
 
-## 支持范围
+## 兼容范围
 
-运行环境为 **GTNH 2.9.0 / Minecraft 1.7.10 / Forge 1614**。已检查的接口包括 NEI 2.8.171-GTNH 和 UniMixins / Mixin 0.8.7；Chromatic Tooltips 1.0.36-GTNH 为可选集成。
+环境：GTNH 2.9.0 / Minecraft 1.7.10 / Forge 1614。NEI 2.8.171-GTNH；Chromatic Tooltips 1.0.36-GTNH 可选。
 
-同一 JAR 根据 Forge 读取到的 ExtraNerf 版本自动选择说明数据：
-
-| ExtraNerf 版本 | 说明记录 | 配方对照记录 |
+| ExtraNerf | 提示记录 | 配方对照 |
 | --- | ---: | ---: |
 | 1.0.1 | 71 | 123 |
 | 1.1.0 | 91 | 140 |
 | 1.1.1 | 91 | 143 |
+| 1.2.0 | 100 | 176 |
 
-未知版本或未安装 ExtraNerf 时，仅使用用户自定义数据。详细规则见[兼容说明](docs/COMPATIBILITY.md)。
+版本由 Forge 读取并自动选择；未知或未安装 ExtraNerf 时仅使用用户自定义显示数据。配置位于 `config/nerflens/user_nerfs.json`，详见[兼容与配置](docs/COMPATIBILITY.md)。
 
-全局金框标记合成材料发生变化的产物，配方中的黄色框和金色框标记相应投入与产物。已有模组或资源包译文优先；仅在缺译且英文含义与参考一致时补充译文。
+已有模组、TX Loader、资源包和动态注入的译文优先；补缺只用于缺译且当前英文参考一致的文本。
 
-## 配置与反馈
+NerfLens 提供显示辅助。机器行为、加工、考试、评分与认证规则由 ExtraNerf 控制；认证状态读取不创建或保存世界记录。
 
-自定义显示数据放在实例游戏目录的 `config/nerflens/user_nerfs.json` 中，格式和版本限制见[配置说明](docs/COMPATIBILITY.md#user-data)。启动日志中的 `[NerfLens] ExtraNerf=...; data profile=...` 可用于确认当前采用的数据版本。
+## 构建与验证
 
-本版本为预发布版本。自动化验证覆盖版本匹配、提示逻辑、接口兼容与 Mixin 注入；完整游戏画面、真实存档加工和蒸汽耗量读数仍需游戏内核对。若出现显示异常，请在 [Issues](https://github.com/Ochizakura/NerfLens/issues) 附上 GTNH、ExtraNerf 和 NerfLens 版本、目标机器或物品名称，以及截图或相关日志。
+使用 Java 25 运行 Gradle，并提供 GTNH 构建约定需要的 Java 8/17/21/25 工具链：
 
-NerfLens 提供显示辅助，认证规则、考试、评分和机器实际行为由 ExtraNerf 控制。认证状态读取不创建或保存世界记录。发布说明见[版本说明](docs/RELEASE_NOTES.md)，检查范围见[验证说明](docs/VALIDATION.md)。
+    gradlew.bat build --no-configuration-cache
+
+Unix 使用 `./gradlew`。离线构建需要已缓存依赖。源码 ZIP 无需 Git 元数据即可构建。完整检查脚本见 [verification/README.md](verification/README.md)，结果与边界见[验证说明](docs/VALIDATION.md)。
+
+发布变化见[版本说明](docs/RELEASE_NOTES.md)，已覆盖玩法见[规则目录](docs/NERFS.md)。问题反馈：[GitHub Issues](https://github.com/Ochizakura/NerfLens/issues)。
 
 ## English
 
-NerfLens is a client-side display companion for ExtraNerf in GTNH 2.9.0. It provides version-aware tooltips, NEI recipe comparisons, material-change frames and certificate status. Author: **ochizakura**. Current release: **0.2.0-rc3**, a prerelease.
+NerfLens 0.2.0 is a stable client-side display companion for ExtraNerf in GTNH 2.9.0. Download the runtime JAR from [Releases](https://github.com/Ochizakura/NerfLens/releases/tag/v0.2.0), replace older NerfLens JARs with the client closed, and keep one version in the active instance's mods directory.
 
-**[Download NerfLens-0.2.0-rc3.jar](https://github.com/Ochizakura/NerfLens/releases/download/v0.2.0-rc3/NerfLens-0.2.0-rc3.jar)** and place it in the active GTNH instance's `mods` directory with the client closed. Replace older NerfLens versions, keep one JAR and restart the game. Forge loads it automatically; the server does not need it. GitHub's **Code → Download ZIP** contains source code for developers.
+Hover items for changes and certificate status; hold Shift for details. NEI recipe pages show changed-input frames, affected-output frames and comparisons. One JAR selects ExtraNerf 1.0.1/1.1.0/1.1.1/1.2.0 data automatically. Existing translations take precedence over fallbacks. Unknown versions use custom display data only.
 
-Open the inventory (`E` by default) and hover an affected item or machine. Hold `Shift` for details. Use NEI recipe and usage pages (`R` / `U` by default) for supported material frames and comparisons. Hover a machine or certificate for certification requirements and status. These features appear in existing inventory and NEI screens; there is no separate NerfLens window or opening key.
+## 许可与来源
 
-GTNH 2.9.0 / Minecraft 1.7.10 / Forge 1614 is the supported environment. One JAR selects ExtraNerf 1.0.1, 1.1.0 or 1.1.1 data automatically. Unknown or absent ExtraNerf uses custom display data only. Remote or unavailable certificate state is shown as unknown. See [compatibility](docs/COMPATIBILITY.md), [release notes](docs/RELEASE_NOTES.md) and [validation](docs/VALIDATION.md).
+代码 MIT；ExtraNerf 衍生显示数据与文档 LGPL-3.0-or-later。源包和 JAR 保留完整许可与来源，见[许可说明](docs/LICENSING.md)。依赖和游戏资源由玩家的整合包提供。
 
-## Source builds and checks
-
-Run Gradle with Java 25 and provide the Java 8/17/21/25 toolchains used by the GTNH convention. Build with `gradlew.bat build --no-configuration-cache`, or `./gradlew build --no-configuration-cache` on Unix. Offline builds require cached dependencies.
-
-The release version is declared in `build.gradle.kts`; source ZIP builds do not require Git metadata. The release source archive omits local absolute toolchain paths. Configure installed toolchains through Gradle properties or automatic discovery. The `check` task includes the dependency-free compatibility and certificate-state checks under `src/test/java`. The optional [offline integration harness](verification/README.md) explains how to generate a local classpath and use your own GTNH mods.
-
-## Licensing and sources
-
-程序代码使用 **MIT**，保留继承的模板许可声明；源自 ExtraNerf 的显示数据与文档使用 **LGPL-3.0-or-later**。完整许可证及来源说明见[许可说明](docs/LICENSING.md)。
-
-Code: MIT, with the inherited template notice preserved. ExtraNerf-derived display data and documentation: LGPL-3.0-or-later. Dependency JARs and game assets are not redistributed.
-
-Upstream: [GTNH Extra Nerf](https://github.com/kuba6000/GTNH-Extra-Nerf). Naming references include installed translations and [Translation-of-GTNH](https://github.com/Kiwi233/Translation-of-GTNH).
+上游：[GTNH Extra Nerf](https://github.com/kuba6000/GTNH-Extra-Nerf)。译名参考：[Translation-of-GTNH](https://github.com/Kiwi233/Translation-of-GTNH) 与已安装模组汉化。

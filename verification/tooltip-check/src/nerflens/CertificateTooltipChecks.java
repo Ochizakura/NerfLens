@@ -32,7 +32,7 @@ public final class CertificateTooltipChecks {
         GregTechAPI.METATILEENTITIES[20]=lv;GregTechAPI.METATILEENTITIES[21]=hv;GregTechAPI.METATILEENTITIES[22]=ulv;
         GregTechAPI.METATILEENTITIES[23]=new Object();GregTechAPI.METATILEENTITIES[24]=apiary;
         Item certificate = certificateItem();
-        for (String version:new String[]{"1.0.1","1.1.0","1.1.1"}) {
+        for (String version:new String[]{"1.0.1","1.1.0","1.1.1","1.2.0"}) {
             NerfDB.load(config,version);
             CertRules.Need need=CertRules.forStack(new ItemStack(machines,1,20));
             require(need!=null&&need.required.equals(Arrays.asList("steam","lv")),"Native classifier produces LV chain in "+version);
@@ -59,7 +59,7 @@ public final class CertificateTooltipChecks {
                 require(detailed.contains("cert.unlocked")&&detailed.contains("cert.locked"),"Shift shows independent states for prerequisites");
             }
         }
-        NerfDB.load(config,"1.2.0");
+        NerfDB.load(config,"1.3.0");
         require(CertRules.forStack(new ItemStack(machines,1,20))==null,"Unknown profile does not guess machine gates");
         NerfDB.load(config,"1.1.1");NerfText.useChinese=true;
         System.out.println("PASS: certificate tooltip "+assertions+" assertions");return assertions;

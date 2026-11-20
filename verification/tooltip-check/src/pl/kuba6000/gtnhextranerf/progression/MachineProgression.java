@@ -5,7 +5,9 @@ public final class MachineProgression {
     public enum Certificate { STEAM, LV, MV, HV, UV }
     public static Certificate requiredTier(MetaTileEntity value) {
         if (!(value instanceof MTEBasicMachine)) return null;
-        if (value instanceof gregtech.common.tileentities.machines.basic.MTEIceCreamMachine && nerflens.NerfDB.profileVersion().equals("1.1.1")) return null;
+        if (value instanceof gregtech.common.tileentities.machines.basic.MTEIceCreamMachine
+            && (nerflens.NerfDB.profileVersion().equals("1.1.1")
+                || nerflens.NerfDB.profileVersion().equals("1.2.0"))) return null;
         MTEBasicMachine machine = (MTEBasicMachine) value;
         if (machine.isSteampowered()) return Certificate.STEAM;
         switch (machine.mTier) {

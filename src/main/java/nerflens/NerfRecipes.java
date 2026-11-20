@@ -1,5 +1,7 @@
 package nerflens;
 
+import java.io.InputStreamReader;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,6 +21,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 
+import com.google.gson.Gson;
+
 import codechicken.nei.PositionedStack;
 import codechicken.nei.item.ItemFluidDisplay;
 import codechicken.nei.recipe.IRecipeHandler;
@@ -32,14 +36,128 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public final class NerfRecipes {
 
-    private static final Map<IRecipeHandler, Map<Integer, List<NerfDB.RecipeEntry>>> CACHE = new WeakHashMap<>();
+    private static final Map<IRecipeHandler, Map<Integer, MatchSnapshot>> CACHE = new WeakHashMap<>();
     private static final Map<String, ItemStack> GT_ITEMS = new HashMap<>();
     private static final Map<String, Fluid> GT_FLUIDS = new HashMap<>();
+    private static final OreAliases ORE_ALIASES = loadOreAliases();
+    private static final Map<Class<?>, Field> REAL_STACK_SIZES = new HashMap<>();
     private static boolean warned;
     private static long matchingGeneration = -1;
     private static List<NerfDB.RecipeEntry> matchingRecipes;
 
     private NerfRecipes() {}
+
+    private static final class OreAliases {
+
+        Map<String, String> exact = Collections.emptyMap();
+        Map<String, String> materials = Collections.emptyMap();
+    }
+
+    private static OreAliases loadOreAliases() {
+        try (InputStreamReader reader = new InputStreamReader(
+            NerfRecipes.class.getResourceAsStream("/assets/nerflens/ore_aliases.json"),
+            "UTF-8")) {
+            return new Gson().fromJson(reader, OreAliases.class);
+        } catch (Exception failure) {
+            FMLLog.warning("[NerfLens] unavailable verified ore aliases: %s", failure);
+            return new OreAliases();
+        }
+    }
+
+    private static String canonicalOre(String name) {
+        if (name == null) return null;
+        String exact = ORE_ALIASES.exact.get(name);
+        if (exact != null) return exact;
+        for (Map.Entry<String, String> material : ORE_ALIASES.materials.entrySet())
+            if (name.endsWith(material.getKey())) return name.substring(
+                0,
+                name.length() - material.getKey()
+                    .length())
+                + material.getValue();
+        return name;
+    }
+
+    private static final class MatchSnapshot {
+
+        final String map;
+        final List<ItemStack[]> inputs, outputs;
+        final List<Long> inputAmounts, outputAmounts;
+        final List<NerfDB.RecipeEntry> matches;
+
+        MatchSnapshot(String map, List<PositionedStack> inputs, List<PositionedStack> outputs,
+            List<NerfDB.RecipeEntry> matches) {
+            this.map = map;
+            this.inputs = copyStacks(inputs);
+            this.outputs = copyStacks(outputs);
+            this.inputAmounts = stackAmounts(inputs);
+            this.outputAmounts = stackAmounts(outputs);
+            this.matches = matches;
+        }
+    }
+
+    /** GT may normalize icon stackSize to one while retaining the recipe count in realStackSize. */
+    public static long stackAmount(PositionedStack position, ItemStack item) {
+        if (position != null) {
+            Class<?> type = position.getClass();
+            if (!REAL_STACK_SIZES.containsKey(type)) {
+                Field field = null;
+                try {
+                    field = type.getField("realStackSize");
+                } catch (NoSuchFieldException absent) {}
+                REAL_STACK_SIZES.put(type, field);
+            }
+            Field field = REAL_STACK_SIZES.get(type);
+            if (field != null) {
+                try {
+                    return field.getLong(position);
+                } catch (IllegalAccessException inaccessible) {}
+            }
+        }
+        return item == null ? 0 : StackInfo.getAmount(item);
+    }
+
+    private static List<Long> stackAmounts(List<PositionedStack> positions) {
+        List<Long> amounts = new ArrayList<>();
+        if (positions != null) for (PositionedStack position : positions)
+            amounts.add(stackAmount(position, position == null ? null : position.item));
+        return amounts;
+    }
+
+    private static List<ItemStack[]> copyStacks(List<PositionedStack> positions) {
+        List<ItemStack[]> copies = new ArrayList<>();
+        if (positions == null) return copies;
+        for (PositionedStack position : positions) {
+            if (position == null) {
+                copies.add(null);
+                continue;
+            }
+            int count = position.items == null ? 0 : position.items.length;
+            ItemStack[] copy = new ItemStack[count + 1];
+            copy[0] = position.item == null ? null : position.item.copy();
+            for (int i = 0; i < count; i++) copy[i + 1] = position.items[i] == null ? null : position.items[i].copy();
+            copies.add(copy);
+        }
+        return copies;
+    }
+
+    private static boolean sameStacks(List<PositionedStack> positions, List<ItemStack[]> copies) {
+        if (positions == null) return copies.isEmpty();
+        if (positions.size() != copies.size()) return false;
+        for (int i = 0; i < positions.size(); i++) {
+            PositionedStack position = positions.get(i);
+            ItemStack[] copy = copies.get(i);
+            if (position == null) {
+                if (copy != null) return false;
+                continue;
+            }
+            int count = position.items == null ? 0 : position.items.length;
+            if (copy == null || copy.length != count + 1 || !ItemStack.areItemStacksEqual(position.item, copy[0]))
+                return false;
+            for (int j = 0; j < count; j++)
+                if (!ItemStack.areItemStacksEqual(position.items[j], copy[j + 1])) return false;
+        }
+        return true;
+    }
 
     public static void clearCache() {
         CACHE.clear();
@@ -82,8 +200,7 @@ public final class NerfRecipes {
                 matchingGeneration = generation;
                 matchingRecipes = NerfDB.recipes();
             }
-            Map<Integer, List<NerfDB.RecipeEntry>> cache = CACHE.computeIfAbsent(handler, h -> new HashMap<>());
-            if (cache.containsKey(index)) return cache.get(index);
+            Map<Integer, MatchSnapshot> cache = CACHE.computeIfAbsent(handler, h -> new HashMap<>());
             String map = mapId(handler);
             List<PositionedStack> inputs = handler.getIngredientStacks(index);
             List<PositionedStack> outputs = new ArrayList<>();
@@ -91,13 +208,19 @@ public final class NerfRecipes {
             if (result != null) outputs.add(result);
             List<PositionedStack> other = handler.getOtherStacks(index);
             if (other != null) outputs.addAll(other);
+            MatchSnapshot cached = cache.get(index);
+            if (cached != null && cached.map.equals(map)
+                && sameStacks(inputs, cached.inputs)
+                && sameStacks(outputs, cached.outputs)
+                && stackAmounts(inputs).equals(cached.inputAmounts)
+                && stackAmounts(outputs).equals(cached.outputAmounts)) return cached.matches;
             List<NerfDB.RecipeEntry> matches = new ArrayList<>();
             for (NerfDB.RecipeEntry recipe : NerfDB.recipes()) {
                 if (matchesRecipe(recipe, map, inputs, outputs)) matches.add(recipe);
             }
             List<NerfDB.RecipeEntry> immutable = Collections.unmodifiableList(matches);
             if (cache.size() >= 256) cache.clear();
-            cache.put(index, immutable);
+            cache.put(index, new MatchSnapshot(map, inputs, outputs, immutable));
             return immutable;
         } catch (RuntimeException | LinkageError failure) {
             if (!warned) {
@@ -158,6 +281,10 @@ public final class NerfRecipes {
 
     private static boolean present(List<PositionedStack> stacks, NerfDB.StackSpec spec) {
         if (stacks == null || spec == null) return false;
+        if (spec.any != null && spec.n == null && spec.mB == null) {
+            for (NerfDB.StackSpec alternative : spec.any) if (present(stacks, alternative)) return true;
+            return false;
+        }
         long total = amount(stacks, spec);
         Integer wanted = isFluid(spec) ? spec.mB : spec.n;
         return total >= 0 && (wanted == null || total == wanted.longValue());
@@ -169,14 +296,14 @@ public final class NerfRecipes {
         boolean found = false;
         for (PositionedStack stack : stacks) {
             if (stack == null) continue;
-            int amount = -1;
+            long amount = -1;
             ItemStack[] alternatives = stack.items == null || stack.items.length == 0 ? new ItemStack[] { stack.item }
                 : stack.items;
             for (ItemStack item : alternatives) {
                 if (matchesItem(spec, item)) {
                     FluidStack fluid = fluid(item);
                     amount = Math
-                        .max(amount, isFluid(spec) ? (fluid == null ? 0 : fluid.amount) : StackInfo.getAmount(item));
+                        .max(amount, isFluid(spec) ? (fluid == null ? 0 : fluid.amount) : stackAmount(stack, item));
                 }
             }
             if (amount >= 0) {
@@ -259,7 +386,9 @@ public final class NerfRecipes {
     }
 
     private static ItemStack oreStack(String name) {
-        for (ItemStack stack : OreDictionary.getOres(name)) {
+        List<ItemStack> ores = OreDictionary.getOres(name, false);
+        if (ores.isEmpty()) ores = OreDictionary.getOres(canonicalOre(name), false);
+        for (ItemStack stack : ores) {
             if (stack != null && stack.getItemDamage() != OreDictionary.WILDCARD_VALUE) return stack.copy();
         }
         return null;
@@ -274,9 +403,12 @@ public final class NerfRecipes {
                 ItemStack stack = oreStack(prefix + name.substring(selector.odPrefix.length()));
                 if (stack != null) return stack;
             }
-            if (!suffix.isEmpty() && name.toLowerCase(Locale.ROOT)
-                .endsWith("tpv")) {
-                ItemStack stack = oreStack(name.substring(0, name.length() - 3) + suffix);
+            String tpv = ORE_ALIASES.materials.getOrDefault("TPV", "TPV");
+            int tpvLength = name.endsWith(tpv) ? tpv.length()
+                : name.toLowerCase(Locale.ROOT)
+                    .endsWith("tpv") ? 3 : 0;
+            if (!suffix.isEmpty() && tpvLength > 0) {
+                ItemStack stack = oreStack(name.substring(0, name.length() - tpvLength) + suffix);
                 if (stack != null) return stack;
             }
         }
@@ -285,11 +417,19 @@ public final class NerfRecipes {
 
     public static boolean changedInput(NerfDB.RecipeEntry recipe, PositionedStack stack) {
         if (recipe.allInputsChanged)
-            return stack.item != null && StackInfo.getAmount(stack.item) > 0 && fluid(stack.item) == null;
+            return stack.item != null && stackAmount(stack, stack.item) > 0 && fluid(stack.item) == null;
         if (recipe.changedInputs == null) return false;
         for (NerfDB.StackSpec spec : recipe.changedInputs) {
             if (matchesItem(spec, stack.item)) return true;
         }
+        return false;
+    }
+
+    public static boolean changedOutput(NerfDB.RecipeEntry recipe, PositionedStack stack) {
+        if (stack == null || stack.item == null) return false;
+        for (NerfDB.StackSpec product : NerfItems.products(recipe)) if (matchesItem(product, stack.item)) return true;
+        for (NerfDB.VisualChange change : recipe.visualChanges)
+            if (change != null && change.output && matchesItem(change.stack, stack.item)) return true;
         return false;
     }
 
@@ -311,6 +451,7 @@ public final class NerfRecipes {
 
     private static boolean matchesItemInner(NerfDB.StackSpec spec, ItemStack stack) {
         if (spec == null || stack == null || stack.getItem() == null) return false;
+        if (spec.beeSpecies != null && !hasBeeSpecies(stack, spec.beeSpecies)) return false;
         if (spec.nbtStrings != null) for (Map.Entry<String, String> value : spec.nbtStrings.entrySet()) {
             if (!stack.hasTagCompound() || !stack.getTagCompound()
                 .hasKey(value.getKey(), 8)
@@ -374,7 +515,12 @@ public final class NerfRecipes {
         if (spec.od != null || spec.odPrefix != null || spec.odSuffix != null) {
             for (int id : OreDictionary.getOreIDs(stack)) {
                 String name = OreDictionary.getOreName(id);
-                if (name.equals(spec.od) || (spec.odPrefix != null && name.startsWith(spec.odPrefix))
+                String suffix = spec.odSuffix == null ? null
+                    : ORE_ALIASES.materials.getOrDefault(spec.odSuffix, spec.odSuffix);
+                if (name.equals(spec.od) || name.equals(canonicalOre(spec.od))
+                    || (spec.odPrefix != null && name.startsWith(spec.odPrefix))
+                    || (spec.odSuffix != null && name.toLowerCase(Locale.ROOT)
+                        .endsWith(suffix.toLowerCase(Locale.ROOT)))
                     || (spec.odSuffix != null && name.toLowerCase(Locale.ROOT)
                         .endsWith(spec.odSuffix.toLowerCase(Locale.ROOT))))
                     return true;
@@ -384,6 +530,26 @@ public final class NerfRecipes {
         if (spec.unloc != null) return nameMatches(spec.unloc, stack.getUnlocalizedName());
         String display = EnumChatFormatting.getTextWithoutFormattingCodes(stack.getDisplayName());
         return nameMatches(spec.dn, display) || nameMatches(spec.dnzh, display);
+    }
+
+    /** Delegate dominance and active-species selection to the same native Forestry API used by ExtraNerf. */
+    private static boolean hasBeeSpecies(ItemStack stack, String species) {
+        String registryName = Item.itemRegistry.getNameForObject(stack.getItem());
+        if (!"Forestry:beeDroneGE".equals(registryName) && !"Forestry:beePrincessGE".equals(registryName)
+            && !"Forestry:beeQueenGE".equals(registryName)) return false;
+        if (!stack.hasTagCompound()) return false;
+        try {
+            Object allele = Class.forName("forestry.apiculture.genetics.BeeGenome")
+                .getMethod("getSpecies", ItemStack.class)
+                .invoke(null, stack);
+            return allele != null && species.equals(
+                Class.forName("forestry.api.genetics.IAllele")
+                    .getMethod("getUID")
+                    .invoke(allele));
+        } catch (ReflectiveOperationException | LinkageError failure) {
+            warn(failure);
+            return false;
+        }
     }
 
     /** Read the same native cable voltage and insulation fields used by ExtraNerf's LATEX rule. */

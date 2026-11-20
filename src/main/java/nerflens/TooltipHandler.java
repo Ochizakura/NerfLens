@@ -115,7 +115,7 @@ public final class TooltipHandler {
         // Removed routes have no live NEI page. Explain them on their product's tooltip.
         for (NerfDB.RecipeEntry recipe : NerfDB.recipes()) {
             if (!recipe.removed || recipe.outputs == null) continue;
-            for (NerfDB.StackSpec output : recipe.outputs) {
+            for (NerfDB.StackSpec output : NerfItems.products(recipe)) {
                 if (!NerfRecipes.matchesItem(output, st)) continue;
                 if (!expanded && !hits.isEmpty()) {
                     hiddenDetails = true;
@@ -154,20 +154,20 @@ public final class TooltipHandler {
             NerfDB.RecipeEntry recipe = live.get(i);
             String title = NerfText.pick(recipe.title, recipe.titleEn);
             addSection(tip, "ExtraNerf · " + title, EnumChatFormatting.GOLD);
-            if (expanded)
+            if (!recipe.before.isEmpty())
                 addLabeledLine(tip, NerfText.tr("before") + ": " + NerfText.pick(recipe.before, recipe.beforeEn));
             String after = NerfText.pick(recipe.after, recipe.afterEn)
                 .replace("quantity shown on the item card", "the recipe quantity of");
             addLabeledLine(tip, NerfText.tr("after") + ": " + after);
             String note = NerfText.pick(recipe.note, recipe.noteEn);
             if (expanded && !note.isEmpty()) addIndented(tip, EnumChatFormatting.GRAY + note, "  • ");
-            if (!expanded && (!recipe.before.isEmpty() || !note.isEmpty())) hiddenDetails = true;
+            if (!expanded && !note.isEmpty()) hiddenDetails = true;
         }
         if (hiddenDetails) addMoreHint(tip);
     }
 
     private static void addMoreHint(List<String> tip) {
-        String hint = EnumChatFormatting.DARK_GRAY + NerfText.tr("more");
+        String hint = EnumChatFormatting.GRAY + NerfText.tr("more");
         if (!tip.contains(hint)) tip.add(hint);
     }
 
@@ -191,10 +191,10 @@ public final class TooltipHandler {
                 .trim();
             addIndented(
                 tip,
-                EnumChatFormatting.AQUA + label + (NerfText.chinese() ? "：" : ": ") + EnumChatFormatting.GRAY + value,
+                EnumChatFormatting.AQUA + label + (NerfText.chinese() ? "：" : ": ") + EnumChatFormatting.WHITE + value,
                 "  • ");
         } else {
-            addIndented(tip, EnumChatFormatting.GRAY + line.trim(), "  • ");
+            addIndented(tip, EnumChatFormatting.WHITE + line.trim(), "  • ");
         }
     }
 

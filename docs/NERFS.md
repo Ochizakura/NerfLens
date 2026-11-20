@@ -1,4 +1,5 @@
-<!-- Source: ExtraNerf 1.1.1, ba670257e49cd7b25153e63678e8ceb11f1cf7f1 -->
+<!-- Source: ExtraNerf 1.2.0, a210637b7d3d31dd68de129bf42d5e83294d6ce3 -->
+<!-- Runtime correction: BlastFurnaceNerf.java outputs Cast Iron for Ilmenite; the upstream table says Wrought Iron. -->
 # Complete gameplay change catalog
 
 This page lists every gameplay change implemented by the current source. It
@@ -34,6 +35,13 @@ breaking the dependency cycle between MV motors, Manasteel and mystical flowers.
 An electric Forge Hammer converts one Livingrock and 22 L of Lubricant into
 one Livingrock Plate in 150 seconds at 30 EU/t. This provides an LV route to
 the Diluted Mana Pool without requiring a Cutting Machine.
+
+## Botania structural glass
+
+Managlass, Alfglass and Bifrost Block count as HV glass in GregTech structures
+and recipes that accept HV glass by tier. The Alfheim trade still requires EV
+glass for Alfglass, so Managlass no longer qualifies. Recipes that call for a
+specific Botania glass, such as Mana Lens or Bifrost Block, still use it.
 
 ## Metal transmutation
 
@@ -182,12 +190,21 @@ Reduced dev without Everglades does not activate the dimension check.
 
 ## Questbook crafting tasks
 
+Quest rewards are claimed once per BetterQuesting party. The claiming player
+receives the reward; all current party members, including absent players, are
+marked as having claimed it. Extra Nerf forces `syncQuestRewards=true` in memory
+after each Quest Book configuration initialization, without rewriting the file.
+This uses BQ's existing claim semantics, not a new permanent team-wide ledger.
+
 All BetterQuesting Standard crafting tasks also accept their required items
 from the inventory without consuming them. Detection runs on inventory changes
 or with Detect and uses each task's existing quantity, OreDictionary and NBT
 matching rules. Observation Stations can detect items as for retrieval tasks.
 Crafting, smelting, anvil use and crafting statistics retain their original
 behavior where enabled by the task.
+
+**You Are Not Prepared!!!** grants no rewards. It keeps its existing Smeltery
+requirements and still leads to **You Are Now Prepared, Hopefully!**.
 
 Production and inventory progress are tracked separately. For each required
 item, the greater count applies instead of summing the two counts, and different
@@ -306,6 +323,19 @@ variants are removed. Silicon SG, Gallium Arsenide, Americium, circuit,
 gas amount, duration, energy, heat and output are retained. Cutting the
 finished boule into wafers is unchanged. One modification and seven
 removals are required by the startup audit.
+Helioflux Melting Core has its own version of the same Oganesson recipe. It
+uses one Radioactive Mineral Mix dust in place of the two Protactinium dust.
+
+## Kevlar bee requirement
+
+The LCR consumes one Kevlar drone for 9000 mB Liquid Crystal Kevlar on circuit
+1, or seven drones for 63000 mB on circuit 9. Only the active species must be
+Kevlar. Other genetics, inactive species and analysis state are unrestricted.
+Queens and princesses do not qualify. The Kevlar mutation requires a ZPM
+Replicator beneath the housing. Parents, mutation chance, recipe chemicals,
+outputs, time and power are retained. Recipe locking accepts different valid
+Kevlar genetics, including after saving and loading the lock. QFT routes and
+remelting are unchanged.
 
 ## High-tier hull insulation
 
@@ -375,8 +405,10 @@ not currently show a certificate-warning icon. LV and
 higher basic electric machines require both. From MV onwards they also require
 the paid certificates up to their tier, from MV through MAX. Energy and dynamo
 hatches from LV upwards require the same prerequisite chain, including multi-amp,
-laser and wireless variants. ULV electric machines, generators, boilers and other
-multiblock controllers are outside the direct processing gate. The unpowered Ice
+laser and wireless variants. Electric multiblock controllers pause intact when a
+connected energy or dynamo hatch lacks certification, including after a world
+reload. Recertification resumes the batch without a certificate-induced power failure.
+ULV machines and controllers without gated hatches remain outside the gate. The unpowered Ice
 Cream Machine is also exempt from certification. Right-clicking the certificate
 unlocks gated machines for all players and dimensions in the save, consuming it
 once in survival. Its NEI page
@@ -415,6 +447,8 @@ the supplied High Pressure Operator paper with an 8/10 passing threshold.
 
 GregTech's existing Tungstensteel is displayed as **TungTungTungstensteel**,
 including its processed forms. Existing item identities and recipes are preserved.
+The IV **TungTungTungstensteel Reinforced Borosilicate Glass Block** uses the
+finished material in its Fluid Solidifier recipe.
 A separate **Tungstensteel** material (`RawTungstenSteel`) is registered for the
 Brainrotter input, with separate items and molten fluid. The prototype Industrial
 Brainrotter uses the supplied 5×5×3 glass and fireproof Forestry log structure,
@@ -446,14 +480,19 @@ player limits and opening. The XML files are not rewritten.
 inherited Basic pool. Basic stays at one unit; Good changes from four to one.
 Selection weights are unchanged. A server-wide allowance permits at most
 one controller from lootbags per save, across players, dimensions, Fortune and
-restarts. There is no guaranteed first drop. Crafting, other reward systems and
+restarts. The first opening of a bag containing the controller guarantees one,
+using one of its normal reward slots. Unrelated bags do not spend the guarantee;
+saves with an already spent allowance do not receive another controller.
+After successful delivery and recording its outcome, only the opening player
+receives the chat message "One controller to connect them all."
+Crafting, other reward systems and
 existing inventories are not affected.
 
 Both server and client apply the quantity patch to their native tables. NEI keeps
 the controller listed and shows the last allowance received from the server, or
 an unknown state if none is available. Once exhausted, it displays a 0% effective
-chance. An available allowance is not a guarantee: ELB's random draws and separate
-player limits still apply. The displayed snapshot can become stale if another
+chance. An available allowance guarantees the first eligible opening, including
+when legacy per-player counts are already exhausted. The snapshot can become stale if another
 player claims the reward concurrently. Controller tooltips replace the native
 base percentages and player counter; other lootbag percentages are identified as
 single-draw weights before limits and retries, with a warning that native player
@@ -614,6 +653,10 @@ The shapeless Tool Station Slab recipe requires:
 - a TConstruct Tool Station;
 - any LV circuit registered as `circuitBasic`.
 
+### TConstruct Tool Forge
+
+Tool Forge recipes that use neither Aluminium nor Steel are removed.
+
 ### LV Circuit Assembler
 
 - The two MV circuits in the shaped crafting recipe become LV circuits.
@@ -642,7 +685,8 @@ The hand-crafting and Assembler recipes require a Magicnetized Manasteel Rod
 instead of a Magnetic Steel Rod. In an Arcane Workbench, place a Manasteel Rod
 between two Magnetic Steel Rods with a Solegnolia below it. The recipe costs
 10 Aer and 10 Ordo vis, keeps the Solegnolia in the workbench, and turns the
-Magnetic Steel Rods into Steel Rods.
+Magnetic Steel Rods into Steel Rods. The Arcane Crafting Terminal also keeps
+the Solegnolia in its grid.
 
 An HV Assembler can also produce one Magicnetized Manasteel Rod from one
 Manasteel Rod, two Magnetic Steel Rods, two Salis Mundus and 144 L Mercury.
@@ -739,6 +783,9 @@ preserved.
 
 ## Steel production
 
+The Electric Iron Bath is the main early industrial source of Steel. The
+Primitive Blast Furnace remains available for slow bootstrap production.
+
 ### Primitive Blast Furnace fuels
 
 Among Primitive Blast Furnace recipes that produce Steel, only recipes using
@@ -747,43 +794,33 @@ one of the following fuel families remain:
 - an ore-dictionary `fuelCoke` input;
 - a Railcraft Coal Coke Block.
 
-In the supported full pack this retains 7 Steel recipes and removes the other
-39. Primitive Blast Furnace recipes that do not produce Steel are outside this
-patch and remain untouched.
+Primitive Blast Furnace recipes that do not produce Steel are unchanged.
 
-### Electric Blast Furnace Steel routes
+### Industrial Steel routes
 
-The following 25-second MV, 1,000 K route is removed:
+The low-tier Iron and Cast Iron Steel recipes are removed from the Electric
+Blast Furnace and Alloy Blast Smelter. Steel Dust and Magnetic Steel Dust can be
+remelted at UHV recipe voltage in one tick, using circuit 1. Each dust returns
+one Steel ingot in the EBF or 144 L molten Steel in the Alloy Blast Smelter.
+These remelting recipes are also available with four amps of UV power.
 
-- 1 Iron dust;
-- 1 Any Carbon dust;
-- integrated circuit 11;
-- 1,000 L Oxygen;
-- output: 1 Steel ingot, 1 Ash dust and 250 L Carbon Dioxide.
+The late bulk recipe takes 50 Iron dust, one Any Carbon dust
+and circuit 2 at UHV recipe voltage, or 1,966,080 EU/t. It produces 50 Steel
+ingots in one tick in the Electric Blast Furnace, or 7,200 L molten Steel in
+one tick in the Alloy Blast Smelter. Four amps of UV power can run it.
 
-The Cast Iron route is changed to:
+The EBF Cast Iron recipe uses 3 Iron dust, 2 Any Carbon dust and circuit 1
+to produce 3 Cast Iron ingots in 20 seconds at MV and 1,000 K. The Arc Furnace
+Cast Iron route remains available. Normal Steel Bee dust can be processed
+through the Iron Bath, the slow Primitive Blast Furnace or late-game remelting.
 
-- 3 Cast Iron dust;
-- integrated circuit 11;
-- 6,000 L Oxygen;
-- output: 3 Steel ingots, 1 Ash dust and 2,500 L Carbon Dioxide;
-- 45 seconds at MV and 1,000 K.
+### Steel acquisition and recycling
 
-A new Cast Iron production route is added:
-
-- 3 Iron dust;
-- integrated circuit 1;
-- 2 Any Carbon dust;
-- output: 3 Cast Iron ingots;
-- 20 seconds at MV and 1,000 K.
-
-The bulk EV route remains unchanged: 50 Iron dust, one Any Carbon dust and
-circuit 2 produce 50 Steel ingots and one Ash dust in 150 seconds at 2,000 K.
-
-The Alloy Blast Smelter's old Iron-and-Coal route is also removed. Its Cast
-Iron route requires 3 dust and 6,000 L Oxygen, producing 432 L molten Steel in
-36 seconds at MV. As with GT++'s generated recipes, it produces the molten
-metal rather than the EBF's item and gas byproducts.
+The Steam Locomotive trade costs 17 Steel Plates and 32–40 Emeralds. Existing
+offer stock, regular locomotive recycling and the MobsInfo preview remain.
+Chainmail retains Macerator recovery into Steel Dust, but its Arc Furnace and
+Fluid Extractor recovery routes are removed. Mob drops, blacksmith trades and
+quest rewards remain available.
 
 ## Aluminium production
 
@@ -853,7 +890,7 @@ Vitriol.
 | --- | ---: | ---: |
 | Ilmenite dust input | 5 | 10 |
 | Carbon dust input | 1 | 2 |
-| Wrought Iron ingot output | 1 | 2 |
+| Cast Iron ingot output | 1 | 2 |
 | Rutile dust output | 3 | 6 |
 | Ilmenite Slag output | none | 1 |
 | Carbon Monoxide output | 1,000 L | 2,000 L |
@@ -943,12 +980,24 @@ For integrated circuit 24 Distillery recipes, oil input doubles from 12 L to
 | Medium Oil | 6 L |
 | Heavy Oil | 9 L |
 
+## Biomes O' Plenty Blood
+
+The Large Chemical Reactor can turn one Phial of Crystal Blood and 100 L of
+Tinkers' Construct Blood into 100 L of Biomes O' Plenty Blood. The recipe
+takes 20 seconds at HV (480 EU/t). This supplies enough blood for one batch
+of Soul Infused Medium without visiting the Nether.
+
 ## Plutonium decay
+
+### Small batch
+
+Chemical Reactors and Large Chemical Reactors consume 8 Plutonium ingots,
+1 tiny Uranium dust and 1,000 L Air to produce 7 Plutonium dust and 100 L Radon.
+The recipe takes 10 minutes at ULV.
 
 ### Circuit 8 route
 
-- 64 Plutonium ingots plus one Uranium dust produce 63 Plutonium dust instead
-  of 64.
+- 64 Plutonium ingots plus one Uranium dust produce 63 Plutonium dust.
 - The recipe still consumes 8,000 L Air and produces 800 L Radon in 75 seconds
   at HV.
 
@@ -1257,6 +1306,8 @@ M.M
   recipe takes 30 seconds at LuV and requires research from scanning a 64k ME
   Storage Cell for 60 seconds at HV. Scanning consumes the cell, including any contents.
 - Blank Pattern uses three Sunnarium plates instead of three Glowstone plates.
+- Universal Wireless Terminal assembly consumes an ME Processing Pattern
+  Terminal in addition to its wireless terminals.
 
 See [AE2 progression and Controller recipe](AE2_PROGRESSION.md).
 
@@ -1290,6 +1341,12 @@ These changes run only when Forestry is loaded.
 
 - Indium output decreases from 30 dust to 20.
 
+## Chicken jockey warp effect
+
+From 20 effective warp, Warp Theory can unleash up to 24 chicken jockeys around the affected player.
+They appear 8 to 16 blocks away wherever there is room on solid ground. The effect respects Peaceful
+difficulty and the `doMobSpawning` game rule.
+
 ## Hungry Axe (Extra Utilities Healing Axe)
 
 Extra Utilities' Healing Axe gives its holder one hunger point every 40 ticks while it is the selected hotbar
@@ -1308,11 +1365,127 @@ tag, so it also shows as one tag in advanced tooltips.
 `onLeftClickEntity` and the constructor only. `items.HungryAxe` uses the shared `FoodStats` NBT API rather than the
 client-only hunger setter. A Horizon-QA scenario exercises server-side player inventory ticks with the real axe.
 
-## Features not present in the current version
+## Electric Iron Bath
 
-For clarity, the active source does not contain:
+The Electric Iron Bath melts iron-family ingots and dusts into a persistent bath.
+Electricity heats the vessel and its contents. Coal, Charcoal and Coke supply
+carbon and impurities directly from the input bus. Calcite binds impurities into slag, which floats above the
+metal. Oxygen lowers the carbon content and continues flowing through the furnace after carbon is exhausted. Hot molten metal also slowly loses
+carbon while the furnace operates.
 
-- a shears crafting nerf;
-- removal of the TConstruct no-gas Aluminium route;
-- a small-batch circuit-9 Plutonium decay recipe;
-- configuration switches for individual changes.
+Cactus Coke and Sugar Coke each supply 25 carbon units and one impurity unit.
+
+Carbon units per Iron ingot determine the extracted fluid: Iron, Wrought Iron,
+Steel, Cast Iron, Pig Iron or Overcarburized Iron. Each product carries a fixed
+composition when tapped. The controller displays temperature, composition,
+contents and melting progress. NEI diagrams show the feed, molten layers and
+outputs for each product and carbon additive. Hovering shows composition ranges
+and additive quantities. NEI also lists cumulative Steel material balances.
+
+Wrought Iron, Cast Iron and Pig Iron have distinct ingots, dusts and molten
+fluids. Maceration and casting preserve each metal's identity.
+
+These metals are required by the alloy mixtures below. All ingredients and
+products in this table are dusts.
+
+| Product | Ingredients | Output |
+| --- | --- | ---: |
+| Stainless Steel | 6 Wrought Iron, 1 Nickel, 1 Manganese, 1 Chrome | 9 |
+| Stainless Steel | 4 Wrought Iron, 3 Invar, 1 Manganese, 1 Chrome | 9 |
+| Electrical Steel | 1 Steel, 1 Coal, 1 Raw Silicon, 1 Cast Iron | 3 |
+| Dark Steel | 1 Electrical Steel, 1 Coal, 1 Obsidian, 1 Pig Iron | 3 |
+| Dark Steel | 1 Steel, 4 Coal, 1 Raw Silicon, 3 Obsidian, 3 Pig Iron | 9 |
+
+Both Mixer maps use these mixtures. Hand mixing Electrical Steel and the
+Electrical Steel-based Dark Steel mixture requires the same ingredients and
+produces two dusts. The direct Dark Steel mixture provides an MV route using
+Pig Iron and ordinary Steel.
+
+Native alloy comb processing and electrolysis retain their original outputs.
+Electrical Steel, Dark Steel and Stainless Steel bee mutations require a block
+of the corresponding alloy. Dark Steel electrolysis returns Electrical Steel,
+Coal and Obsidian. End Steel returns Dark Steel, Tungsten and Endstone.
+The HV Stainless Steel loot reward,
+recyclable IV Dark Steel sword reward and Dark Steel recovery from the windmill
+shaft extruder shape are removed.
+
+Build a refractory chimney with exposed coils, Steel Frames and a raised Brass
+pipe conveyor. Start with Cupronickel coils. The structure occupies 13 x 12 x 7
+blocks when facing north. The controller sits on the side platform beside the
+buffered item input, Oxygen input and maintenance hatch. Place energy hatches
+at the chimney base and tapping hatches beside the coils on the narrow neck.
+The furnace supports up to eight energy hatches in the chimney base. Additional
+amperage at the same voltage scales throughput proportionally at the same energy
+cost per ingot. Higher voltage applies native EBF overclocks, including coil heat
+discounts and perfect overclocks. The highest connected hatch voltage determines
+the overclock tier. At the coil temperature ceiling, standby costs 30 EU/t
+with Cupronickel coils and doubles per coil upgrade. Heat loss falls linearly
+as the bath cools toward ambient temperature. Wrought Iron reinforcement
+reduces loss in proportion to the upgraded shell, up to 50% at full coverage.
+The number and tier of energy hatches do not increase standby costs. More power heats
+the bath faster. Active heating and melting lose 10% of their working energy.
+Reinforcement reduces that loss linearly to 5% at full coverage. When the
+controller is switched off, heating, intake and tapping stop. Unreplaced heat
+loss removes twice the heat needed for powered standby.
+
+Input buses queue metal within the tank volume limits. Coils share available
+heating power among queued items by count. Each metal ingot or dust completes
+one heating stage at 1,700 K, then joins the bath with its stored energy. The bath
+temperature adjusts when heated material joins it. Carbon additives enter directly.
+Cupronickel coils provide 512 ingots of bath capacity. The upper 1/32 of the tank
+is reserved for slag, leaving room for 496 ingots of metal, including queued
+charges. Total stored and queued material cannot exceed tank capacity. Each higher
+coil tier doubles capacity. Calcite binds impurities as space for slag becomes
+available. Items with identical item data and progress share one melting group. The
+controller displays the total melting item count and pages through groups, each
+with an item count and progress bar.
+
+The Calcite reserve holds 180 binding units with Cupronickel coils and gains 160
+per coil upgrade. Each dust supplies 20 units. Stored units survive a coil
+downgrade, with refilling paused until below the new limit. Oxygen is consumed
+from its input hatch through a shared per-tick limit.
+
+The controller draws resident metal and floating slag at their relative heights.
+Solidified contents retain their level and use a static texture. Molten portions
+use animated fluid textures and a gentle thermal glow. The temperature readout shows the current value and the coil limit. Electrical
+power restores bath heat toward that limit as incoming material changes its
+temperature. The limit starts at 2,200 K and rises by 900 K per coil tier. A fixed
+gradient spans the installed coils' temperature range, with a moving marker. The composition scale includes pure Iron
+and distinct colors for each alloy, with the active product named below its
+highlighted range. Hovering over a layer or gauge shows its exact quantities.
+
+Tapping hatches cover five equal vertical bands, from three to seven blocks
+above the controller. Each band spans 20% of the tank. Liquid slag in the band
+has priority over metal, even when only a small amount of slag remains. If the
+band contains no slag, the hatch can draw its liquid metal. The selected fluid
+can change on the next discharge as the layers move. Its GUI offers an
+editable amount and named modes: one discharge per redstone pulse, discharge
+every powered tick, always flowing, or stopped. Cooling solidifies the contents,
+and reheating melts
+them again. The controller retains its loaded bath when picked up and replaced.
+
+Each metal batch uses the composition at the start of its discharge. Removing
+the batch can move the remaining bath into another product range. The amount
+is limited by the available metal and carbon.
+
+At LuV, a Bath Measurement Hatch exposes exact bath measurements to
+OpenComputers. Craft it in a LuV Assembler from one LuV Machine Hull, two LuV
+Sensors and two LuV circuits. Install the hatch in the side platform and place
+an OpenComputers Adapter against it.
+
+The `iron_bath_measurement` component returns a snapshot through `read()`:
+
+```lua
+local bath = require("component").iron_bath_measurement
+local state, err = bath.read()
+assert(state, err)
+print(state.metalMb, state.carbonUnits, state.temperatureK)
+```
+
+Volume fields use mB: `metalMb`, `liquidMetalMb`, `slagMb`, `liquidSlagMb`,
+`capacityMb` and `pendingMetalMb`. `carbonUnits`, `impurityUnits` and
+`calciteUnits` use the furnace's material units. `temperatureK` uses kelvin.
+`meltingItems` gives the number of queued items. `melting` indicates whether
+the queue contains items. `chargeGroups` is a Lua array of tables, each with
+`count` and `progress` from zero to one. `product` names the current metal
+product. An unconnected hatch returns `nil` and an error.

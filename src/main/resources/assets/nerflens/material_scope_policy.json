@@ -1,0 +1,33 @@
+{
+  "localOnlyRecipes": [
+    "mutated-solder",
+    "pcb-wetware",
+    "pcb-bioware",
+    "purified-water-naquadah",
+    "purified-water-enriched-naquadah",
+    "purified-water-naquadria",
+    "sticky-piston",
+    "coated-board-1",
+    "coated-board-3",
+    "ilmenite-ebf",
+    "indium-concentrate",
+    "lubricant-lightoil",
+    "lubricant-oil",
+    "lubricant-heavyoil",
+    "europium-base",
+    "europium-promethium",
+    "americium-base",
+    "americium-promethium",
+    "nanoprocessor",
+    "quantumprocessor",
+    "iron-steel-transmutation",
+    "iron-bath-stainless-nickel",
+    "iron-bath-stainless-invar",
+    "iron-bath-electrical-steel",
+    "iron-bath-dark-steel-small",
+    "iron-bath-dark-steel-large",
+    "iron-bath-electrical-steel-crafting",
+    "iron-bath-dark-steel-crafting"
+  ],
+  "localOnlyEntries": ["tooltip-049"]
+}

@@ -72,7 +72,7 @@ public final class ExtraNerf111Checks {
         ItemStack value = stack(item, count); NBTTagCompound tag = new NBTTagCompound(); tag.setString("type", type);
         value.setTagCompound(tag); return value;
     }
-    private static final class Resources implements IResourceManager {
+    static final class Resources implements IResourceManager {
         final Map<String,String> files = new LinkedHashMap<>();
         public Set<String> getResourceDomains() { return new LinkedHashSet<>(Arrays.asList("gtnhextranerf","othermod")); }
         public IResource getResource(ResourceLocation location) throws IOException { return getAllResources(location).get(0); }
@@ -99,6 +99,15 @@ public final class ExtraNerf111Checks {
         List<String> zh = Arrays.asList("en_US", "zh_CN");
         String key = "item.gtnhextranerf.magicnetized_manasteel_rod.name", en = english(key);
         NerfTranslations.reloaded(resources, zh);
+        try (Reader reader = new InputStreamReader(ExtraNerf111Checks.class.getResourceAsStream(
+            "/assets/nerflens/translation_fallbacks_zh_CN.json"), StandardCharsets.UTF_8)) {
+            com.google.gson.JsonObject values = new com.google.gson.JsonParser().parse(reader).getAsJsonObject();
+            for (Map.Entry<String, com.google.gson.JsonElement> value : values.entrySet()) {
+                com.google.gson.JsonObject fallback = value.getValue().getAsJsonObject();
+                require(NerfTranslations.fallback(value.getKey(), fallback.get("english").getAsString())
+                    .equals(fallback.get("chinese").getAsString()), "Every shipped missing key translates: " + value.getKey());
+            }
+        }
         require(NerfTranslations.fallback(key, en).equals("魔法磁化魔力钢棒"), "Missing native Chinese key receives fallback");
         require(NerfTranslations.fallback("foreign.untranslated.key", "foreign.untranslated.key").equals("foreign.untranslated.key"), "Unowned keys remain untouched");
         require(NerfTranslations.fallback(key, "动态外部译名").equals("动态外部译名"), "Directly injected translations take precedence");
