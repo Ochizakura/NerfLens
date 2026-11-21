@@ -17,7 +17,7 @@ EXE = ".exe" if os.name == "nt" else ""
 ROOT.joinpath("classes").mkdir(parents=True, exist_ok=True)
 dependencies = [line.strip() for line in (WORK / "frame-check-classpath.txt").read_text(encoding="utf-8").splitlines()
                 if line.strip() and "jabel-javac-plugin" not in line]
-base = [ROOT / "classes", PROJECT / "build/libs/nerflens-0.2.0-dev.jar",
+base = [ROOT / "classes", PROJECT / "build/libs/nerflens-0.2.1-dev.jar",
         PROJECT / "build/rfg/recompiled_minecraft-1.7.10.jar", *dependencies]
 chromatic = MODS / "chromatictooltips-1.0.36-GTNH.jar"
 

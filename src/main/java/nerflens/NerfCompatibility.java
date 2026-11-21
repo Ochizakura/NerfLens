@@ -16,7 +16,8 @@ public final class NerfCompatibility {
         LEGACY("1.0.1", "/assets/nerflens/profiles/1.0.1.json"),
         V110("1.1.0", "/assets/nerflens/profiles/1.1.0.json"),
         V111("1.1.1", "/assets/nerflens/profiles/1.1.1.json"),
-        V120("1.2.0", "/assets/nerflens/nerfs.json"),
+        V120("1.2.0", "/assets/nerflens/profiles/1.2.0.json"),
+        V121("1.2.1", "/assets/nerflens/nerfs.json"),
         NONE("", "");
 
         public final String version;

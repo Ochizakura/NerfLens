@@ -1,5 +1,4 @@
-<!-- Source: ExtraNerf 1.2.0, a210637b7d3d31dd68de129bf42d5e83294d6ce3 -->
-<!-- Runtime correction: BlastFurnaceNerf.java outputs Cast Iron for Ilmenite; the upstream table says Wrought Iron. -->
+<!-- Source: ExtraNerf 1.2.1, d064eaa3cbd54ef15abd75985662bca81aa192d1 -->
 # Complete gameplay change catalog
 
 This page lists every gameplay change implemented by the current source. It
@@ -299,7 +298,8 @@ requires one Chemical Plant modification.
 ## Raw Bio Catalyst Medium
 
 All three Bacterial Vat variants producing Raw Bio Catalyst Medium consume
-one full Radioactive Mineral Mix dust as an additional item input. Existing
+one Small Pile of Radioactive Mineral Mix Dust (a quarter of a full dust) as
+an additional item input. Existing
 ingredients, cultures, glass and radiation requirements, time, voltage and
 native fluid amplification are retained. The item cost is per recipe run;
 fluid amplification does not multiply it. The startup audit requires three
@@ -328,14 +328,16 @@ uses one Radioactive Mineral Mix dust in place of the two Protactinium dust.
 
 ## Kevlar bee requirement
 
+Kevlar bees produce Kevlar Combs as their only specialty, with a base chance of 7.5%.
 The LCR consumes one Kevlar drone for 9000 mB Liquid Crystal Kevlar on circuit
-1, or seven drones for 63000 mB on circuit 9. Only the active species must be
-Kevlar. Other genetics, inactive species and analysis state are unrestricted.
-Queens and princesses do not qualify. The Kevlar mutation requires a ZPM
-Replicator beneath the housing. Parents, mutation chance, recipe chemicals,
-outputs, time and power are retained. Recipe locking accepts different valid
-Kevlar genetics, including after saving and loading the lock. QFT routes and
-remelting are unchanged.
+1, or seven drones for 63000 mB on circuit 9. The requirement checks the
+active species and caste, including when the recipe is locked.
+
+Naquadah replaces Infinity Catalyst as a parent of Kevlar bees. The mutation
+requires a ZPM Replicator beneath the housing.
+
+The QFT recipe for Radox Polymer and Molten Kevlar consumes 64 Kevlar Combs per
+batch.
 
 ## High-tier hull insulation
 
@@ -890,7 +892,7 @@ Vitriol.
 | --- | ---: | ---: |
 | Ilmenite dust input | 5 | 10 |
 | Carbon dust input | 1 | 2 |
-| Cast Iron ingot output | 1 | 2 |
+| Wrought Iron ingot output | 1 | 2 |
 | Rutile dust output | 3 | 6 |
 | Ilmenite Slag output | none | 1 |
 | Carbon Monoxide output | 1,000 L | 2,000 L |
@@ -1411,9 +1413,10 @@ shaft extruder shape are removed.
 
 Build a refractory chimney with exposed coils, Steel Frames and a raised Brass
 pipe conveyor. Start with Cupronickel coils. The structure occupies 13 x 12 x 7
-blocks when facing north. The controller sits on the side platform beside the
-buffered item input, Oxygen input and maintenance hatch. Place energy hatches
-at the chimney base and tapping hatches beside the coils on the narrow neck.
+blocks when facing north. Any steel casing on the controller platform can be
+replaced by an item input bus, oxygen input hatch or maintenance hatch.
+Place energy hatches at the chimney base and tapping hatches beside the coils
+on the narrow neck. Mobs cannot spawn on either refractory casing variant.
 The furnace supports up to eight energy hatches in the chimney base. Additional
 amperage at the same voltage scales throughput proportionally at the same energy
 cost per ingot. Higher voltage applies native EBF overclocks, including coil heat
@@ -1470,8 +1473,9 @@ is limited by the available metal and carbon.
 
 At LuV, a Bath Measurement Hatch exposes exact bath measurements to
 OpenComputers. Craft it in a LuV Assembler from one LuV Machine Hull, two LuV
-Sensors and two LuV circuits. Install the hatch in the side platform and place
-an OpenComputers Adapter against it.
+Sensors and two LuV circuits. Replace any refractory casing on the chimney with
+the hatch and place an OpenComputers Adapter against it. The bath accepts one
+Measurement Hatch.
 
 The `iron_bath_measurement` component returns a snapshot through `read()`:
 

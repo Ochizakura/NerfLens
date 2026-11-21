@@ -104,8 +104,11 @@ public final class ExtraNerf111Checks {
             com.google.gson.JsonObject values = new com.google.gson.JsonParser().parse(reader).getAsJsonObject();
             for (Map.Entry<String, com.google.gson.JsonElement> value : values.entrySet()) {
                 com.google.gson.JsonObject fallback = value.getValue().getAsJsonObject();
-                require(NerfTranslations.fallback(value.getKey(), fallback.get("english").getAsString())
-                    .equals(fallback.get("chinese").getAsString()), "Every shipped missing key translates: " + value.getKey());
+                String reference = fallback.get("english").getAsString();
+                boolean exists = resources.files.get("gtnhextranerf:lang/en_US.lang").contains(value.getKey() + "=" + reference);
+                String expected = exists ? fallback.get("chinese").getAsString() : reference;
+                require(NerfTranslations.fallback(value.getKey(), reference).equals(expected),
+                    "Legacy references translate; unavailable new keys remain unchanged: " + value.getKey());
             }
         }
         require(NerfTranslations.fallback(key, en).equals("魔法磁化魔力钢棒"), "Missing native Chinese key receives fallback");

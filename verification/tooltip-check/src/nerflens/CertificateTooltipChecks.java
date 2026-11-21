@@ -32,7 +32,7 @@ public final class CertificateTooltipChecks {
         GregTechAPI.METATILEENTITIES[20]=lv;GregTechAPI.METATILEENTITIES[21]=hv;GregTechAPI.METATILEENTITIES[22]=ulv;
         GregTechAPI.METATILEENTITIES[23]=new Object();GregTechAPI.METATILEENTITIES[24]=apiary;
         Item certificate = certificateItem();
-        for (String version:new String[]{"1.0.1","1.1.0","1.1.1","1.2.0"}) {
+        for (String version:new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1"}) {
             NerfDB.load(config,version);
             CertRules.Need need=CertRules.forStack(new ItemStack(machines,1,20));
             require(need!=null&&need.required.equals(Arrays.asList("steam","lv")),"Native classifier produces LV chain in "+version);

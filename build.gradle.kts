@@ -3,7 +3,7 @@ plugins {
     id("com.gtnewhorizons.gtnhconvention")
 }
 
-version = "0.2.0"
+version = "0.2.1"
 extra["modVersion"] = version.toString()
 
 tasks.withType<Jar>().configureEach {

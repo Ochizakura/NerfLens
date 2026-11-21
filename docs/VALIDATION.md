@@ -1,14 +1,15 @@
 # Release validation
 
-NerfLens 0.2.0 promotes the verified rc6 implementation and display data to a stable release. No gameplay or display algorithm changes are introduced by this promotion.
+NerfLens 0.2.1 supports the official ExtraNerf 1.2.1 source tag at `d064eaa3cbd54ef15abd75985662bca81aa192d1`. The installed official 1.2.1 JAR matches the upstream release SHA-256.
 
-- Offline Gradle build, Spotless and Checkstyle; 51 version/profile assertions and 16 certificate-state assertions.
-- Integration harness: 794 assertions with Chromatic Tooltips and 778 without it, including 74 native solar-oracle assertions, 46 display regressions, 207 catalog-scope assertions, 73 certificate-tooltip assertions and 10 comparison-card boundary checks per environment.
-- Four display profiles contain 582 version-scoped recipe records. Older profile resource bytes remain frozen.
-- Live GTNH 2.9.0 registry identities corrected 55 exact selectors and the TPV suffix. Eleven client-native solar routes were captured: seven affected routes match and four unchanged Silane routes remain excluded.
-- Production Mixin probes cover NEI frame/tooltip hooks, comparison footer hooks, Minecraft translation hooks and certificate registration. No forbidden world load/write calls are present.
-- Chinese fallback precedence, English-reference matching, resource reload, native generated material references and owner-version boundaries are checked.
+- Offline Gradle build, Spotless and Checkstyle passed; 62 version/profile assertions and 16 certificate-state assertions.
+- Integration harness passed 1,228 assertions with Chromatic Tooltips and 1,212 without it.
+- Five profiles contain 759 version-scoped recipe records. Four older profile files are frozen; the 1.2.1 profile contains 102 descriptions and 177 compare records.
+- Native solar snapshots run for both 1.2.0 and 1.2.1: 148 assertions cover seven affected and four unchanged routes, normal and normalized item counts, local acid frames and empty-cell exclusions.
+- New 1.2.1 routes and native language references pass 254 assertions, including Small Pile versus full dust, fluid amplification, 64 Comb identity/count, exact QFT output quantities, unchanged-route controls, cache invalidation, QFT controller tooltip, wireless-cover IDs, all 8 changed meanings and generated-owner bounds.
+- Certificate tooltips pass 91 assertions across all five profiles. Full catalog scope checks, previous 46 display regressions and 10 comparison-card boundary assertions remain included.
+- Production Mixin bytecode probes passed NEI RecipeWidget, GuiRecipe, Minecraft Locale/StringTranslate, certificate registration and the absence of forbidden world load/write calls.
 
-The optional harness uses real Minecraft/NEI interfaces with isolated GT/BW/Thaumcraft registries and a Forestry API fixture. The native solar fixture records the actual client item IDs, metadata, ore identities, quantities and container layouts. This does not claim automated processing of every machine in a real save.
+The harness uses real Minecraft/NEI/Chromatic APIs with isolated GregTech/Thaumcraft registries and a Forestry API fixture. Solar snapshots were captured from the earlier real GTNH client; new 1.2.1 selectors and language references were verified against official release source and installed native JAR bytecode. This does not claim a new real-world machine-processing run or visual acceptance of the updated JAR in the current save.
 
 Reproduction: build normally, generate the local classpath with `verification/export-classpath.gradle`, and follow `verification/README.md` with your own GTNH mods and JDKs.

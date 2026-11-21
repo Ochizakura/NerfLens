@@ -325,7 +325,10 @@
   },
   "gtnhextranerf.iron_bath.measurement.connection": {
     "english": "Optional side platform hatch. Connect an OpenComputers Adapter and call read()",
-    "chinese": "侧平台可选仓位；连接 OpenComputers 适配器并调用 read()"
+    "chinese": "侧平台可选仓位；连接 OpenComputers 适配器并调用 read()",
+    "variants": {
+      "Mount on the chimney, connect an OpenComputers Adapter and call read()": "安装在烟囱上，连接 OpenComputers 适配器并调用 read()"
+    }
   },
   "gtnhextranerf.iron_bath.energy_hatches": {
     "english": "Use between one and eight energy hatches",
@@ -341,23 +344,38 @@
   },
   "gtnhextranerf.iron_bath.tooltip.info.0": {
     "english": "Electrically heats a persistent iron and carbon bath",
-    "chinese": "使用电力加热可持久保存的铁碳浴槽"
+    "chinese": "使用电力加热可持久保存的铁碳浴槽",
+    "variants": {
+      "Adjust the carbon content of molten iron to make different alloys": "调整熔融铁的碳含量，制成不同合金"
+    }
   },
   "gtnhextranerf.iron_bath.tooltip.info.1": {
     "english": "Accepts ingots, dusts, carbon additives, Calcite and Oxygen",
-    "chinese": "接受锭、粉、碳添加剂、方解石和氧气"
+    "chinese": "接受锭、粉、碳添加剂、方解石和氧气",
+    "variants": {
+      "Use Calcite to bind impurities and oxygen to lower carbon": "用方解石结合杂质，用氧气降低碳含量"
+    }
   },
   "gtnhextranerf.iron_bath.tooltip.info.2": {
     "english": "Tapping height selects molten metal, slag or empty space",
-    "chinese": "浇铸仓高度决定抽取熔融金属、炉渣或空层"
+    "chinese": "浇铸仓高度决定抽取熔融金属、炉渣或空层",
+    "variants": {
+      "Metal settles below slag, and tap height determines what can flow out": "金属沉在矿渣下方；浇铸高度决定可流出的物质"
+    }
   },
   "gtnhextranerf.iron_bath.tooltip.info.3": {
     "english": "Cupronickel coils provide 512 ingots of bath capacity",
-    "chinese": "白铜线圈提供 512 锭的浴槽容量"
+    "chinese": "白铜线圈提供 512 锭的浴槽容量",
+    "variants": {
+      "More amps at the same voltage melt more items in parallel": "同电压增加安培数，可以并行熔化更多物品"
+    }
   },
   "gtnhextranerf.iron_bath.tooltip.info.4": {
     "english": "Higher coils double bath capacity",
-    "chinese": "每升一级线圈，浴槽容量翻倍"
+    "chinese": "每升一级线圈，浴槽容量翻倍",
+    "variants": {
+      "Higher voltage overclocks the bath, and better coils improve melting": "更高电压使铁浴超频，更好线圈改善熔化能力"
+    }
   },
   "gtnhextranerf.iron_bath.tooltip.info.5": {
     "english": "Queued metal reserves tank space and shares the available heating power",
@@ -397,7 +415,10 @@
   },
   "gtnhextranerf.iron_bath.tooltip.structure.chimney_base": {
     "english": "Chimney base",
-    "chinese": "烟囱底座"
+    "chinese": "烟囱底座",
+    "variants": {
+      "Bottom layer under the chimney": "烟囱下方的最底层"
+    }
   },
   "gtnhextranerf.iron_bath.tooltip.structure.buffered_inputs": {
     "english": "Side platform, buffered inputs",
@@ -413,26 +434,77 @@
   },
   "gtnhextranerf.iron_bath.tooltip.structure.tap_walls": {
     "english": "Narrow chimney walls beside coils",
-    "chinese": "线圈旁的狭窄烟囱壁"
+    "chinese": "线圈旁的狭窄烟囱壁",
+    "variants": {
+      "1 or more beside the coils, with all five heights shown in NEI": "线圈旁至少 1 个；NEI 展示全部五种安装高度"
+    }
   },
   "Material.wroughtiron": {
     "english": "Wrought Iron",
     "chinese": "锻铁",
-    "generatedExtraNerfVersion": "1.2.0"
+    "generatedExtraNerfVersion": "1.2.0",
+    "generatedExtraNerfVersions": [
+      "1.2.0",
+      "1.2.1"
+    ]
   },
   "Material.overcarburizediron": {
     "english": "Overcarburized Iron",
     "chinese": "过渗碳铁",
-    "generatedExtraNerfVersion": "1.2.0"
+    "generatedExtraNerfVersion": "1.2.0",
+    "generatedExtraNerfVersions": [
+      "1.2.0",
+      "1.2.1"
+    ]
   },
   "Material.slag": {
     "english": "Slag",
     "chinese": "炉渣",
-    "generatedExtraNerfVersion": "1.2.0"
+    "generatedExtraNerfVersion": "1.2.0",
+    "generatedExtraNerfVersions": [
+      "1.2.0",
+      "1.2.1"
+    ]
   },
   "Material.tungstensteel": {
     "english": "TungTungTungstensteel",
     "chinese": "钨钨钨钢",
-    "generatedExtraNerfVersion": "1.2.0"
+    "generatedExtraNerfVersion": "1.2.0",
+    "generatedExtraNerfVersions": [
+      "1.2.0",
+      "1.2.1"
+    ]
+  },
+  "gtnhextranerf.iron_bath.measurement_hatches": {
+    "english": "Use at most one Bath Measurement Hatch",
+    "chinese": "最多安装 1 个铁浴测量仓"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.coils": {
+    "english": "50 matching heating coils",
+    "chinese": "50 个同种加热线圈"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.coil_layers": {
+    "english": "Chimney base and the five exposed coil layers",
+    "chinese": "烟囱底座和五层外露线圈"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.platform_hatch": {
+    "english": "Controller platform hatch",
+    "chinese": "控制器平台端口"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.platform_casings": {
+    "english": "Any Steel Machine Casing on the controller platform",
+    "chinese": "控制器平台上的任意钢机械方块位置"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.platform_requirements": {
+    "english": "Requires 1+ Input Buses, 1+ Fluid Input Hatches and exactly 1 Maintenance Hatch",
+    "chinese": "需要至少 1 个输入总线、至少 1 个流体输入仓，且恰好 1 个维护仓"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.tap_name": {
+    "english": "Bath Tapping Hatch",
+    "chinese": "铁浴浇铸仓"
+  },
+  "gtnhextranerf.iron_bath.tooltip.structure.measurement": {
+    "english": "Optional (LuV) in place of any refractory casing on the chimney",
+    "chinese": "可选（LuV）：替换烟囱上的任意耐火外壳"
   }
 }

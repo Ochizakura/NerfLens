@@ -43,6 +43,8 @@ public final class NerfTranslations {
         String english;
         String chinese;
         String generatedExtraNerfVersion;
+        List<String> generatedExtraNerfVersions = Collections.emptyList();
+        Map<String, String> variants = Collections.emptyMap();
     }
 
     private static final class State {
@@ -124,9 +126,7 @@ public final class NerfTranslations {
         int missing = 0, supplied = 0, unavailable = 0;
         for (Map.Entry<String, Fallback> value : FALLBACKS.entrySet()) {
             if (suppliedKeys.contains(value.getKey())) supplied++;
-            else if (NUMERIC_FORMAT.matcher(value.getValue().english)
-                .replaceAll("%$1s")
-                .equals(english.get(value.getKey()))) missing++;
+            else if (referenceTranslation(value.getValue(), english.get(value.getKey())) != null) missing++;
             else unavailable++;
         }
         FMLLog.info(
@@ -143,15 +143,28 @@ public final class NerfTranslations {
         String english = current.english.get(key);
         // GT registers these material names dynamically. The returned native English is the reference;
         // only the verified owner version may use it when no resource-file English exists.
-        if (english == null && fallback.generatedExtraNerfVersion != null
-            && fallback.generatedExtraNerfVersion.equals(NerfDB.profileVersion())
+        if (english == null && (NerfDB.profileVersion()
+            .equals(fallback.generatedExtraNerfVersion)
+            || fallback.generatedExtraNerfVersions.contains(NerfDB.profileVersion()))
             && fallback.english.equals(original)) return fallback.chinese;
-        if (!NUMERIC_FORMAT.matcher(fallback.english)
-            .replaceAll("%$1s")
-            .equals(english)) return original;
+        String translated = referenceTranslation(fallback, english);
+        if (translated == null) return original;
         // A translator can also inject text directly. Any result different from English/the unresolved key wins.
         if (!key.equals(original) && !original.equals(current.english.get(key))) return original;
-        return fallback.chinese;
+        return translated;
+    }
+
+    /** Changed upstream text selects its verified meaning while older English keeps its original translation. */
+    private static String referenceTranslation(Fallback fallback, String english) {
+        if (english == null) return null;
+        if (NUMERIC_FORMAT.matcher(fallback.english)
+            .replaceAll("%$1s")
+            .equals(english)) return fallback.chinese;
+        for (Map.Entry<String, String> variant : fallback.variants.entrySet())
+            if (NUMERIC_FORMAT.matcher(variant.getKey())
+                .replaceAll("%$1s")
+                .equals(english)) return variant.getValue();
+        return null;
     }
 
     public static boolean supplied(String key) {

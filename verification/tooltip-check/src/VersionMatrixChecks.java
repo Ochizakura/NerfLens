@@ -60,14 +60,14 @@ public final class VersionMatrixChecks {
         IRecipeHandler galliumRecipe = handler("gt.recipe.electrolyzer",new ItemStack(sphalerite,2,0),new ItemStack(gallium));
         Item raw = item("gtnhextranerf:raw_machine_casing");
         ItemStack mv = items.get("Electric_Motor_MV");
-        for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0"}) {
+        for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1"}) {
             NerfDB.load(directory,version);
             require(NerfDB.profileVersion().equals(version),"Correct loaded version " + version);
             require(matched(galliumRecipe,"sphalerite-electrolyzer") == version.equals("1.0.1"),"Same handler cache follows Gallium version changes");
-            require(recipe("metal-duplication") == (version.equals("1.1.1")||version.equals("1.2.0")),"Metal transmutation starts at 1.1.1");
-            require(recipe("livingrock-plate-hammer") == (version.equals("1.1.1")||version.equals("1.2.0")),"Hammer route starts at 1.1.1");
-            require(recipe("universal-wireless-terminal") == version.equals("1.2.0"),"Wireless terminal change is 1.2.0 only");
-            require(recipe("iron-bath-stainless-nickel") == version.equals("1.2.0"),"Iron Bath alloy data is 1.2.0 only");
+            require(recipe("metal-duplication") == (version.equals("1.1.1")||(version.equals("1.2.0") || version.equals("1.2.1"))),"Metal transmutation starts at 1.1.1");
+            require(recipe("livingrock-plate-hammer") == (version.equals("1.1.1")||(version.equals("1.2.0") || version.equals("1.2.1"))),"Hammer route starts at 1.1.1");
+            require(recipe("universal-wireless-terminal") == (version.equals("1.2.0") || version.equals("1.2.1")),"Wireless terminal change is 1.2.0 and newer");
+            require(recipe("iron-bath-stainless-nickel") == (version.equals("1.2.0") || version.equals("1.2.1")),"Iron Bath alloy data is 1.2.0 and newer");
             require(NerfItems.affected(mv) == !version.equals("1.0.1"),"Motor global frame follows version");
             require(NerfItems.affected(new ItemStack(raw,1,9)) == !version.equals("1.0.1"),"UEV raw casing material frame follows version");
             require(NerfItems.affected(new ItemStack(raw,1,8)),"UHV raw casing retains changed material frame");
@@ -81,7 +81,7 @@ public final class VersionMatrixChecks {
         Loader loader = Loader.instance();Field index = Loader.class.getDeclaredField("namedMods");index.setAccessible(true);
         Object original = index.get(loader);
         try {
-            for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0"}) {
+            for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1"}) {
                 ModMetadata metadata = new ModMetadata();metadata.modId="gtnhextranerf";metadata.version=version;
                 Map<String,ModContainer> mods = new HashMap<>();mods.put("gtnhextranerf",new DummyModContainer(metadata));index.set(loader,mods);
                 NerfDB.load(directory);

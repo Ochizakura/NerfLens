@@ -64,7 +64,8 @@ public final class NativeSolarOracleChecks {
         Map<String,ItemStack> originalItems=new HashMap<>(gtItems);
         JsonObject snapshot;
         try(Reader reader=new InputStreamReader(new FileInputStream("official/native_solar_oracle.json"),"UTF-8")){snapshot=new JsonParser().parse(reader).getAsJsonObject();}
-        NerfDB.load(config,"1.2.0");
+        for(String profile:new String[]{"1.2.0","1.2.1"}) {
+        NerfDB.load(config,profile);
         gtFluids.put("Hydrogen:gas",fluid("hydrogen"));gtFluids.put("Trichlorosilane:fluid",fluid("trichlorosilane"));
         gtFluids.put("HydrochloricAcid:fluid",fluid("hydrochloricacid_gt5u"));gtFluids.put("SiliconTetrachloride:fluid",fluid("silicontetrachloride"));
         JsonArray rows=snapshot.getAsJsonArray("solarRecipes");require(rows.size()==11,"Captured all eleven native solar-grade silicon routes");
@@ -94,6 +95,7 @@ public final class NativeSolarOracleChecks {
         require(changed==14&&unchanged==8,"Seven changed and four unchanged native routes checked in both count modes");
         require(OreDictionary.getOres("dustSiliconSG",false).isEmpty(),"Tests do not fabricate the incorrect ore name");
         require(!OreDictionary.getOres("dustSiliconSolarGrade",false).isEmpty(),"Captured real ore name exists in the scenario registry");
+        }
         NerfDB.load(config,"1.1.1");gtFluids.putAll(original);gtItems.putAll(originalItems);
         System.out.println("PASS: live-captured native solar oracle "+assertions+" assertions");return assertions;
     }

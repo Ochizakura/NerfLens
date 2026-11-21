@@ -8,6 +8,7 @@ One NerfLens JAR supports the following verified display profiles in GTNH 2.9.0,
 | 1.1.0 | 91 | 140 | Automatic |
 | 1.1.1 | 91 | 143 | Automatic |
 | 1.2.0 | 100 | 176 | Automatic |
+| 1.2.1 | 102 | 177 | Automatic |
 
 The ExtraNerf version comes from Forge's loaded mod metadata. Leading `v` and build metadata such as `1.1.1+build.42` are recognized. Unverified prereleases, unrecognized releases and an absent ExtraNerf do not receive a guessed built-in profile. User-provided display records remain available.
 
@@ -17,6 +18,10 @@ The 1.2.0 profile adds the Electric Iron Bath, its Wrought/Cast/Pig Iron alloy f
 
 Global material frames follow the selected profile. Changing the database invalidates recipe matches and item classification, including when the same NEI handler is reused. Output-only changes retain their local recipe frames; the legacy high-tier casing finishing step does not create a global material frame.
 
+The 1.2.0 profile is frozen byte-for-byte in `profiles/1.2.0.json`. The independent 1.2.1 profile changes the Bacterial Vat's added full Mineral Mix dust to one Small Pile (1/4 full dust), adds 64 Kevlar Combs to the verified QFT plastics route and updates Kevlar parent/specialty, Iron Bath structure and wireless-cover certification descriptions. Exact QFT materials and all four output quantities scope the new match; only the intended plastics receive local output frames. Other polymer routes and unchanged byproducts do not inherit those frames.
+
+Changed Iron Bath language keys keep both verified English meanings. Reference text selects the corresponding translation, so 1.2.1 chimney-placement text does not replace 1.2.0 side-platform wording. Native, resource-pack and dynamic translations retain priority. Generated material names accept only the verified 1.2.0/1.2.1 owners and unchanged native English.
+
 ## User data
 
 `config/nerflens/user_nerfs.json` replaces built-in records by ID. An optional top-level `extraNerfVersion` restricts that file to a specific version; an unversioned file applies to all profiles.
@@ -24,7 +29,7 @@ Global material frames follow the selected profile. Changing the database invali
 ```json
 {
   "schemaVersion": 3,
-  "extraNerfVersion": "1.2.0",
+  "extraNerfVersion": "1.2.1",
   "entries": [],
   "recipes": []
 }
@@ -32,7 +37,7 @@ Global material frames follow the selected profile. Changing the database invali
 
 ## Certification tooltips
 
-NerfLens 0.2.0 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain. ExtraNerf 1.2.0 multiblocks inherit the installed classifier's energy/dynamo-hatch tier rule, while the Industrial Apiary remains HV and the Ice Cream Machine remains exempt.
+NerfLens 0.2.1 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain. ExtraNerf 1.2.0/1.2.1 multiblocks inherit the installed classifier's energy/dynamo-hatch tier rule, while the Industrial Apiary remains HV and the Ice Cream Machine remains exempt.
 
 Singleplayer reads only an already-loaded record in the integrated server's MapStorage, on its server thread, every half second. It serializes that existing record into a temporary NBT object without loading, creating, saving or dirtying world data. World/server changes invalidate the snapshot. Remote or unavailable state is shown as unknown.
 
