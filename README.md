@@ -1,6 +1,6 @@
 # NerfLens
 
-**NerfLens 0.2.1 正式版**，用于 GregTech: New Horizons 2.9.0 的客户端显示辅助模组。作者：ochizakura。
+**NerfLens 0.2.1 正式版**，用于 GregTech: New Horizons 2.9.0 / 2.9.1 的客户端显示辅助模组。作者：ochizakura。
 
 在物品提示与 NEI 配方页中显示 ExtraNerf 的玩法改动、投入与产物对照、材料标记以及认证状态。
 
@@ -30,7 +30,7 @@ Forge 随游戏加载 JAR。服务器无需安装 NerfLens。
 
 ## 兼容范围
 
-环境：GTNH 2.9.0 / Minecraft 1.7.10 / Forge 1614。NEI 2.8.171-GTNH；Chromatic Tooltips 1.0.36-GTNH 可选。
+环境：GTNH 2.9.0 / 2.9.1，Minecraft 1.7.10 / Forge 1614。已核对 NEI 2.8.171 / 2.8.175 和 Chromatic Tooltips 1.0.36 / 1.0.38（可选）的显示接口。
 
 | ExtraNerf | 提示记录 | 配方对照 |
 | --- | ---: | ---: |
@@ -48,6 +48,8 @@ Forge 随游戏加载 JAR。服务器无需安装 NerfLens。
 
 NerfLens 提供显示辅助。机器行为、加工、考试、评分与认证规则由 ExtraNerf 控制；认证状态读取不创建或保存世界记录。
 
+维护和发布前参照[开发与发布注意表](docs/MAINTENANCE_RULES.md)。表中的验收要求需按每次修改的实际环境执行。
+
 ## 构建与验证
 
 使用 Java 25 运行 Gradle，并提供 GTNH 构建约定需要的 Java 8/17/21/25 工具链：
@@ -60,7 +62,7 @@ Unix 使用 `./gradlew`。离线构建需要已缓存依赖。源码 ZIP 无需 
 
 ## English
 
-NerfLens 0.2.1 is a stable client-side display companion for ExtraNerf in GTNH 2.9.0. Use the runtime JAR from the update package; published versions are listed under [Releases](https://github.com/Ochizakura/NerfLens/releases), replace older NerfLens JARs with the client closed, and keep one version in the active instance's mods directory.
+NerfLens 0.2.1 is a stable client-side display companion for ExtraNerf with verified display APIs in GTNH 2.9.0 and 2.9.1. Use the runtime JAR from the update package; published versions are listed under [Releases](https://github.com/Ochizakura/NerfLens/releases), replace older NerfLens JARs with the client closed, and keep one version in the active instance's mods directory.
 
 Hover items for changes and certificate status; hold Shift for details. NEI recipe pages show changed-input frames, affected-output frames and comparisons. One JAR selects ExtraNerf 1.0.1/1.1.0/1.1.1/1.2.0/1.2.1 data automatically. Existing translations take precedence over fallbacks. Unknown versions use custom display data only.
 

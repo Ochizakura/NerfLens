@@ -13,3 +13,7 @@ NerfLens 0.2.1 supports the official ExtraNerf 1.2.1 source tag at `d064eaa3cbd5
 The harness uses real Minecraft/NEI/Chromatic APIs with isolated GregTech/Thaumcraft registries and a Forestry API fixture. Solar snapshots were captured from the earlier real GTNH client; new 1.2.1 selectors and language references were verified against official release source and installed native JAR bytecode. This does not claim a new real-world machine-processing run or visual acceptance of the updated JAR in the current save.
 
 Reproduction: build normally, generate the local classpath with `verification/export-classpath.gradle`, and follow `verification/README.md` with your own GTNH mods and JDKs.
+
+## GTNH 2.9.1 interface check (2026-11-22)
+
+The same 0.2.1 runtime JAR was checked against NEI 2.8.175-GTNH development/native APIs and installed Chromatic Tooltips 1.0.38-GTNH. The harness passed 1,228 / 1,212 assertions and all five production Mixin probes. These results cover display interfaces with isolated registries and existing solar snapshots; the upgraded real save was not launched by this check. No runtime code or bundled display data changed for this documentation and harness update.

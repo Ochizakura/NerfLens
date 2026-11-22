@@ -1,6 +1,6 @@
 # Version compatibility
 
-One NerfLens JAR supports the following verified display profiles in GTNH 2.9.0, Minecraft 1.7.10 / Forge 1614:
+One NerfLens JAR supports the following verified display profiles in GTNH 2.9.0 and 2.9.1, Minecraft 1.7.10 / Forge 1614:
 
 | ExtraNerf | Descriptions | Compare records | Selection |
 | --- | ---: | ---: | --- |
@@ -48,3 +48,5 @@ Default tooltips show ready or missing requirements. Shift shows each prerequisi
 The release has deterministic profile checks, actual Forge metadata checks, real Minecraft/NEI/Chromatic API checks with isolated GregTech and Thaumcraft registries, and production Mixin bytecode checks. This does not claim three complete game runs or upstream processing tests in real saves.
 
 In-game steam-consumption readouts are outside the automated verification scope. Check machine readouts and actual consumption in the running game when evaluating steam usage.
+
+GTNH 2.9.1 display-interface verification uses the official NEI 2.8.175-GTNH development API and installed native JAR, Chromatic Tooltips 1.0.38-GTNH, and production Mixin bytecode hooks. It does not substitute for loading the upgraded existing save or processing machines in it. Maintenance requirements are in [MAINTENANCE_RULES.md](MAINTENANCE_RULES.md).

@@ -20,7 +20,11 @@ ROOT.joinpath("classes").mkdir(exist_ok=True)
 with zipfile.ZipFile(PROJECT / "build/libs/nerflens-0.2.1.jar") as jar:
     for name in ("TooltipHandler", "NerfLensMod", "CertTracker"):
         (ROOT / (name + ".class")).write_bytes(jar.read("nerflens/" + name + ".class"))
-with zipfile.ZipFile(MODS / "NotEnoughItems-2.8.171-GTNH.jar") as jar:
+nei_candidates = sorted(MODS.glob("NotEnoughItems-*.jar"))
+if len(nei_candidates) != 1:
+    raise RuntimeError("Expected exactly one installed NEI JAR")
+nei = nei_candidates[0]
+with zipfile.ZipFile(nei) as jar:
     (ROOT / "RecipeWidget.class").write_bytes(jar.read("codechicken/nei/recipe/widget/RecipeWidget.class"))
     (ROOT / "GuiRecipe.class").write_bytes(jar.read("codechicken/nei/recipe/GuiRecipe.class"))
 with zipfile.ZipFile(PROJECT / "build/rfg/srg_merged_minecraft.jar") as jar:
@@ -34,7 +38,7 @@ with zipfile.ZipFile(PROJECT / "build/rfg/srg_merged_minecraft.jar") as jar:
 dependencies = [line.strip() for line in (WORK / "frame-check-classpath.txt").read_text(encoding="utf-8").splitlines()
                 if line.strip() and not any(key in line for key in ("jabel-javac-plugin", "NotEnoughItems-", "patchedMc"))]
 classpath = os.pathsep.join(map(str, [ROOT / "classes", ROOT, PROJECT / "build/libs/nerflens-0.2.1.jar",
-    MODS / "NotEnoughItems-2.8.171-GTNH.jar", PROJECT / "build/rfg/srg_merged_minecraft.jar",
+    nei, PROJECT / "build/rfg/srg_merged_minecraft.jar",
     PROJECT / "build/rfg/recompiled_minecraft-1.7.10.jar", *dependencies]))
 
 def run(command, log):

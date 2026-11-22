@@ -17,9 +17,15 @@ EXE = ".exe" if os.name == "nt" else ""
 ROOT.joinpath("classes").mkdir(parents=True, exist_ok=True)
 dependencies = [line.strip() for line in (WORK / "frame-check-classpath.txt").read_text(encoding="utf-8").splitlines()
                 if line.strip() and "jabel-javac-plugin" not in line]
+nei_override = os.environ.get("NERFLENS_TEST_NEI_DEV")
+if nei_override:
+    dependencies = [str(Path(nei_override)), *[line for line in dependencies if "NotEnoughItems-" not in Path(line).name]]
 base = [ROOT / "classes", PROJECT / "build/libs/nerflens-0.2.1-dev.jar",
         PROJECT / "build/rfg/recompiled_minecraft-1.7.10.jar", *dependencies]
-chromatic = MODS / "chromatictooltips-1.0.36-GTNH.jar"
+chromatic_candidates = sorted(MODS.glob("chromatictooltips-*.jar"))
+if len(chromatic_candidates) != 1:
+    raise RuntimeError("Expected exactly one installed Chromatic Tooltips JAR")
+chromatic = chromatic_candidates[0]
 
 db = json.loads((PROJECT / "src/main/resources/assets/nerflens/nerfs.json").read_text(encoding="utf-8"))
 keys = set()

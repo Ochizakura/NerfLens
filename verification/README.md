@@ -13,5 +13,7 @@ Run these scripts from the source root:
 
 The harness uses your own Minecraft/NEI/Chromatic dependency artifacts and isolated GregTech/Thaumcraft registries.
 The two runtime modes exercise the optional Chromatic bridge. It does not run a real save or validate full machine processing.
+The harness discovers the single installed NEI/Chromatic JAR rather than assuming a filename version.
+NERFLENS_TEST_NEI_DEV optionally selects a matching NEI development JAR when checking another GTNH release.
 The compact language fixture contains only the reference strings used by the shipped fallback records.
 Generated classpath files, classes, logs and test configs are local output, not release source.
