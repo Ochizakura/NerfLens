@@ -60,20 +60,20 @@ public final class VersionMatrixChecks {
         IRecipeHandler galliumRecipe = handler("gt.recipe.electrolyzer",new ItemStack(sphalerite,2,0),new ItemStack(gallium));
         Item raw = item("gtnhextranerf:raw_machine_casing");
         ItemStack mv = items.get("Electric_Motor_MV");
-        for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1"}) {
+        for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1","1.3.0"}) {
             NerfDB.load(directory,version);
             require(NerfDB.profileVersion().equals(version),"Correct loaded version " + version);
             require(matched(galliumRecipe,"sphalerite-electrolyzer") == version.equals("1.0.1"),"Same handler cache follows Gallium version changes");
-            require(recipe("metal-duplication") == (version.equals("1.1.1")||(version.equals("1.2.0") || version.equals("1.2.1"))),"Metal transmutation starts at 1.1.1");
-            require(recipe("livingrock-plate-hammer") == (version.equals("1.1.1")||(version.equals("1.2.0") || version.equals("1.2.1"))),"Hammer route starts at 1.1.1");
-            require(recipe("universal-wireless-terminal") == (version.equals("1.2.0") || version.equals("1.2.1")),"Wireless terminal change is 1.2.0 and newer");
-            require(recipe("iron-bath-stainless-nickel") == (version.equals("1.2.0") || version.equals("1.2.1")),"Iron Bath alloy data is 1.2.0 and newer");
+            require(recipe("metal-duplication") == (version.equals("1.1.1")||version.equals("1.2.0") || version.equals("1.2.1") || version.equals("1.3.0")),"Metal transmutation starts at 1.1.1");
+            require(recipe("livingrock-plate-hammer") == (version.equals("1.1.1")||version.equals("1.2.0") || version.equals("1.2.1") || version.equals("1.3.0")),"Hammer route starts at 1.1.1");
+            require(recipe("universal-wireless-terminal") == (version.equals("1.2.0") || version.equals("1.2.1") || version.equals("1.3.0")),"Wireless terminal change is 1.2.0 and newer");
+            require(recipe("iron-bath-stainless-nickel") == (version.equals("1.2.0") || version.equals("1.2.1") || version.equals("1.3.0")),"Iron Bath alloy data is 1.2.0 and newer");
             require(NerfItems.affected(mv) == !version.equals("1.0.1"),"Motor global frame follows version");
             require(NerfItems.affected(new ItemStack(raw,1,9)) == !version.equals("1.0.1"),"UEV raw casing material frame follows version");
             require(NerfItems.affected(new ItemStack(raw,1,8)),"UHV raw casing retains changed material frame");
             require(!NerfItems.affected(new ItemStack(raw,1,13)),"MAX placeholder has no invented material frame");
         }
-        NerfDB.load(directory,"1.3.0");
+        NerfDB.load(directory,"1.4.0");
         require(NerfDB.entries().isEmpty() && NerfDB.recipes().isEmpty(),"Unknown future version does not claim known rules");
         require(NerfRecipes.match(galliumRecipe,0).isEmpty(),"Unknown-version cache drops old matches");
         require(!NerfItems.affected(mv),"Unknown version does not retain a cached global frame");
@@ -81,7 +81,7 @@ public final class VersionMatrixChecks {
         Loader loader = Loader.instance();Field index = Loader.class.getDeclaredField("namedMods");index.setAccessible(true);
         Object original = index.get(loader);
         try {
-            for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1"}) {
+            for (String version : new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1","1.3.0"}) {
                 ModMetadata metadata = new ModMetadata();metadata.modId="gtnhextranerf";metadata.version=version;
                 Map<String,ModContainer> mods = new HashMap<>();mods.put("gtnhextranerf",new DummyModContainer(metadata));index.set(loader,mods);
                 NerfDB.load(directory);
@@ -96,7 +96,7 @@ public final class VersionMatrixChecks {
         require(NerfDB.entries().stream().noneMatch(e -> e.id.equals("matrix-custom")),"Versioned override does not leak into old version");
         NerfDB.load(directory,"1.1.1");
         require(NerfDB.entries().stream().anyMatch(e -> e.id.equals("matrix-custom")),"Versioned override applies to matching version");
-        Files.write(override,custom.replace("\"extraNerfVersion\":\"1.1.1\",","").getBytes(StandardCharsets.UTF_8));NerfDB.load(directory,"1.3.0");
+        Files.write(override,custom.replace("\"extraNerfVersion\":\"1.1.1\",","").getBytes(StandardCharsets.UTF_8));NerfDB.load(directory,"1.4.0");
         require(NerfDB.entries().stream().anyMatch(e -> e.id.equals("matrix-custom")),"Unversioned custom data remains available in unknown version");
         Files.delete(override);NerfDB.load(normalConfig,"1.1.1");
         System.out.println("PASS: version matrix " + assertions + " assertions");return assertions;

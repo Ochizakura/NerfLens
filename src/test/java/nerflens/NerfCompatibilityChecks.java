@@ -51,8 +51,15 @@ public final class NerfCompatibilityChecks {
         require(
             NerfCompatibility.profile("1.1.1-beta") == NerfCompatibility.Profile.NONE,
             "unverified prerelease stays unselected");
+        require(NerfCompatibility.profile("1.3.0") == NerfCompatibility.Profile.V130, "1.3.0 profile selection");
         require(
-            NerfCompatibility.profile("1.3.0") == NerfCompatibility.Profile.NONE,
+            NerfCompatibility.profile("v1.3.0+build.7") == NerfCompatibility.Profile.V130,
+            "1.3.0 build metadata selection");
+        require(
+            NerfCompatibility.profile("1.3.0-rc1") == NerfCompatibility.Profile.NONE,
+            "unverified 1.3.0 prerelease stays unselected");
+        require(
+            NerfCompatibility.profile("1.4.0") == NerfCompatibility.Profile.NONE,
             "future version stays unselected");
         require(NerfCompatibility.profile(null) == NerfCompatibility.Profile.NONE, "missing mod stays unselected");
         require(
@@ -76,18 +83,22 @@ public final class NerfCompatibilityChecks {
                 recipe("mv-motor-magicnetized") == !version.equals("1.0.1"),
                 "new motor record is version-specific");
             require(
-                recipe("metal-duplication")
-                    == (version.equals("1.1.1") || (version.equals("1.2.0") || version.equals("1.2.1"))),
+                recipe("metal-duplication") == (version.equals("1.1.1") || version.equals("1.2.0")
+                    || version.equals("1.2.1")
+                    || version.equals("1.3.0")),
                 "metal duplication starts at 1.1.1");
             require(
-                recipe("livingrock-plate-hammer")
-                    == (version.equals("1.1.1") || (version.equals("1.2.0") || version.equals("1.2.1"))),
+                recipe("livingrock-plate-hammer") == (version.equals("1.1.1") || version.equals("1.2.0")
+                    || version.equals("1.2.1")
+                    || version.equals("1.3.0")),
                 "Livingrock route starts at 1.1.1");
             require(
-                recipe("universal-wireless-terminal") == (version.equals("1.2.0") || version.equals("1.2.1")),
+                recipe("universal-wireless-terminal")
+                    == (version.equals("1.2.0") || version.equals("1.2.1") || version.equals("1.3.0")),
                 "Universal Wireless Terminal change starts at 1.2.0");
             require(
-                recipe("iron-bath-stainless-nickel") == (version.equals("1.2.0") || version.equals("1.2.1")),
+                recipe("iron-bath-stainless-nickel")
+                    == (version.equals("1.2.0") || version.equals("1.2.1") || version.equals("1.3.0")),
                 "Iron Bath alloy data starts at 1.2.0");
             require(recipe("legacy-high-casing-uev") == version.equals("1.0.1"), "legacy output-only casing record");
         }
@@ -109,7 +120,7 @@ public final class NerfCompatibilityChecks {
                     .anyMatch(value -> "Casing_MAX".equals(value.gt)),
             "native Casing_MAX is the UHV identity");
 
-        NerfDB.load(directory, "1.3.0");
+        NerfDB.load(directory, "1.4.0");
         require(
             NerfDB.entries()
                 .isEmpty()
@@ -142,7 +153,7 @@ public final class NerfCompatibilityChecks {
             override,
             custom.replace("\"extraNerfVersion\":\"1.1.1\",", "")
                 .getBytes(StandardCharsets.UTF_8));
-        NerfDB.load(directory, "1.3.0");
+        NerfDB.load(directory, "1.4.0");
         require(
             NerfDB.entries()
                 .stream()

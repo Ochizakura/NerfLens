@@ -439,7 +439,7 @@
         "镅晶棒：EBF 只保留 鿫 路线并消耗 2 镤粉；太阳射流融化核心 改用 1 放射性矿物混合物。",
         "硅岩 / 富集硅岩 / 超能硅岩提纯：每批分别增加 1,000 mB 一级 / 二级 / 三级净化水。",
         "制钛：氯化镁副产物从 6 减至 4。",
-        "钛铁矿：钛铁矿粉 5→10、碳粉 1→2，产出 2 铸铁、6 金红石、1 矿渣和 2,000 mBCO；300 秒。",
+        "钛铁矿：钛铁矿粉 5→10、碳粉 1→2，产出 2 铸铁、6 金红石、1 炉渣和 2,000 mBCO；300 秒。",
         "低阶铁粉与铸铁粉炼钢路线均移除；钢粉 / 磁钢粉仅可用电路 1 在 UHV 配方电压下 1 tick 重熔。",
         "50 铁粉＋1 任意碳源＋电路 2 的后期批量路线改为 UHV 配方电压、1 tick，产出 50 钢锭。",
         "铸铁生产仍为：3 铁粉＋2 任意碳源＋电路 1 → 3 铸铁，MV20 秒、1,000K。",
@@ -2234,13 +2234,13 @@
       ],
       "lines": [
         "UV / UHV：组装机增加 288 mB 熔融凯芙拉，工作台增加 2 个凯芙拉板。",
-        "UEV / UIV / UMV：组装机增加 576 mB 熔融 Radox 聚合物，工作台增加 2 个双重板。",
+        "UEV / UIV / UMV：组装机增加 576 mB 熔融 拉多X聚合物，工作台增加 2 个双重板。",
         "UXV：组装机同样增加 576 mB，工作台使用 2 个致密板。",
         "回收外壳时不会返还新增绝缘材料。",
         "UV 以下的外壳不受这条规则影响。"
       ],
       "newMat": [
-        "凯芙拉或 Radox 聚合物绝缘材料"
+        "凯芙拉或 拉多X聚合物绝缘材料"
       ],
       "id": "tooltip-054",
       "linesEn": [
@@ -2255,7 +2255,7 @@
       ],
       "summary": [
         "UV 及以上机器外壳增加绝缘材料要求。",
-        "UV / UHV 用凯芙拉，更高档用 Radox 聚合物。"
+        "UV / UHV 用凯芙拉，更高档用 拉多X聚合物。"
       ],
       "summaryEn": [
         "UV and higher Machine Hulls need additional insulation.",
@@ -2640,7 +2640,8 @@
       "lines": [
         "机器为 5×5×3 结构，使用玻璃和防火原木，按 EV 运行。",
         "热粗制钨钢锭必须先用真空冷冻机冷却。",
-        "加工时保留底座上的粗制钨钢锭，取走它会使该轮全部进度标记失效。"
+        "加工时保留底座上的粗制钨钢锭，取走它会使该轮全部进度标记失效。",
+        "基础并行仍为 1 + 2 ×（输入电压高于配方的等级差）；1.3.0 取消了低刻超频不增加并行的限制。"
       ],
       "newMat": [],
       "requireUnloc": [
@@ -2650,16 +2651,19 @@
       "linesEn": [
         "The 5×5×3 structure uses glass and fireproof logs and runs at EV.",
         "Cool hot raw ingots in a Vacuum Freezer first.",
-        "Keep the raw base ingot in place; removing it invalidates all progress markers for the cycle."
+        "Keep the raw base ingot in place; removing it invalidates all progress markers for the cycle.",
+        "Base parallel remains 1 + 2 x voltage tiers above the recipe; 1.3.0 removes the rule that sub-tick overclocks add no parallel."
       ],
       "newMatEn": [],
       "summary": [
         "用于把冷却后的粗制钨钢精炼成成品。",
-        "每锭需要 1 份木浆和不消耗的 Brainrot Compilation。"
+        "每锭需要 1 份木浆和不消耗的 Brainrot Compilation。",
+        "1.3.0：低于 1 刻的超频现在会增加并行数。"
       ],
       "summaryEn": [
         "Refines cooled Raw Tungstensteel into finished material.",
-        "Needs 1 Wood Pulp per ingot and a non-consumed Brainrot compilation."
+        "Needs 1 Wood Pulp per ingot and a non-consumed Brainrot compilation.",
+        "1.3.0: sub-tick overclocks now add parallel."
       ],
       "heading": "粗制钨钢精炼",
       "headingEn": "Raw Tungstensteel refining",
@@ -3589,11 +3593,13 @@
       ],
       "summary": [
         "ExtraNerf 的主要工业钢铁设备；1.2.1 更新结构端口和界面。",
-        "熔化铁系锭/粉，并按碳含量抽取六种铁系产品。"
+        "熔化铁系锭/粉，并按碳含量抽取六种铁系产品。",
+        "ExtraNerf 1.3.0：浇铸仓改为按批分步浇注；拆掉控制器会丢弃浴槽内容。"
       ],
       "summaryEn": [
         "ExtraNerf main industrial iron and Steel machine; 1.2.1 revises its ports and GUI.",
-        "Melts iron-family ingots/dusts and taps six products according to carbon content."
+        "Melts iron-family ingots/dusts and taps six products according to carbon content.",
+        "ExtraNerf 1.3.0: tapping pours each batch in steps, and breaking the controller discards the bath."
       ],
       "lines": [
         "运行方式：持续加热铁碳浴槽，按碳含量和浇铸仓高度抽取产物。",
@@ -3605,7 +3611,11 @@
         "可选 LuV 测量仓安装在烟囱耐火外壳位置，最多 1 个；不再安装在侧平台。",
         "结构需要 50 个同种线圈；NEI 展示五层浇铸高度和端口。两种耐火外壳均禁止刷怪。",
         "浇铸仓遵守锁定流体，不能混入不匹配的熔融金属；浴槽与冷却内容仍持久保存。",
-        "界面根据分辨率选择完整／紧凑布局，显示准确结构错误；同电压增加安培数提高并行熔化能力。"
+        "界面根据分辨率选择完整／紧凑布局，显示准确结构错误；同电压增加安培数提高并行熔化能力。",
+        "1.3.0：每个满批分 10 步放出，每步最多 1/10 批（向上取整到整数 mB），步间隔至少 5 刻，出口排空后才继续下一步。",
+        "红石脉冲只开始一整批；也可持续浇铸或仅在通电时浇铸。停止会取消本批剩余部分，浇铸高度处没有液体时同样取消。",
+        "每步抽取该高度当前的液体，因此一趟批次可能随浴槽成分或液位改变产物。",
+        "拆掉控制器会丢弃浴槽内容，掉落物只保留覆盖板、涂装和升级；保存并重载世界仍会保留浴槽。"
       ],
       "linesEn": [
         "Operation: continuously heats an iron-carbon bath; composition and tapping height determine the output.",
@@ -3617,7 +3627,11 @@
         "The optional LuV Measurement Hatch replaces a chimney refractory casing, at most one; it no longer goes on the side platform.",
         "Requires 50 matching coils; NEI previews all five tap heights and ports. Neither refractory casing allows mob spawning.",
         "Tapping hatches respect locked fluid and cannot mix an incompatible molten product; bath and cooled contents remain persistent.",
-        "The GUI selects full/compact layout for the viewport and shows exact structure errors. More amps at the same voltage improve parallel melting."
+        "The GUI selects full/compact layout for the viewport and shows exact structure errors. More amps at the same voltage improve parallel melting.",
+        "1.3.0: each full batch is poured in 10 steps of at most one tenth of the tier maximum (rounded up to whole mB), at least five ticks apart, and the outlet must empty between steps.",
+        "A redstone pulse starts one batch; the hatch can also pour continuously or only while powered. Stopping cancels the rest of the batch, as does finding no liquid at its height.",
+        "Each step draws the fluid currently at that height, so one batch can change products as the bath composition or level changes.",
+        "Breaking the controller discards the bath contents; the drop keeps only covers, paint and upgrades. Saving and reloading the world preserves the bath."
       ],
       "newMat": [
         "铁系原料、碳源、方解石与可选氧气"
@@ -3635,37 +3649,27 @@
       "kind": "item",
       "matchStacks": [
         {
-          "od": "dustWroughtIron"
+          "odSuffix": "WroughtIron"
         },
         {
-          "od": "ingotWroughtIron"
+          "odSuffix": "CastIron"
         },
         {
-          "od": "dustCastIron"
+          "odSuffix": "PigIron"
         },
         {
-          "od": "ingotCastIron"
-        },
-        {
-          "od": "dustPigIron"
-        },
-        {
-          "od": "ingotPigIron"
-        },
-        {
-          "od": "dustOvercarburizedIron"
-        },
-        {
-          "od": "ingotOvercarburizedIron"
+          "odSuffix": "OvercarburizedIron"
         }
       ],
       "matchUnloc": [],
       "matchName": [],
       "summary": [
-        "铁浴按碳含量区分六种铁系产物；研磨和铸造保持材料身份。"
+        "铁浴按碳含量区分六种铁系产物；研磨和铸造保持材料身份。",
+        "1.3.0：四种铁系金属各有完整的 GT 材料部件，铸造与回收保持身份。"
       ],
       "summaryEn": [
-        "The Iron Bath selects its tapped product by the carbon-to-iron ratio; maceration and casting preserve identity."
+        "The Iron Bath selects its tapped product by the carbon-to-iron ratio; maceration and casting preserve identity.",
+        "1.3.0: all four iron-family metals gain full GregTech parts; casting and recycling preserve identity."
       ],
       "lines": [
         "碳含量：碳单位数 ÷ 铁锭当量；144 mB 铁按 1 锭计算。",
@@ -3674,7 +3678,10 @@
         "钢：大于 0.2%，小于 2%。",
         "铸铁：至少 2%，小于 3.5%。",
         "生铁：至少 3.5%，小于 4.5%。",
-        "过渗碳铁：至少 4.5%。"
+        "过渗碳铁：至少 4.5%。",
+        "1.3.0：锻铁、铸铁、生铁与过渗碳铁现在各有板、杆、齿轮、小齿轮、转子和工具部件，并生成自动回收配方。",
+        "四种金属都有完整、小撮与细粉形式；矿渣不再提供粉、小撮粉、细粉和锭。",
+        "新增铁浴金属方块：metadata 0 为锻铁、1 为过渗碳铁；两者仍是独立材料，不并入普通铁。"
       ],
       "linesEn": [
         "Carbon ratio: carbon units / Iron-ingot equivalents; 144 mB Iron counts as 1 ingot.",
@@ -3683,7 +3690,10 @@
         "Steel: above 0.2%, below 2%.",
         "Cast Iron: at least 2%, below 3.5%.",
         "Pig Iron: at least 3.5%, below 4.5%.",
-        "Overcarburized Iron: at least 4.5%."
+        "Overcarburized Iron: at least 4.5%.",
+        "1.3.0: Wrought, Cast, Pig and Overcarburized Iron now each have plates, rods, gears, small gears, rotors and tool parts, with generated recycling recipes.",
+        "All four metals have full, small and tiny dusts; Slag no longer provides dust, small dust, tiny dust or ingots.",
+        "New Iron Bath Metal Block: metadata 0 is Wrought Iron and 1 is Overcarburized Iron. Both remain separate materials and do not become plain Iron."
       ],
       "newMat": [],
       "newMatEn": [],
@@ -3771,7 +3781,7 @@
       "summary": [
         "液晶凯芙拉批次额外消耗 1／7 个凯芙拉雄蜂；突变需要下方放置 ZPM 复制机。",
         "1.2.1：硅岩蜂替代无尽催化剂蜂成为突变亲本；唯一特产为凯芙拉蜂窝，基础概率 7.5%。",
-        "QFT 的 Radox 聚合物／熔融凯芙拉路线每批新增 64 个凯芙拉蜂窝。"
+        "QFT 的 拉多X聚合物／熔融凯芙拉路线每批新增 64 个凯芙拉蜂窝。"
       ],
       "summaryEn": [
         "Liquid Crystal Kevlar consumes 1 / 7 Kevlar Drones; mutation requires a ZPM Replicator below the housing.",
@@ -3989,7 +3999,7 @@
     {
       "id": "tooltip-qft-kevlar-combs",
       "kind": "machine",
-      "title": "量子力场 (QFT) · 塑料路线",
+      "title": "量子操纵者 (QFT) · 塑料路线",
       "heading": "QFT 凯芙拉蜂窝投入",
       "headingEn": "QFT Kevlar Comb input",
       "matchUnloc": [
@@ -3999,26 +4009,36 @@
         "blockmachines"
       ],
       "summary": [
-        "ExtraNerf 1.2.1：Radox 聚合物／熔融凯芙拉路线每批新增 64 个凯芙拉蜂窝。"
+        "ExtraNerf 1.2.1：拉多X聚合物／熔融凯芙拉路线每批新增 64 个凯芙拉蜂窝。",
+        "ExtraNerf 1.3.0：Radox 聚合物路线另需 1 份 Radox 聚合物粉，24 蜂窝路线另需 1 份凯芙拉粉；两份都以 0 数量放入，不随批次消耗。"
       ],
       "summaryEn": [
-        "ExtraNerf 1.2.1: the Radox Polymer / Molten Kevlar route adds 64 Kevlar Combs per batch."
+        "ExtraNerf 1.2.1: the Radox Polymer / Molten Kevlar route adds 64 Kevlar Combs per batch.",
+        "ExtraNerf 1.3.0: the Radox Polymer route also requires one Radox Polymer Pulp and the 24-comb route one Kevlar Dust; both enter with zero count and are not consumed."
       ],
       "lines": [
         "碳粉 64、锇粉 24、氢气和氮气各 16,000 mB 保留；终极塑料催化剂与焦点等级 4 不变。",
-        "产出异种烯和重 Radox 各 16,000 mB，Radox 聚合物与凯芙拉各 9,216 mB；UIV、20 秒。",
-        "凯芙拉蜂的唯一特产为该蜂窝，基础产出概率 7.5%；1.2.1 移除凯芙拉粒特产。"
+        "产出异种烯和重拉多X 各 16,000 mB，拉多X聚合物与凯芙拉各 9,216 mB；UIV、20 秒。",
+        "凯芙拉蜂的唯一特产为该蜂窝，基础产出概率 7.5%；1.2.1 移除凯芙拉粒特产。",
+        "24 蜂窝路线的产物为 32,000 mB 聚氨酯树脂、4,608 mB 液晶凯芙拉和 9,216 mB 熔融凯芙拉；UIV、20 秒。",
+        "两份 0 数量催化不改变配方身份；其他 QFT 塑料路线和未改动的副产物不继承本记录的局部标记。"
       ],
       "linesEn": [
         "Retains 64 Carbon Dust, 24 Osmium Dust and 16,000 mB each of Hydrogen and Nitrogen; Ultimate Plastic Catalyst and focus tier 4 remain.",
         "Outputs 16,000 mB each of Xenoxene and Heavy Radox plus 9,216 mB each of Radox Polymer and Kevlar; UIV, 20s.",
-        "Kevlar bees have this comb as their sole specialty at a 7.5% base chance; 1.2.1 removes the Kevlar nugget specialty."
+        "Kevlar bees have this comb as their sole specialty at a 7.5% base chance; 1.2.1 removes the Kevlar nugget specialty.",
+        "The 24-comb route outputs 32,000 mB Polyurethane Resin, 4,608 mB Liquid Crystal Kevlar and 9,216 mB Molten Kevlar; UIV, 20s.",
+        "The zero-count catalysts do not change recipe identity; other QFT plastics routes and unchanged byproducts do not inherit this record's local marks."
       ],
       "newMat": [
-        "凯芙拉蜂窝 ×64"
+        "凯芙拉蜂窝 ×64",
+        "Radox 聚合物粉 ×1（不消耗）",
+        "凯芙拉粉 ×1（不消耗）"
       ],
       "newMatEn": [
-        "64 Kevlar Combs"
+        "64 Kevlar Combs",
+        "1 Radox Polymer Pulp (not consumed)",
+        "1 Kevlar Dust (not consumed)"
       ],
       "materialInputsChanged": false,
       "matchStacks": [
@@ -4095,6 +4115,69 @@
       ],
       "linesEn": [
         "Uses the energy hatch certificate requirement; native certification restores withdrawals. Exams, scoring and world certificate state are unchanged."
+      ],
+      "newMat": [],
+      "newMatEn": [],
+      "materialInputsChanged": false
+    },
+    {
+      "id": "tooltip-lapotronic-laser-certification",
+      "kind": "machine",
+      "title": "兰波顿超级电容库 · 激光仓认证",
+      "heading": "激光仓认证等级",
+      "headingEn": "Laser hatch certification",
+      "matchUnloc": [
+        "multimachine.supercapacitor"
+      ],
+      "matchName": [
+        "lapotronic supercapacitor",
+        "兰波顿超级电容库"
+      ],
+      "requireUnloc": [
+        "blockmachines"
+      ],
+      "summary": [
+        "ExtraNerf 1.3.0：兰波顿超级电容库的认证需求也计入激光仓（激光能源仓／激光动力仓）的等级。"
+      ],
+      "summaryEn": [
+        "ExtraNerf 1.3.0: the Lapotronic Supercapacitor's certification requirement also counts its laser energy and dynamo hatch tiers."
+      ],
+      "lines": [
+        "认证等级取普通、异种与激光仓中已安装且有效的最高等级；激光仓原本不在普通能源仓列表中，1.3.0 单独读取。",
+        "最高等级超过已持有证书时，兰波顿超级电容库按原生认证规则暂停；补回证书后恢复，不改考试、评分或世界认证状态。"
+      ],
+      "linesEn": [
+        "The requirement uses the highest valid installed normal, exotic or laser hatch tier; laser hatches live outside the normal hatch lists and are read separately in 1.3.0.",
+        "When the highest tier exceeds the held certificates the Supercapacitor pauses by the native certification rule and resumes after recertification. Exams, scoring and world certificate state are unchanged."
+      ],
+      "newMat": [],
+      "newMatEn": [],
+      "materialInputsChanged": false
+    },
+    {
+      "id": "tooltip-quest-reward-party",
+      "kind": "item",
+      "title": "任务书 · 完成任务奖励",
+      "heading": "任务完成奖励（队伍）",
+      "headingEn": "Quest completion rewards",
+      "matchStacks": [
+        {
+          "item": "questbook:ItemQuestBook"
+        }
+      ],
+      "summary": [
+        "ExtraNerf 1.3.0：奖励要求完成另一个任务时，会为当前队伍全部成员标记完成，包括离线成员。"
+      ],
+      "summaryEn": [
+        "ExtraNerf 1.3.0: a reward that completes another quest completes it for every current party member, including absent players."
+      ],
+      "lines": [
+        "奖励物品仍只发给领取者；在线成员会刷新任务缓存，非静默奖励再发完成提示，已完成该任务者跳过。",
+        "不改任务 ID、任务书文件或原生 BetterQuesting 配置；上游自行同步队伍后会变成无操作。"
+      ],
+      "linesEn": [
+        "The reward item still goes only to the claimant; online members get a quest cache refresh and a completion notice unless the reward is silent, and members who already completed it are skipped.",
+        "Quest IDs, questbook files and native BetterQuesting configuration are unchanged; the hotfix becomes a no-op once upstream syncs parties itself."
       ],
       "newMat": [],
       "newMatEn": [],
@@ -5435,7 +5518,7 @@
       "before": "1 铸铁粉＋电路 11＋1,000 mB 氧 → 1 钢锭＋1 灰；MV5 秒。",
       "after": "这条低阶路线已移除。",
       "changedInputs": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "visualChanges": [],
       "titleEn": "Low-tier Cast Iron Dust steelmaking",
       "beforeEn": "1 Cast Iron Dust + circuit 11 + 1,000 mB Oxygen -> 1 Steel Ingot + 1 Ash; MV, 5s.",
@@ -5822,7 +5905,7 @@
         }
       ],
       "before": "5 钛铁矿＋1 碳 → 1 铸铁＋3 金红石＋1,000 mBCO；160 秒",
-      "after": "10 钛铁矿＋2 碳 → 2 铸铁＋6 金红石＋1 矿渣＋2,000 mBCO；300 秒；HV1,700K",
+      "after": "10 钛铁矿＋2 碳 → 2 铸铁＋6 金红石＋1 炉渣＋2,000 mBCO；300 秒；HV1,700K",
       "changedInputs": [
         {
           "od": "dustIlmenite"
@@ -5831,7 +5914,7 @@
           "od": "dustCarbon"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md; runtime BlastFurnaceNerf.java (Cast Iron overrides stale upstream table wording)",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md; runtime BlastFurnaceNerf.java (Cast Iron overrides stale upstream table wording)",
       "visualChanges": [
         {
           "label": "投入",
@@ -10240,7 +10323,7 @@
       "before": "原料为铁粉、碳类粉、氧气和电路 11，MV，25 秒。",
       "after": "这条路线已移除。",
       "changedInputs": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "removed": true,
       "note": "使用 电力铁浴、慢速砖高炉，或 UHV 重熔 / 后期批量路线。",
       "visualChanges": [],
@@ -10588,7 +10671,7 @@
       ],
       "note": "工作台与组装机路线均适用。组件装配线的 MV 马达仍使用长磁化钢棒。",
       "noteEn": "Hand crafting and Assembler routes change. Component Assembly Line MV motors retain Long Magnetic Steel Rods.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Electric_Motor_MV",
@@ -10643,7 +10726,7 @@
       ],
       "note": "先在 MV 组装机制作所需的新棒材；其他马达材料保持原样。",
       "noteEn": "Produce the new rod in an MV Assembler. Other motor ingredients are retained.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Electric_Motor_HV",
@@ -10743,7 +10826,7 @@
       ],
       "note": "弱磁兰不消耗，磁化钢棒会变为普通钢棒；奥术合成终端 自动化同样保留弱磁兰。",
       "noteEn": "Solegnolia is retained and magnetic rods return as Steel Rods; Arcane Crafting Terminal automation also retains the flower.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": true,
       "products": [
         {
@@ -10882,7 +10965,7 @@
       ],
       "note": "同时返还 2 钢棒。",
       "noteEn": "Also returns 2 Steel Rods.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": true,
       "products": [
         {
@@ -11039,7 +11122,7 @@
       ],
       "note": "同时返还 2 魔力钢棒；组装机新增第二输出槽以接收返还材料。",
       "noteEn": "Also returns 2 Manasteel Rods; Assemblers now have two output slots.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": true,
       "products": [
         {
@@ -11130,7 +11213,7 @@
       ],
       "note": "暮色传送门激活水晶会消耗；提供受限维度和 GoG 玩法的植物魔法入口。",
       "noteEn": "The Portal Generator is consumed. Provides Botania access in GoG or dimension-restricted worlds.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -11200,7 +11283,7 @@
       ],
       "note": "提供 LV 魔力池入口，原有其他活石板路线保留。",
       "noteEn": "Provides an LV route to the Diluted Mana Pool; other plate routes remain.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -11273,7 +11356,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_Kanthal",
@@ -11345,7 +11428,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_Nichrome",
@@ -11417,7 +11500,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_TungstenSteel",
@@ -11489,7 +11572,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_HSSG",
@@ -11561,7 +11644,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_HSSS",
@@ -11633,7 +11716,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_Naquadah",
@@ -11705,7 +11788,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_NaquadahAlloy",
@@ -11777,7 +11860,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_Trinium",
@@ -11849,7 +11932,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_ElectrumFlux",
@@ -11921,7 +12004,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "gt": "Casing_Coil_AwakenedDraconium",
@@ -11965,7 +12048,7 @@
       "visualChanges": [],
       "note": "使用 电力铁浴，或 UHV 重熔 / 后期批量路线。",
       "noteEn": "Use the Electric Iron Bath or UHV remelting / late bulk routes.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "removed": true,
       "products": [
         {
@@ -12308,7 +12391,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "gtnhextranerf:raw_machine_casing",
@@ -12357,7 +12440,7 @@
       ],
       "note": "仅匹配 GT 金属及同材质的复制配方；非金属不受影响。",
       "noteEn": "Matches real GT metal recipes with the same input/output material; non-metals are unaffected.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "rule": "metal-duplication",
       "products": [
@@ -12427,7 +12510,7 @@
       ],
       "note": "",
       "noteEn": "",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "od": "dustTinySteel",
@@ -12480,7 +12563,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": true,
       "products": [
         {
@@ -12513,7 +12596,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12544,7 +12627,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12575,7 +12658,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12606,7 +12689,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12637,7 +12720,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12668,7 +12751,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12699,7 +12782,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12730,7 +12813,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12761,7 +12844,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12792,7 +12875,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12823,7 +12906,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12854,7 +12937,7 @@
       "note": "仅 铝 与 钢 版本保留。",
       "noteEn": "Only the Aluminium and Steel variants remain.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "item": "TConstruct:ToolForgeBlock",
@@ -12934,7 +13017,7 @@
       ],
       "note": "只对液晶凯芙拉显示此生产改动；稀盐酸是未削弱的副产物。雄蜂显性物种必须为凯芙拉。",
       "noteEn": "Production provenance belongs to Liquid Crystal Kevlar, not unchanged dilute acid. The drone active species must be Kevlar.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": true,
       "products": [
         {
@@ -13016,7 +13099,7 @@
       ],
       "note": "只对液晶凯芙拉显示此生产改动；稀盐酸是未削弱的副产物。雄蜂显性物种必须为凯芙拉。",
       "noteEn": "Production provenance belongs to Liquid Crystal Kevlar, not unchanged dilute acid. The drone active species must be Kevlar.",
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": true,
       "products": [
         {
@@ -13066,7 +13149,7 @@
           "afterEn": "HV, 20s"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "f": "hell_blood",
@@ -13126,7 +13209,7 @@
           "output": true
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "od": "dustPlutonium",
@@ -13172,7 +13255,7 @@
           "afterEn": "UHV, 1 tick"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13219,7 +13302,7 @@
           "afterEn": "UHV, 1 tick"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13267,7 +13350,7 @@
           "afterEn": "UHV, 1 tick"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13316,7 +13399,7 @@
           "afterEn": "UHV, 1 tick"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13378,7 +13461,7 @@
           "afterEn": "UHV, 1 tick"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13440,7 +13523,7 @@
           "afterEn": "UHV, 1 tick"
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13510,7 +13593,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13579,7 +13662,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13645,7 +13728,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13711,7 +13794,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13781,7 +13864,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13843,7 +13926,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13905,7 +13988,7 @@
           "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "materialInputsChanged": false,
       "products": [
         {
@@ -13937,7 +14020,7 @@
       "note": "避免从模具形状中获得含糊的合金回收。",
       "noteEn": "Prevents ambiguous alloy recovery from the extruder shape.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "od": "nuggetDarkSteel",
@@ -13969,7 +14052,7 @@
       "note": "避免从模具形状中获得含糊的合金回收。",
       "noteEn": "Prevents ambiguous alloy recovery from the extruder shape.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "fluidGt": "DarkSteel",
@@ -14001,7 +14084,7 @@
       "note": "避免从模具形状中获得含糊的合金回收。",
       "noteEn": "Prevents ambiguous alloy recovery from the extruder shape.",
       "visualChanges": [],
-      "source": "ExtraNerf 1.2.1 / docs/NERFS.md",
+      "source": "ExtraNerf 1.3.0 / docs/NERFS.md",
       "products": [
         {
           "od": "dustTinyDarkSteel",
@@ -14011,7 +14094,7 @@
     },
     {
       "id": "qft-kevlar-combs",
-      "title": "Radox 聚合物／凯芙拉 · QFT 蜂窝投入",
+      "title": "拉多X聚合物／凯芙拉 · QFT 蜂窝投入",
       "titleEn": "Radox Polymer / Kevlar · QFT Comb input",
       "maps": [
         "gt.recipe.quantumforcesmelter"
@@ -14039,6 +14122,10 @@
           "item": "gregtech:gt.comb",
           "meta": 161,
           "n": 64
+        },
+        {
+          "od": "dustRadoxPolymer",
+          "n": 0
         }
       ],
       "outputs": [
@@ -14079,15 +14166,18 @@
         {
           "item": "gregtech:gt.comb",
           "meta": 161
+        },
+        {
+          "od": "dustRadoxPolymer"
         }
       ],
       "materialInputsChanged": false,
       "before": "原整合包与 ExtraNerf 1.2.0 的这条 QFT 塑料路线不消耗凯芙拉蜂窝。",
-      "after": "ExtraNerf 1.2.1：每批另加 64 个凯芙拉蜂窝；其他材料、四种产物、20 秒耗时、UIV 电压和焦点等级 4 不变。",
+      "after": "ExtraNerf 1.2.1：每批另加 64 个凯芙拉蜂窝；1.3.0：另加 1 份 Radox 聚合物粉（不消耗）。其余材料、四种产物、20 秒耗时、UIV 电压和焦点等级 4 不变。",
       "beforeEn": "The original pack and ExtraNerf 1.2.0 QFT plastics route consume no Kevlar Combs.",
-      "afterEn": "ExtraNerf 1.2.1 adds 64 Kevlar Combs per batch; other inputs, all four outputs, 20s, UIV voltage and focus tier 4 remain unchanged.",
-      "note": "只标记这条 QFT 路线；其他凯芙拉、Radox 路线及未改动副产物不继承全局金框。原终极塑料催化剂保留。",
-      "noteEn": "Frames are local to this QFT route. Other Kevlar/Radox routes and unchanged byproducts do not inherit global frames; the Ultimate Plastic Catalyst is retained.",
+      "afterEn": "ExtraNerf 1.2.1 adds 64 Kevlar Combs per batch; 1.3.0 adds one non-consumed Radox Polymer Pulp. Other inputs, all four outputs, 20s, UIV voltage and focus tier 4 remain.",
+      "note": "只标记这条 QFT 路线；其他凯芙拉、Radox 路线及未改动副产物不继承全局金框。原终极塑料催化剂保留，0 数量催化不消耗。",
+      "noteEn": "Frames are local to this QFT route. Other Kevlar/Radox routes and unchanged byproducts do not inherit global frames; the Ultimate Plastic Catalyst is retained and the zero-count catalyst is not consumed.",
       "visualChanges": [
         {
           "label": "新增蜂窝",
@@ -14100,12 +14190,104 @@
           "before": "0",
           "after": "",
           "output": false
+        },
+        {
+          "label": "新增催化",
+          "labelEn": "Added catalyst",
+          "kind": "item",
+          "stack": {
+            "od": "dustRadoxPolymer",
+            "n": 0
+          },
+          "before": "0",
+          "after": "放入（不消耗）",
+          "afterEn": "Place; retained",
+          "output": false
         }
       ],
-      "source": "ExtraNerf 1.2.1 / ChemicalAndMiscNerf.java#requireKevlarCombs"
+      "source": "ExtraNerf 1.3.0 / ChemicalAndMiscNerf.java#requireKevlarCombs"
+    },
+    {
+      "id": "qft-kevlar-dust",
+      "title": "聚氨酯树脂／液晶凯芙拉 · QFT 凯芙拉粉投入",
+      "titleEn": "Polyurethane Resin / Liquid Crystal Kevlar · QFT Kevlar Dust",
+      "maps": [
+        "gt.recipe.quantumforcesmelter"
+      ],
+      "inputs": [
+        {
+          "item": "gregtech:gt.comb",
+          "meta": 161,
+          "n": 24
+        },
+        {
+          "od": "dustCarbon",
+          "n": 64
+        },
+        {
+          "fluidGt": "Nitrogen",
+          "phase": "gas",
+          "mB": 16000
+        },
+        {
+          "fluidGt": "Hydrogen",
+          "phase": "gas",
+          "mB": 16000
+        },
+        {
+          "od": "dustKevlar",
+          "n": 0
+        }
+      ],
+      "outputs": [
+        {
+          "fluidGt": "PolyurethaneResin",
+          "phase": "fluid",
+          "mB": 32000
+        },
+        {
+          "fluidGt": "LiquidCrystalKevlar",
+          "phase": "fluid",
+          "mB": 4608
+        },
+        {
+          "fluidGt": "Kevlar",
+          "phase": "molten",
+          "mB": 9216
+        }
+      ],
+      "products": [],
+      "changedInputs": [
+        {
+          "od": "dustKevlar"
+        }
+      ],
+      "materialInputsChanged": false,
+      "before": "原整合包与 ExtraNerf 1.2.1 的 24 蜂窝 QFT 路线只有 24 个蜂窝、64 碳粉、两种气体和不消耗的终极塑料催化剂。",
+      "after": "ExtraNerf 1.3.0：另需 1 份凯芙拉粉，以 0 数量放入、不消耗；蜂窝、碳粉、气体、三种产物、UIV 与 20 秒耗时不变。",
+      "beforeEn": "The original pack and ExtraNerf 1.2.1 24-comb QFT route hold only 24 Combs, 64 Carbon Dust, two gases and the non-consumed Ultimate Plastic Catalyst.",
+      "afterEn": "ExtraNerf 1.3.0 adds one Kevlar Dust with zero count; it is not consumed. Combs, Carbon, gases, all three outputs, UIV and 20s remain unchanged.",
+      "note": "只标记这条 24 蜂窝路线；64 蜂窝的 Radox 聚合物路线有自己的 Radox 聚合物粉记录，未改动产物不继承金框。",
+      "noteEn": "Frames are local to this 24-comb route. The 64-comb Radox Polymer route has its own pulp record, and unchanged outputs do not inherit gold frames.",
+      "visualChanges": [
+        {
+          "label": "新增催化",
+          "labelEn": "Added catalyst",
+          "kind": "item",
+          "stack": {
+            "od": "dustKevlar",
+            "n": 0
+          },
+          "before": "0",
+          "after": "放入（不消耗）",
+          "afterEn": "Place; retained",
+          "output": false
+        }
+      ],
+      "source": "ExtraNerf 1.3.0 / ChemicalAndMiscNerf.java#separateQftKevlarInputs"
     }
   ],
   "schemaVersion": 3,
-  "extraNerfVersion": "1.2.1",
-  "sourceCommit": "d064eaa3cbd54ef15abd75985662bca81aa192d1"
+  "extraNerfVersion": "1.3.0",
+  "sourceCommit": "825923725f87dee6bb2ae32de2088135888e0563"
 }

@@ -88,6 +88,8 @@ public final class FixRegressionChecks {
         NerfDB.load(config,"1.1.1");
         require(NerfTranslations.fallback(materialKey,materialEnglish).equals(materialEnglish),"Generated material fallback is not applied to an older owner version");
         NerfDB.load(config,"1.3.0");
+        require(NerfTranslations.fallback(materialKey,materialEnglish).equals("过渗碳铁"),"Current owner 1.3.0 keeps the verified generated material name");
+        NerfDB.load(config,"1.4.0");
         require(NerfTranslations.fallback(materialKey,materialEnglish).equals(materialEnglish),"Unknown owner version receives no dynamic material fallback");
         NerfDB.load(config,"1.2.0");
         Fluid diluted = fluid("DilutedHydrochloricAcid:fluid", fluids);

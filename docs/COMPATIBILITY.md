@@ -9,6 +9,7 @@ One NerfLens JAR supports the following verified display profiles in GTNH 2.9.0 
 | 1.1.1 | 91 | 143 | Automatic |
 | 1.2.0 | 100 | 176 | Automatic |
 | 1.2.1 | 102 | 177 | Automatic |
+| 1.3.0 | 104 | 178 | Automatic |
 
 The ExtraNerf version comes from Forge's loaded mod metadata. Leading `v` and build metadata such as `1.1.1+build.42` are recognized. Unverified prereleases, unrecognized releases and an absent ExtraNerf do not receive a guessed built-in profile. User-provided display records remain available.
 
@@ -22,6 +23,10 @@ The 1.2.0 profile is frozen byte-for-byte in `profiles/1.2.0.json`. The independ
 
 Changed Iron Bath language keys keep both verified English meanings. Reference text selects the corresponding translation, so 1.2.1 chimney-placement text does not replace 1.2.0 side-platform wording. Native, resource-pack and dynamic translations retain priority. Generated material names accept only the verified 1.2.0/1.2.1 owners and unchanged native English.
 
+The 1.2.0 and 1.2.1 profiles are frozen byte-for-byte in `profiles/1.2.0.json` and `profiles/1.2.1.json`. The independent 1.3.0 profile adds the two zero-count QFT catalysts (Radox Polymer Pulp on the 64-comb route, Kevlar Dust on the 24-comb route), the full GregTech part sets and the stepped tapping/persistence rules of the Iron Bath metals, the Lapotronic Supercapacitor's laser-hatch certification tiers, sub-tick Brainrotter parallels and the party-wide quest completion reward. Zero-count inputs are matched as quantity 0 and marked as non-consumed additions, so routes without them keep their previous matches.
+
+Slight name alignment follows the installed Chinese language files: 兰波顿超级电容库 (Lapotronic Supercapacitor), 量子操纵者 (Quantum Force Transformer), 任务书 (Quest Book), 炉渣 (Slag) and the 锻铁 / 铸铁 / 生铁 / 过渗碳铁 metal names. Older profiles keep their released bytes; only the 1.3.0 profile carries the aligned wording.
+
 ## User data
 
 `config/nerflens/user_nerfs.json` replaces built-in records by ID. An optional top-level `extraNerfVersion` restricts that file to a specific version; an unversioned file applies to all profiles.
@@ -29,7 +34,7 @@ Changed Iron Bath language keys keep both verified English meanings. Reference t
 ```json
 {
   "schemaVersion": 3,
-  "extraNerfVersion": "1.2.1",
+  "extraNerfVersion": "1.3.0",
   "entries": [],
   "recipes": []
 }
@@ -37,7 +42,7 @@ Changed Iron Bath language keys keep both verified English meanings. Reference t
 
 ## Certification tooltips
 
-NerfLens 0.2.1 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain. ExtraNerf 1.2.0/1.2.1 multiblocks inherit the installed classifier's energy/dynamo-hatch tier rule, while the Industrial Apiary remains HV and the Ice Cream Machine remains exempt.
+NerfLens 0.3.0 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain. ExtraNerf 1.2.0/1.2.1 multiblocks inherit the installed classifier's energy/dynamo-hatch tier rule, while the Industrial Apiary remains HV and the Ice Cream Machine remains exempt.
 
 Singleplayer reads only an already-loaded record in the integrated server's MapStorage, on its server thread, every half second. It serializes that existing record into a temporary NBT object without loading, creating, saving or dirtying world data. World/server changes invalidate the snapshot. Remote or unavailable state is shown as unknown.
 

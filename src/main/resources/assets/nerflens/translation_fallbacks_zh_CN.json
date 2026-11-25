@@ -181,15 +181,24 @@
   },
   "gtnhextranerf.iron_bath.tap.mode.description.0": {
     "english": "Discharge once when the redstone signal turns on",
-    "chinese": "红石信号开启时排出一次"
+    "chinese": "红石信号开启时排出一次",
+    "variants": {
+      "Start one batch when the redstone signal turns on": "红石信号开启时开始一整批"
+    }
   },
   "gtnhextranerf.iron_bath.tap.mode.description.1": {
     "english": "Discharge every tick while redstone is on",
-    "chinese": "有红石信号时每刻排出"
+    "chinese": "有红石信号时每刻排出",
+    "variants": {
+      "Pour while redstone is on": "有红石信号时持续浇铸"
+    }
   },
   "gtnhextranerf.iron_bath.tap.mode.description.2": {
     "english": "Discharge every tick",
-    "chinese": "每刻排出"
+    "chinese": "每刻排出",
+    "variants": {
+      "Pour batches continuously": "持续按批浇铸"
+    }
   },
   "gtnhextranerf.iron_bath.tap.mode.description.3": {
     "english": "Keep the furnace outlet closed",
@@ -360,7 +369,7 @@
     "english": "Tapping height selects molten metal, slag or empty space",
     "chinese": "浇铸仓高度决定抽取熔融金属、炉渣或空层",
     "variants": {
-      "Metal settles below slag, and tap height determines what can flow out": "金属沉在矿渣下方；浇铸高度决定可流出的物质"
+      "Metal settles below slag, and tap height determines what can flow out": "金属沉在炉渣下方；浇铸高度决定可流出的物质"
     }
   },
   "gtnhextranerf.iron_bath.tooltip.info.3": {
@@ -445,7 +454,8 @@
     "generatedExtraNerfVersion": "1.2.0",
     "generatedExtraNerfVersions": [
       "1.2.0",
-      "1.2.1"
+      "1.2.1",
+      "1.3.0"
     ]
   },
   "Material.overcarburizediron": {
@@ -454,7 +464,8 @@
     "generatedExtraNerfVersion": "1.2.0",
     "generatedExtraNerfVersions": [
       "1.2.0",
-      "1.2.1"
+      "1.2.1",
+      "1.3.0"
     ]
   },
   "Material.slag": {
@@ -463,7 +474,8 @@
     "generatedExtraNerfVersion": "1.2.0",
     "generatedExtraNerfVersions": [
       "1.2.0",
-      "1.2.1"
+      "1.2.1",
+      "1.3.0"
     ]
   },
   "Material.tungstensteel": {
@@ -472,7 +484,8 @@
     "generatedExtraNerfVersion": "1.2.0",
     "generatedExtraNerfVersions": [
       "1.2.0",
-      "1.2.1"
+      "1.2.1",
+      "1.3.0"
     ]
   },
   "gtnhextranerf.iron_bath.measurement_hatches": {

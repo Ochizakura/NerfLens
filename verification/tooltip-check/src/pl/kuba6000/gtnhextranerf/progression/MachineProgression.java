@@ -8,7 +8,8 @@ public final class MachineProgression {
         if (value instanceof gregtech.common.tileentities.machines.basic.MTEIceCreamMachine
             && (nerflens.NerfDB.profileVersion().equals("1.1.1")
                 || nerflens.NerfDB.profileVersion().equals("1.2.0")
-                || nerflens.NerfDB.profileVersion().equals("1.2.1"))) return null;
+                || nerflens.NerfDB.profileVersion().equals("1.2.1")
+                || nerflens.NerfDB.profileVersion().equals("1.3.0"))) return null;
         MTEBasicMachine machine = (MTEBasicMachine) value;
         if (machine.isSteampowered()) return Certificate.STEAM;
         switch (machine.mTier) {

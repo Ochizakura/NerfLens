@@ -1,4 +1,4 @@
-<!-- Source: ExtraNerf 1.2.1, d064eaa3cbd54ef15abd75985662bca81aa192d1 -->
+<!-- Source: ExtraNerf 1.3.0, 825923725f87dee6bb2ae32de2088135888e0563 -->
 # Complete gameplay change catalog
 
 This page lists every gameplay change implemented by the current source. It
@@ -195,6 +195,9 @@ marked as having claimed it. Extra Nerf forces `syncQuestRewards=true` in memory
 after each Quest Book configuration initialization, without rewriting the file.
 This uses BQ's existing claim semantics, not a new permanent team-wide ledger.
 
+A reward that completes another quest completes it for every current party
+member, including absent players, not only for the claiming player.
+
 All BetterQuesting Standard crafting tasks also accept their required items
 from the inventory without consuming them. Detection runs on inventory changes
 or with Detect and uses each task's existing quantity, OreDictionary and NBT
@@ -338,6 +341,8 @@ requires a ZPM Replicator beneath the housing.
 
 The QFT recipe for Radox Polymer and Molten Kevlar consumes 64 Kevlar Combs per
 batch.
+The QFT requires one Radox Polymer Pulp for that recipe and one Kevlar Dust
+for the 24-comb recipe. Each recipe leaves its own dust intact.
 
 ## High-tier hull insulation
 
@@ -409,7 +414,7 @@ the paid certificates up to their tier, from MV through MAX. Energy and dynamo
 hatches from LV upwards require the same prerequisite chain, including multi-amp,
 laser and wireless variants. Electric multiblock controllers pause intact when a
 connected energy or dynamo hatch lacks certification, including after a world
-reload. Recertification resumes the batch without a certificate-induced power failure.
+reload. For the Lapotronic Supercapacitor this includes its laser hatches. Recertification resumes the batch without a certificate-induced power failure.
 ULV machines and controllers without gated hatches remain outside the gate. The unpowered Ice
 Cream Machine is also exempt from certification. Right-clicking the certificate
 unlocks gated machines for all players and dimensions in the save, consuming it
@@ -1384,10 +1389,11 @@ contents and melting progress. NEI diagrams show the feed, molten layers and
 outputs for each product and carbon additive. Hovering shows composition ranges
 and additive quantities. NEI also lists cumulative Steel material balances.
 
-Wrought Iron, Cast Iron and Pig Iron have distinct ingots, dusts and molten
-fluids. Maceration and casting preserve each metal's identity.
+Wrought Iron, Cast Iron, Pig Iron and Overcarburized Iron have their own
+GregTech metal parts, including plates, rods, gears and rotors. Casting and
+recycling preserve the metal's identity.
 
-These metals are required by the alloy mixtures below. All ingredients and
+Wrought Iron, Cast Iron and Pig Iron are used in the alloy mixtures below. All ingredients and
 products in this table are dusts.
 
 | Product | Ingredients | Output |
@@ -1460,16 +1466,19 @@ highlighted range. Hovering over a layer or gauge shows its exact quantities.
 Tapping hatches cover five equal vertical bands, from three to seven blocks
 above the controller. Each band spans 20% of the tank. Liquid slag in the band
 has priority over metal, even when only a small amount of slag remains. If the
-band contains no slag, the hatch can draw its liquid metal. The selected fluid
-can change on the next discharge as the layers move. Its GUI offers an
-editable amount and named modes: one discharge per redstone pulse, discharge
-every powered tick, always flowing, or stopped. Cooling solidifies the contents,
+band contains no slag, the hatch can draw its liquid metal. A redstone pulse starts
+one batch. The hatch can also pour continuously or while powered. Stopping it
+cancels the rest of the batch, and so does finding no liquid at its height.
+Cooling solidifies the contents,
 and reheating melts
-them again. The controller retains its loaded bath when picked up and replaced.
+them again. Breaking the controller discards the bath's contents; the dropped
+controller keeps only its covers, paint and upgrades. Saving and reloading the
+world preserves the bath.
 
-Each metal batch uses the composition at the start of its discharge. Removing
-the batch can move the remaining bath into another product range. The amount
-is limited by the available metal and carbon.
+Each step transfers up to one tenth of the tier's maximum batch, rounded up to
+whole mB. Steps are at least five ticks apart and the outlet must empty between
+steps. Each step draws the fluid currently at the tap, so a batch can change
+products as the bath composition or level changes.
 
 At LuV, a Bath Measurement Hatch exposes exact bath measurements to
 OpenComputers. Craft it in a LuV Assembler from one LuV Machine Hull, two LuV

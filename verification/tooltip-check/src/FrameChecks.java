@@ -294,6 +294,7 @@ public final class FrameChecks {
         assertions += NativeSolarOracleChecks.run(new File(args[0]), gtFluids, gtItems);
         assertions += nerflens.CertificateTooltipChecks.run(new File(args[0]));
         assertions += ExtraNerf121Checks.run(new File(args[0]), gtItems, gtFluids);
+        assertions += ExtraNerf130Checks.run(new File(args[0]), gtItems, gtFluids);
         scenarios.add("fluid descriptions, recipe-only products, scoped provenance, bilingual summaries and Shift");
 
         File override = new File(args[0], "nerflens/user_nerfs.json"); override.getParentFile().mkdirs();

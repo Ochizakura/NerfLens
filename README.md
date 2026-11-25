@@ -1,23 +1,23 @@
 # NerfLens
 
-**NerfLens 0.2.1 正式版**，用于 GregTech: New Horizons 2.9.0 / 2.9.1 的客户端显示辅助模组。作者：ochizakura。
+**NerfLens 0.3.0 正式版**，用于 GregTech: New Horizons 2.9.0 / 2.9.1 的客户端显示辅助模组。作者：ochizakura。
 
 在物品提示与 NEI 配方页中显示 ExtraNerf 的玩法改动、投入与产物对照、材料标记以及认证状态。
 
 ## 安装
 
 1. 保存并关闭 Minecraft 客户端。
-2. 从更新包取出 `NerfLens-0.2.1.jar`；GitHub 发布列表见 [Releases](https://github.com/Ochizakura/NerfLens/releases)。
+2. 从更新包取出 `NerfLens-0.3.0.jar`；GitHub 发布列表见 [Releases](https://github.com/Ochizakura/NerfLens/releases)。
 3. 升级时移出旧 NerfLens，将新 JAR 放进正在使用的 GTNH 实例 `mods` 目录，每种模组保留一个版本。
-4. 重新启动，Mods 列表应显示 NerfLens 0.2.1。
+4. 重新启动，Mods 列表应显示 NerfLens 0.3.0。
 
 Forge 随游戏加载 JAR。服务器无需安装 NerfLens。
 
 | 文件 | 用途 |
 | --- | --- |
-| `NerfLens-0.2.1.jar` | 玩家安装使用。 |
-| `NerfLens-0.2.1-source.zip` | 源码、许可证及验证脚本。 |
-| `NerfLens-0.2.1-release.zip` | JAR、源码、说明与验证记录的完整离线包。 |
+| `NerfLens-0.3.0.jar` | 玩家安装使用。 |
+| `NerfLens-0.3.0-source.zip` | 源码、许可证及验证脚本。 |
+| `NerfLens-0.3.0-release.zip` | JAR、源码、说明与验证记录的完整离线包。 |
 
 ## 使用
 
@@ -30,7 +30,7 @@ Forge 随游戏加载 JAR。服务器无需安装 NerfLens。
 
 ## 兼容范围
 
-环境：GTNH 2.9.0 / 2.9.1，Minecraft 1.7.10 / Forge 1614。已核对 NEI 2.8.171 / 2.8.175 和 Chromatic Tooltips 1.0.36 / 1.0.38（可选）的显示接口。
+环境：GTNH 2.9.0 / 2.9.1，Minecraft 1.7.10 / Forge 1614（ExtraNerf 1.3.0 声明支持 2.9.1）。已核对 NEI 2.8.171 / 2.8.175 和 Chromatic Tooltips 1.0.36 / 1.0.38（可选）的显示接口。
 
 | ExtraNerf | 提示记录 | 配方对照 |
 | --- | ---: | ---: |
@@ -39,8 +39,9 @@ Forge 随游戏加载 JAR。服务器无需安装 NerfLens。
 | 1.1.1 | 91 | 143 |
 | 1.2.0 | 100 | 176 |
 | 1.2.1 | 102 | 177 |
+| 1.3.0 | 104 | 178 |
 
-1.2.1 档案增加 QFT 的 64 凯芙拉蜂窝投入，将生物培养基的额外奇异粉改为小撮（1/4 份），同步凯芙拉蜂、铁浴端口和无线能源覆盖板认证说明。1.2.0 档案继续保留整份奇异粉与原有规则。
+1.2.1 档案增加 QFT 的 64 凯芙拉蜂窝投入，将生物培养基的额外奇异粉改为小撮（1/4 份），同步凯芙拉蜂、铁浴端口和无线能源覆盖板认证说明。1.3.0 档案再增加 QFT 两份 0 数量催化（拉多X聚合物粉、凯芙拉粉）、铁浴四金属的完整 GT 部件与分批浇铸、兰波顿超级电容库的激光仓认证，以及任务完成奖励对全队生效。1.2.0、1.2.1 及更早档案逐字节保留。
 
 版本由 Forge 读取并自动选择；未知或未安装 ExtraNerf 时仅使用用户自定义显示数据。配置位于 `config/nerflens/user_nerfs.json`，详见[兼容与配置](docs/COMPATIBILITY.md)。
 
@@ -62,9 +63,9 @@ Unix 使用 `./gradlew`。离线构建需要已缓存依赖。源码 ZIP 无需 
 
 ## English
 
-NerfLens 0.2.1 is a stable client-side display companion for ExtraNerf with verified display APIs in GTNH 2.9.0 and 2.9.1. Use the runtime JAR from the update package; published versions are listed under [Releases](https://github.com/Ochizakura/NerfLens/releases), replace older NerfLens JARs with the client closed, and keep one version in the active instance's mods directory.
+NerfLens 0.3.0 is a stable client-side display companion for ExtraNerf with verified display APIs in GTNH 2.9.0 and 2.9.1. Use the runtime JAR from the update package; published versions are listed under [Releases](https://github.com/Ochizakura/NerfLens/releases), replace older NerfLens JARs with the client closed, and keep one version in the active instance's mods directory.
 
-Hover items for changes and certificate status; hold Shift for details. NEI recipe pages show changed-input frames, affected-output frames and comparisons. One JAR selects ExtraNerf 1.0.1/1.1.0/1.1.1/1.2.0/1.2.1 data automatically. Existing translations take precedence over fallbacks. Unknown versions use custom display data only.
+Hover items for changes and certificate status; hold Shift for details. NEI recipe pages show changed-input frames, affected-output frames and comparisons. One JAR selects ExtraNerf 1.0.1/1.1.0/1.1.1/1.2.0/1.2.1/1.3.0 data automatically. Existing translations take precedence over fallbacks. Unknown versions use custom display data only.
 
 ## 许可与来源
 

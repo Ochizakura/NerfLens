@@ -48,7 +48,7 @@ public final class CatalogScopeChecks {
             "iron-bath-dark-steel-large","iron-bath-electrical-steel-crafting","iron-bath-dark-steel-crafting"};
         Item nano=item("catalog:nanoprocessor"),quantum=item("catalog:quantumprocessor"),cpu=item("catalog:nanocpu"),soc=item("catalog:soc");
         int audited=0;
-        for(String version:new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1"}) {
+        for(String version:new String[]{"1.0.1","1.1.0","1.1.1","1.2.0","1.2.1","1.3.0"}) {
             NerfDB.load(config,version);
             items.put("Circuit_Nanoprocessor",new ItemStack(nano));items.put("Circuit_Quantumprocessor",new ItemStack(quantum));
             items.put("Circuit_Chip_NanoCPU",new ItemStack(cpu));items.put("Circuit_Chip_SoC",new ItemStack(soc));
@@ -68,7 +68,7 @@ public final class CatalogScopeChecks {
             require(NerfRecipes.match(h,0).stream().noneMatch(r->r.id.equals("nanoprocessor")),"SoC route is excluded after handler contents change: "+version);
             require(NerfBadges.forRecipe(h,0,output,false).isEmpty(),"Unchanged SoC recipe does not inherit global/old local frames: "+version);
         }
-        require(audited==759,"All 759 version-scoped recipe records were inspected");
+        require(audited==937,"All 937 version-scoped recipe records were inspected");
         Item tagged=item("appliedenergistics2:catalog_tagged"),tpv=item("catalog:tpv"),other=item("catalog:other");
         OreDictionary.registerOre("dustCatalogTPVAlloy",new ItemStack(tpv));
         ItemStack changed=new ItemStack(tagged),unchanged=new ItemStack(tagged);
