@@ -54,3 +54,4 @@
 
 # Preserve the frozen 1.2.0 resource bytes from the verified 0.2.0 runtime JAR.
 src/main/resources/assets/nerflens/profiles/1.2.0.json text eol=crlf encoding=utf-8
+src/main/resources/assets/nerflens/profiles/1.2.1.json text eol=crlf encoding=utf-8
