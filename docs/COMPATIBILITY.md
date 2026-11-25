@@ -42,7 +42,7 @@ Slight name alignment follows the installed Chinese language files: 兰波顿超
 
 ## Certification tooltips
 
-NerfLens 0.3.0 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain. ExtraNerf 1.2.0/1.2.1 multiblocks inherit the installed classifier's energy/dynamo-hatch tier rule, while the Industrial Apiary remains HV and the Ice Cream Machine remains exempt.
+NerfLens 0.3.1 displays read-only certification state in machine and certificate item tooltips. Machine requirements use the installed ExtraNerf classifier, including its legacy obfuscated API in 1.0.1. Individual certificate items show their own ownership bit; machines check their full prerequisite chain. ExtraNerf 1.2.0/1.2.1 multiblocks inherit the installed classifier's energy/dynamo-hatch tier rule, while the Industrial Apiary remains HV and the Ice Cream Machine remains exempt.
 
 Singleplayer reads only an already-loaded record in the integrated server's MapStorage, on its server thread, every half second. It serializes that existing record into a temporary NBT object without loading, creating, saving or dirtying world data. World/server changes invalidate the snapshot. Remote or unavailable state is shown as unknown.
 

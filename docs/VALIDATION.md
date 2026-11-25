@@ -1,6 +1,6 @@
 # Release validation
 
-NerfLens 0.3.0 supports the official ExtraNerf 1.3.0 source tag at `825923725f87dee6bb2ae32de2088135888e0563`.
+NerfLens 0.3.1 supports the official ExtraNerf 1.3.0 source tag at `825923725f87dee6bb2ae32de2088135888e0563`.
 
 - Offline Gradle build, Spotless and Checkstyle passed; 65 version/profile assertions and 16 certificate-state assertions.
 - Integration harness passed 1,376 assertions with Chromatic Tooltips and 1,360 without it.

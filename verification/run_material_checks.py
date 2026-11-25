@@ -20,7 +20,7 @@ dependencies = [line.strip() for line in (WORK / "frame-check-classpath.txt").re
 nei_override = os.environ.get("NERFLENS_TEST_NEI_DEV")
 if nei_override:
     dependencies = [str(Path(nei_override)), *[line for line in dependencies if "NotEnoughItems-" not in Path(line).name]]
-base = [ROOT / "classes", PROJECT / "build/libs/nerflens-0.3.0-dev.jar",
+base = [ROOT / "classes", PROJECT / "build/libs/nerflens-0.3.1-dev.jar",
         PROJECT / "build/rfg/recompiled_minecraft-1.7.10.jar", *dependencies]
 chromatic_candidates = sorted(MODS.glob("chromatictooltips-*.jar"))
 if len(chromatic_candidates) != 1:

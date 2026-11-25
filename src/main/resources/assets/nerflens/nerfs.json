@@ -3680,7 +3680,7 @@
         "生铁：至少 3.5%，小于 4.5%。",
         "过渗碳铁：至少 4.5%。",
         "1.3.0：锻铁、铸铁、生铁与过渗碳铁现在各有板、杆、齿轮、小齿轮、转子和工具部件，并生成自动回收配方。",
-        "四种金属都有完整、小撮与细粉形式；矿渣不再提供粉、小撮粉、细粉和锭。",
+        "四种金属都有完整、小撮与细粉形式；炉渣不再提供粉、小撮粉、细粉和锭。",
         "新增铁浴金属方块：metadata 0 为锻铁、1 为过渗碳铁；两者仍是独立材料，不并入普通铁。"
       ],
       "linesEn": [
@@ -4010,7 +4010,7 @@
       ],
       "summary": [
         "ExtraNerf 1.2.1：拉多X聚合物／熔融凯芙拉路线每批新增 64 个凯芙拉蜂窝。",
-        "ExtraNerf 1.3.0：Radox 聚合物路线另需 1 份 Radox 聚合物粉，24 蜂窝路线另需 1 份凯芙拉粉；两份都以 0 数量放入，不随批次消耗。"
+        "ExtraNerf 1.3.0：拉多X聚合物路线另需 1 份 拉多X聚合物粉，24 蜂窝路线另需 1 份凯芙拉粉；两份都以 0 数量放入，不随批次消耗。"
       ],
       "summaryEn": [
         "ExtraNerf 1.2.1: the Radox Polymer / Molten Kevlar route adds 64 Kevlar Combs per batch.",
@@ -4032,7 +4032,7 @@
       ],
       "newMat": [
         "凯芙拉蜂窝 ×64",
-        "Radox 聚合物粉 ×1（不消耗）",
+        "拉多X聚合物粉 ×1（不消耗）",
         "凯芙拉粉 ×1（不消耗）"
       ],
       "newMatEn": [
@@ -14173,7 +14173,7 @@
       ],
       "materialInputsChanged": false,
       "before": "原整合包与 ExtraNerf 1.2.0 的这条 QFT 塑料路线不消耗凯芙拉蜂窝。",
-      "after": "ExtraNerf 1.2.1：每批另加 64 个凯芙拉蜂窝；1.3.0：另加 1 份 Radox 聚合物粉（不消耗）。其余材料、四种产物、20 秒耗时、UIV 电压和焦点等级 4 不变。",
+      "after": "ExtraNerf 1.2.1：每批另加 64 个凯芙拉蜂窝；1.3.0：另加 1 份 拉多X聚合物粉（不消耗）。其余材料、四种产物、20 秒耗时、UIV 电压和焦点等级 4 不变。",
       "beforeEn": "The original pack and ExtraNerf 1.2.0 QFT plastics route consume no Kevlar Combs.",
       "afterEn": "ExtraNerf 1.2.1 adds 64 Kevlar Combs per batch; 1.3.0 adds one non-consumed Radox Polymer Pulp. Other inputs, all four outputs, 20s, UIV voltage and focus tier 4 remain.",
       "note": "只标记这条 QFT 路线；其他凯芙拉、Radox 路线及未改动副产物不继承全局金框。原终极塑料催化剂保留，0 数量催化不消耗。",
@@ -14267,7 +14267,7 @@
       "after": "ExtraNerf 1.3.0：另需 1 份凯芙拉粉，以 0 数量放入、不消耗；蜂窝、碳粉、气体、三种产物、UIV 与 20 秒耗时不变。",
       "beforeEn": "The original pack and ExtraNerf 1.2.1 24-comb QFT route hold only 24 Combs, 64 Carbon Dust, two gases and the non-consumed Ultimate Plastic Catalyst.",
       "afterEn": "ExtraNerf 1.3.0 adds one Kevlar Dust with zero count; it is not consumed. Combs, Carbon, gases, all three outputs, UIV and 20s remain unchanged.",
-      "note": "只标记这条 24 蜂窝路线；64 蜂窝的 Radox 聚合物路线有自己的 Radox 聚合物粉记录，未改动产物不继承金框。",
+      "note": "只标记这条 24 蜂窝路线；64 蜂窝的 拉多X聚合物路线有自己的 拉多X聚合物粉记录，未改动产物不继承金框。",
       "noteEn": "Frames are local to this 24-comb route. The 64-comb Radox Polymer route has its own pulp record, and unchanged outputs do not inherit gold frames.",
       "visualChanges": [
         {

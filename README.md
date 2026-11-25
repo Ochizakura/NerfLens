@@ -1,13 +1,13 @@
 # NerfLens
 
-**NerfLens 0.3.0 正式版**，用于 GregTech: New Horizons 2.9.0 / 2.9.1 的客户端显示辅助模组。作者：ochizakura。
+**NerfLens 0.3.1 正式版**，用于 GregTech: New Horizons 2.9.0 / 2.9.1 的客户端显示辅助模组。作者：ochizakura。
 
 在物品提示与 NEI 配方页中显示 ExtraNerf 的玩法改动、投入与产物对照、材料标记以及认证状态。
 
 ## 安装
 
 1. 保存并关闭 Minecraft 客户端。
-2. 从更新包取出 `NerfLens-0.3.0.jar`；GitHub 发布列表见 [Releases](https://github.com/Ochizakura/NerfLens/releases)。
+2. 从更新包取出 `NerfLens-0.3.1.jar`；GitHub 发布列表见 [Releases](https://github.com/Ochizakura/NerfLens/releases)。
 3. 升级时移出旧 NerfLens，将新 JAR 放进正在使用的 GTNH 实例 `mods` 目录，每种模组保留一个版本。
 4. 重新启动，Mods 列表应显示 NerfLens 0.3.0。
 
@@ -15,9 +15,9 @@ Forge 随游戏加载 JAR。服务器无需安装 NerfLens。
 
 | 文件 | 用途 |
 | --- | --- |
-| `NerfLens-0.3.0.jar` | 玩家安装使用。 |
-| `NerfLens-0.3.0-source.zip` | 源码、许可证及验证脚本。 |
-| `NerfLens-0.3.0-release.zip` | JAR、源码、说明与验证记录的完整离线包。 |
+| `NerfLens-0.3.1.jar` | 玩家安装使用。 |
+| `NerfLens-0.3.1-source.zip` | 源码、许可证及验证脚本。 |
+| `NerfLens-0.3.1-release.zip` | JAR、源码、说明与验证记录的完整离线包。 |
 
 ## 使用
 
@@ -63,7 +63,7 @@ Unix 使用 `./gradlew`。离线构建需要已缓存依赖。源码 ZIP 无需 
 
 ## English
 
-NerfLens 0.3.0 is a stable client-side display companion for ExtraNerf with verified display APIs in GTNH 2.9.0 and 2.9.1. Use the runtime JAR from the update package; published versions are listed under [Releases](https://github.com/Ochizakura/NerfLens/releases), replace older NerfLens JARs with the client closed, and keep one version in the active instance's mods directory.
+NerfLens 0.3.1 is a stable client-side display companion for ExtraNerf with verified display APIs in GTNH 2.9.0 and 2.9.1. Use the runtime JAR from the update package; published versions are listed under [Releases](https://github.com/Ochizakura/NerfLens/releases), replace older NerfLens JARs with the client closed, and keep one version in the active instance's mods directory.
 
 Hover items for changes and certificate status; hold Shift for details. NEI recipe pages show changed-input frames, affected-output frames and comparisons. One JAR selects ExtraNerf 1.0.1/1.1.0/1.1.1/1.2.0/1.2.1/1.3.0 data automatically. Existing translations take precedence over fallbacks. Unknown versions use custom display data only.
 
